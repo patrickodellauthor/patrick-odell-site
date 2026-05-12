@@ -9,9 +9,9 @@ import Layout from "../layouts/Layout.astro";
       <section class="series-header">
         <h1>The Godfire Series</h1>
 
-      <p>
-        The Godfire series traces Elias Fetch’s descent into a world that does not reward certainty, forcing him to confront what he is, what he isn’t, and what it costs to remain either.
-      </p>
+        <p>
+          The Godfire series traces Elias Fetch’s descent into a world that does not reward certainty, forcing him to confront what he is, what he isn’t, and what it costs to remain either.
+        </p>
       </section>
 
       <hr class="series-divider" />
@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="grid">
 
         <!-- BOOK 1 -->
-        <div class="book-card">
+        <a class="book-card" href="/books/gods-and-monsters">
           <img src="/gods-and-monsters-cover.jpg" alt="Gods and Monsters cover" />
 
           <h2>Gods and Monsters</h2>
@@ -40,10 +40,10 @@ import Layout from "../layouts/Layout.astro";
           <p class="meta">
             Coming February 2027
           </p>
-        </div>
+        </a>
 
         <!-- BOOK 2 -->
-        <div class="book-card">
+        <a class="book-card" href="/books/watchers-in-the-dark">
           <img src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
 
           <h2>Watchers in the Dark</h2>
@@ -64,10 +64,10 @@ import Layout from "../layouts/Layout.astro";
           <p class="meta">
             Coming 2027
           </p>
-        </div>
+        </a>
 
         <!-- BOOK 3 -->
-        <div class="book-card">
+        <a class="book-card" href="/books/the-dream-eaters-bargain">
           <img src="/the-dream-eaters-bargain-cover.jpg" alt="The Dream Eater's Bargain cover" />
 
           <h2>The Dream Eater's Bargain</h2>
@@ -88,7 +88,7 @@ import Layout from "../layouts/Layout.astro";
           <p class="meta">
            Coming 2027
           </p>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -111,14 +111,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-.intro {
-  max-width: 720px;
-  margin: 0 auto 50px auto;
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.8;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -127,6 +119,7 @@ h1 {
   margin-top: 0;
 }
 
+/* IMPORTANT: now anchors behave like cards */
 .book-card {
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 12px;
@@ -136,6 +129,9 @@ h1 {
   flex-direction: column;
   gap: 10px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  text-decoration: none;
+  color: inherit;
 }
 
 .book-card:hover {
@@ -153,6 +149,7 @@ h1 {
   margin: 10px 0 8px;
   font-size: 1.25rem;
   letter-spacing: 0.2px;
+  color: black;
 }
 
 .book-card p {
@@ -175,31 +172,22 @@ h1 {
   max-width: 900px;
 }
 
- .series-header h1 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: 0.2px;
+.series-header {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.series-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
 }
 
 .series-header p {
-    max-width: 680px;
-    line-height: 1.65;
-    opacity: 0.78;
-}
-
-.section {
-  padding-top: 60px;
-  padding-bottom: 80px;
-}
-
-.series-header {
-  max-width: 720px;
-  margin: 0 auto 0 auto;
-}
-
-.series-divider {
-  margin: 35px auto 55px auto;
+  max-width: 680px;
+  line-height: 1.65;
+  opacity: 0.78;
 }
 
 .series-tag {
