@@ -1,1 +1,86 @@
 
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Gods and Monsters | Patrick O’Dell">
+
+  <section class="book-page">
+    <div class="container">
+
+      <img class="cover" src="/gods-and-monsters-cover.jpg" alt="Gods and Monsters cover" />
+
+      <h1>Gods and Monsters</h1>
+
+      <p class="blurb">
+        Supernatural detective Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
+
+        When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
+
+        Something ancient is moving beneath the surface and it knows his name.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="https://YOUR-PREORDER-LINK.com">Preorder</a>
+        <a class="btn secondary" href="/books">Back to Books</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+
+.book-page {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cover {
+  width: 240px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.blurb {
+  text-align: left;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.primary {
+  background: rgba(255,255,255,0.9);
+  color: black;
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+}
+
+</style>
