@@ -19,45 +19,50 @@ import '@fontsource-variable/inter';
 // Urbanist
 ---
 
-<style is:inline>
+<style>
+  /* whatever is already here */
+
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
-
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
-
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
-
-    --aw-color-bg-page-dark: rgb(3 6 32);
-
-    ::selection {
-      background-color: lavender;
-    }
+    --bg: #0b0c10;
+    --panel: #11131a;
+    --text: rgba(255,255,255,0.88);
+    --muted: rgba(255,255,255,0.55);
+    --faint: rgba(255,255,255,0.25);
+    --accent: #d6c7a1;
   }
 
-  .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+  }
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(3 6 32);
+  a:hover {
+    color: var(--accent);
+  }
 
-    ::selection {
-      background-color: black;
-      color: snow;
-    }
+  h1, h2, h3 {
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  section, header {
+    position: relative;
+    z-index: 1;
   }
 </style>
