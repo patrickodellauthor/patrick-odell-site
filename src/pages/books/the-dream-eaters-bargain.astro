@@ -1,86 +1,44 @@
-
 ---
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="The Dream Eater’s Bargain | Patrick O’Dell">
-
   <section class="book-page">
     <div class="container">
 
-      <img class="cover" src="/the-dream-eaters-bargain-cover.jpg" alt="The Dream Eater’s Bargain cover" />
+      <img class="cover" src="/the-dream-eaters-bargain-cover.jpg" alt="Dream Eater’s Bargain cover" />
 
       <h1>The Dream Eater’s Bargain</h1>
+      <p class="series">The Godfire Series</p>
 
       <p class="blurb">
-        Elias Fetch’s power is fading, and something older than understanding takes notice.
+        Elias Fetch’s power is fading when Somnus, the ruler of the Dream Realm, offers him a bargain: hunt down escaped Dream Lords before they consume both worlds.
+      </p>
 
-        When Somnus appears without warning, he offers a bargain that binds Elias to a hunt through the Dream Realm itself.
+      <p class="blurb">
+        The deeper he goes, the more the Dream Realm begins to reflect something personal, and dangerous.
+      </p>
 
-        What begins as a search for escaped Dream Lords becomes something far more unstable — where memory, identity, and consequence begin to collapse into one another.
+      <p class="blurb">
+        By the end of the hunt, Elias realizes the real threat was never what he was chasing.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="YOUR-PREORDER-LINK">Preorder</a>
-        <a class="btn secondary" href="/books">Back to Books</a>
+        <a href="#" class="btn">Preorder (Coming Soon)</a>
+        <a href="/books" class="btn secondary">Back to Books</a>
       </div>
 
     </div>
   </section>
-
 </Layout>
 
 <style>
-
-.book-page {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cover {
-  width: 240px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-
-.blurb {
-  text-align: left;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 30px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.btn {
-  padding: 10px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.primary {
-  background: rgba(255,255,255,0.9);
-  color: black;
-}
-
-.secondary {
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.8);
-}
-
+.book-page { padding: 80px 20px; }
+.container { max-width: 800px; margin: 0 auto; text-align: center; }
+.cover { width: 260px; border-radius: 8px; margin-bottom: 20px; }
+.series { opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
+.blurb { text-align: left; margin: 16px auto; line-height: 1.6; max-width: 650px; opacity: 0.85; }
+.actions { margin-top: 30px; display: flex; gap: 12px; justify-content: center; }
+.btn { padding: 10px 14px; border: 1px solid black; text-decoration: none; color: black; }
+.secondary { opacity: 0.6; }
 </style>
