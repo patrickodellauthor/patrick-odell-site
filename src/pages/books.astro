@@ -95,8 +95,9 @@ import Layout from "../layouts/Layout.astro";
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 h1 {
@@ -105,29 +106,31 @@ h1 {
 }
 
 .intro {
-  opacity: 0.75;
-  margin-bottom: 40px;
-  max-width: 600px;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 48px;
+  align-items: start;
 }
 
 .book-card {
   border: 1px solid rgba(0,0,0,0.08);
-  padding: 22px;
   border-radius: 12px;
+  padding: 20px;
   background: white;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
 }
 
 .book-card img {
