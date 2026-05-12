@@ -101,6 +101,7 @@ const { language, textDirection } = I18N;
    ========================= */
 
 .nav {
+  overflow: visible;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -184,22 +185,27 @@ const { language, textDirection } = I18N;
 
 .dropdown {
   position: relative;
+  display: inline-flex;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 26px;
-  left: 0;
+
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
 
   background: rgba(12, 12, 14, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  min-width: 190px;
+  min-width: 200px;
   padding: 8px 0;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+
+  z-index: 9999;
 }
 
 .dropdown-content a {
@@ -216,7 +222,7 @@ const { language, textDirection } = I18N;
   color: rgba(255,255,255,0.95);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover > .dropdown-content {
   display: block;
 }
 
