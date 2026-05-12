@@ -12,7 +12,6 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
-// Comment the line below to disable View Transitions
 import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
@@ -38,27 +37,37 @@ const { language, textDirection } = I18N;
 
     <link rel="preconnect" href="https://images.unsplash.com" />
 
-    <!-- View Transitions -->
     <ClientRouter fallback="swap" />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
 
-    <!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
     <header class="nav">
       <div class="nav-inner">
 
         <div class="nav-center">
           <a class="logo" href="/">Patrick O’Dell</a>
-
           <div class="subtitle">The Godfire Series</div>
 
           <nav class="menu">
-            <a href="/">Home</a>
-            <a href="/books">Books</a>
 
+            <a href="/">Home</a>
+
+            <!-- BOOKS DROPDOWN -->
             <div class="dropdown">
-              <button>Worlds ▾</button>
+              <button class="dropbtn">Books ▾</button>
+              <div class="dropdown-content">
+                <a href="/books">All Books</a>
+                <a href="/books/gods-and-monsters">Gods and Monsters</a>
+                <a href="/books/watchers-in-the-dark">Watchers in the Dark</a>
+                <a href="/books/the-dream-eaters-bargain">The Dream Eater’s Bargain</a>
+              </div>
+            </div>
+
+            <!-- WORLDS DROPDOWN -->
+            <div class="dropdown">
+              <button class="dropbtn">Worlds ▾</button>
               <div class="dropdown-content">
                 <a href="/worlds">Overview</a>
                 <a href="/worlds/timeline">Timeline</a>
@@ -70,6 +79,7 @@ const { language, textDirection } = I18N;
             <a href="/blog">Blog</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
+
           </nav>
 
         </div>
@@ -86,13 +96,19 @@ const { language, textDirection } = I18N;
 </html>
 
 <style>
+/* =========================
+   NAVBAR CORE
+   ========================= */
+
 .nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(8, 8, 10, 0.72);
+
+  background: rgba(8, 8, 10, 0.78);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-inner {
@@ -112,13 +128,27 @@ const { language, textDirection } = I18N;
   gap: 10px;
 }
 
+/* =========================
+   BRANDING
+   ========================= */
+
 .logo {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-weight: 400;
   letter-spacing: 0.4px;
   font-size: 0.95rem;
 }
+
+.subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.45);
+}
+
+/* =========================
+   MENU
+   ========================= */
 
 .menu {
   display: flex;
@@ -129,13 +159,14 @@ const { language, textDirection } = I18N;
 }
 
 .menu a,
-.menu button {
+.dropbtn {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font: inherit;
   font-weight: 300;
   font-size: 0.92rem;
   letter-spacing: 0.25px;
+
   background: none;
   border: none;
   cursor: pointer;
@@ -143,11 +174,14 @@ const { language, textDirection } = I18N;
 }
 
 .menu a:hover,
-.menu button:hover {
+.dropbtn:hover {
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* Dropdown */
+/* =========================
+   DROPDOWNS (CLEAN SYSTEM)
+   ========================= */
+
 .dropdown {
   position: relative;
 }
@@ -158,21 +192,23 @@ const { language, textDirection } = I18N;
   top: 26px;
   left: 0;
 
-  background: rgba(12, 12, 14, 0.95);
+  background: rgba(12, 12, 14, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.06);
 
+  min-width: 190px;
   padding: 8px 0;
-  min-width: 170px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
 }
 
 .dropdown-content a {
   display: block;
-  padding: 8px 14px;
+  padding: 10px 14px;
 
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.75);
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
@@ -184,9 +220,11 @@ const { language, textDirection } = I18N;
   display: block;
 }
 
-.subtitle {
-  font-size: 0.75rem;
-  letter-spacing: 0.3px;
-  color: rgba(255,255,255,0.45);
+/* =========================
+   PAGE BASE
+   ========================= */
+
+body {
+  margin: 0;
 }
 </style>
