@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Books | Patrick O’Dell">
+  <section class="section">
+    <div class="container">
+
+      <section class="series-header">
+        <h1>The Godfire Series</h1>
+
+      <p>
+        The Godfire series traces Elias Fetch’s descent into a world that does not reward certainty, forcing him to confront what he is, what he isn’t, and what it costs to remain either.
+      </p>
+
+      <div class="grid">
+
+        <!-- BOOK 1 -->
+        <div class="book-card">
+          <img src="/gods-and-monsters.jpg" alt="Gods and Monsters cover" />
+
+          <h2>Gods and Monsters</h2>
+
+          <p>
+              Supernatural fixer Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
+          </p>
+
+          <p>
+              When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
+          </p>
+
+          <p>
+              Something ancient is moving beneath the surface... and it knows his name.
+          </p>
+
+          <p class="meta">
+            Coming February 2027
+          </p>
+        </div>
+
+        <!-- BOOK 2 -->
+        <div class="book-card">
+          <img src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
+
+          <h2>Watchers in the Dark</h2>
+
+          <p>
+              Elias Fetch makes a living cleaning up supernatural messes, but even he has limits. When a soft-spoken stranger named Louis arrives in New Orleans with a disturbing problem, Elias is drawn into a case that feels wrong from the start.
+          </p>
+
+          <p>
+              What begins as a routine job unravels into something far older and more dangerous than the city itself, where drained bodies, fractured identities, and unseen forces begin to surface in the dark.
+          </p>
+
+          <p>
+              As Elias and the others are pulled deeper into a conflict involving fallen angels and buried histories, he discovers the truth may be more terrifying than what he knows.
+          </p>
+
+          <p class="meta">
+            Coming 2027
+          </p>
+        </div>
+
+        <!-- BOOK 3 -->
+        <div class="book-card">
+          <img src="/the-dream-eaters-bargain-cover.jpg" alt="The Dream Eater's Bargain cover" />
+
+          <h2>The Dream Eater's Bargain</h2>
+
+          <p>
+              Elias Fetch’s power is fading when Somnus, the ruler of the Dream Realm, appears with an offer he cannot refuse: hunt down the escaped Dream Lords before they consume both the dreamscape and the waking world.
+          </p>
+
+          <p>
+              To survive, Elias is forced into a bargain that pulls him and his allies into nightmares made real—where every step deeper into the Dream Realm pushes them closer to collapse.
+          </p>
+
+          <p>
+              But as the hunt reaches its end, Elias realizes the true danger is not what he has been chasing, and the price of saving the Dream Realm may be far greater than he is willing to pay.
+          </p>
+
+          <p class="meta">
+           Coming 2027
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.intro {
+  opacity: 0.75;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+
+.book-card {
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 22px;
+  border-radius: 12px;
+  background: white;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.book-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.book-card h2 {
+  margin: 10px 0 8px;
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+.book-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.meta {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  opacity: 0.55;
+  letter-spacing: 0.3px;
+}
+</style>
