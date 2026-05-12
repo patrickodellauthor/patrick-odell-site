@@ -38,13 +38,155 @@ const { language, textDirection } = I18N;
 
     <link rel="preconnect" href="https://images.unsplash.com" />
 
-    <!-- Comment the line below to disable View Transitions -->
+    <!-- View Transitions -->
     <ClientRouter fallback="swap" />
   </head>
 
-  <body class="antialiased text-default tracking-tight bg-[#fafafa]">
+  <body class="antialiased text-default bg-page tracking-tight">
+
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-inner">
+
+        <div class="nav-center">
+          <a class="logo" href="/">Patrick O’Dell</a>
+
+          <div class="subtitle">The Godfire Series</div>
+
+          <nav class="menu">
+            <a href="/">Home</a>
+            <a href="/books">Books</a>
+
+            <div class="dropdown">
+              <button>Worlds ▾</button>
+              <div class="dropdown-content">
+                <a href="/worlds">Overview</a>
+                <a href="/worlds/timeline">Timeline</a>
+                <a href="/worlds/bestiary">Bestiary</a>
+                <a href="/worlds/elderspeech">Elderspeech</a>
+              </div>
+            </div>
+
+            <a href="/blog">Blog</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </nav>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
     <slot />
 
     <BasicScripts />
+
   </body>
 </html>
+
+<style>
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(8, 8, 10, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 18px 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  font-size: 0.95rem;
+}
+
+.menu {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu a,
+.menu button {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font: inherit;
+  font-weight: 300;
+  font-size: 0.92rem;
+  letter-spacing: 0.25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu a:hover,
+.menu button:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 26px;
+  left: 0;
+
+  background: rgba(12, 12, 14, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  padding: 8px 0;
+  min-width: 170px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 14px;
+
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.95);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.45);
+}
+</style>
