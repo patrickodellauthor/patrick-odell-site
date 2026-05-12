@@ -1,86 +1,44 @@
-
 ---
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Watchers in the Dark | Patrick O’Dell">
-
   <section class="book-page">
     <div class="container">
 
       <img class="cover" src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
 
       <h1>Watchers in the Dark</h1>
+      <p class="series">The Godfire Series</p>
 
       <p class="blurb">
-        Elias Fetch takes on work that no one else wants — cleaning up problems that don’t belong in the world most people think they live in.
+        Elias Fetch makes a living cleaning up supernatural messes, but even he has limits. When a soft-spoken stranger named Louis arrives in New Orleans with a disturbing problem, Elias is pulled into a case that feels wrong from the start.
+      </p>
 
-        When a quiet stranger named Louis arrives with a case that doesn’t behave like anything Elias has seen before, the job stops feeling routine.
+      <p class="blurb">
+        What begins as a routine job unravels into something far older and more dangerous than the city itself.
+      </p>
 
-        Something old is moving through New Orleans, and it has already begun leaving bodies behind.
+      <p class="blurb">
+        As Elias digs deeper, he realizes the truth may be more dangerous than the problem itself.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="YOUR-PREORDER-LINK">Preorder</a>
-        <a class="btn secondary" href="/books">Back to Books</a>
+        <a href="#" class="btn">Preorder (Coming Soon)</a>
+        <a href="/books" class="btn secondary">Back to Books</a>
       </div>
 
     </div>
   </section>
-
 </Layout>
 
 <style>
-
-.book-page {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cover {
-  width: 240px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-
-.blurb {
-  text-align: left;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 30px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.btn {
-  padding: 10px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.primary {
-  background: rgba(255,255,255,0.9);
-  color: black;
-}
-
-.secondary {
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.8);
-}
-
+.book-page { padding: 80px 20px; }
+.container { max-width: 800px; margin: 0 auto; text-align: center; }
+.cover { width: 260px; border-radius: 8px; margin-bottom: 20px; }
+.series { opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
+.blurb { text-align: left; margin: 16px auto; line-height: 1.6; max-width: 650px; opacity: 0.85; }
+.actions { margin-top: 30px; display: flex; gap: 12px; justify-content: center; }
+.btn { padding: 10px 14px; border: 1px solid black; text-decoration: none; color: black; }
+.secondary { opacity: 0.6; }
 </style>
