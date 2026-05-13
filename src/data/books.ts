@@ -91,12 +91,12 @@ export const books: Book[] = [
     slug: "the-dream-eaters-bargain",
 
     title: "The Dream Eater’s Bargain",
-    series: "The Godfire Mythos",
+    series: "The Godfire Series",
 
-    status: "published",
+    status: "Coming Soon",
 
     description:
-      "A dark fantasy entry in the broader Godfire mythos.",
+      "Book Three of The Godfire Series by Patrick O’Dell.",
 
     cover: "/the-dream-eaters-bargain-cover.jpg",
 
@@ -109,7 +109,7 @@ export const books: Book[] = [
     seo: {
       title: "The Dream Eater’s Bargain | Patrick O’Dell",
       description:
-        "A dark fantasy story in the Godfire mythos."
+        "Book Three of The Godfire Series by Patrick O’Dell."
     }
   }
 ];
