@@ -6,6 +6,10 @@
 
 @custom-variant intersect (&:not([no-intersect]));
 
+/* ===============================
+   THEME TOKENS
+   =============================== */
+
 @theme {
   --color-primary: var(--aw-color-primary);
   --color-secondary: var(--aw-color-secondary);
@@ -39,11 +43,11 @@
 }
 
 /* ===============================
-   BASE PAGE BACKGROUND (WARM SHIFT)
+   PAGE BACKGROUND UTILITIES
    =============================== */
 
 @utility bg-page {
-  background-color: #15130f; /* warm ink-black (replaces cold near-black) */
+  background-color: #15130f;
 }
 
 @utility bg-dark {
@@ -55,7 +59,7 @@
 }
 
 /* ===============================
-   TEXT SYSTEM (WARM, READABLE)
+   BASE TYPOGRAPHY SYSTEM
    =============================== */
 
 body {
@@ -116,7 +120,7 @@ small,
 }
 
 /* ===============================
-   BUTTON SYSTEM (FIXED - SINGLE SOURCE OF TRUTH)
+   BUTTON SYSTEM (FIXED FOR TAILWIND V4)
    =============================== */
 
 @utility btn {
@@ -126,22 +130,26 @@ small,
   color: rgba(240, 232, 220, 0.9);
 }
 
+/* PRIMARY BUTTON */
 @utility btn-primary {
   @apply btn;
   background: rgba(214, 196, 168, 0.92);
   color: #15130f;
 }
 
-@utility btn-primary:hover {
+/* hover state MUST be normal CSS */
+.btn-primary:hover {
   background: rgba(228, 212, 186, 1);
 }
 
+/* SECONDARY BUTTON */
 @utility btn-secondary {
   @apply btn;
   background: transparent;
 }
 
-@utility btn-secondary:hover {
+/* hover state MUST be normal CSS */
+.btn-secondary:hover {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(214, 196, 168, 0.5);
 }
@@ -155,7 +163,7 @@ section {
 }
 
 /* ===============================
-   BOOK PAGES (kept, lightly warmed)
+   BOOK PAGES
    =============================== */
 
 .book-hero {
