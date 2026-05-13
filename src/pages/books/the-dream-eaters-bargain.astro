@@ -1,25 +1,38 @@
 ---
-import BookLayout from "../../layouts/BookLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<BookLayout
-  title="The Dream Eater’s Bargain"
-  cover="/the-dream-eaters-bargain-cover.jpg"
->
+<Layout title="The Dream Eater’s Bargain | Patrick O’Dell">
+  <section class="book-hero">
+    <div class="container">
 
-  <span slot="series">The Godfire Series</span>
+      <img class="cover" src="/the-dream-eaters-bargain-cover.jpg" alt="The Dream Eater’s Bargain cover" />
 
-  <p>
-    Elias Fetch’s power is fading when Somnus, ruler of the Dream Realm, appears with an offer he cannot refuse.
-    His escaped Dream Lords are slipping into the minds of the living, turning dreams into something far more dangerous.
-  </p>
+      <div class="info">
+        <h1>The Dream Eater’s Bargain</h1>
 
-  <p>
-    In exchange for restoring what he is losing, Elias is forced into a hunt across collapsing dreamscapes where memory and nightmare no longer have clear borders.
-  </p>
+        <p class="series">The Godfire Series</p>
 
-  <p>
-    But as the final pieces fall into place, Elias realizes the danger was never what he was sent to kill—and the cost of stopping it may outlast waking life itself.
-  </p>
+        <p class="blurb">
+          Elias Fetch’s power is fading when Somnus, the ruler of the Dream Realm, appears with an offer he cannot refuse: hunt down the escaped Dream Lords before they consume both the dreamscape and the waking world.
+        </p>
 
-</BookLayout>
+        <p class="blurb">
+          To survive, Elias is forced into a bargain that pulls him and his allies into nightmares made real—where every step deeper into the Dream Realm pushes them closer to collapse.
+        </p>
+
+        <p class="blurb">
+          But as the hunt reaches its end, Elias realizes the true danger is not what he has been chasing, and the price of saving the Dream Realm may be far greater than he is willing to pay.
+        </p>
+
+        <div class="actions">
+          <a class="btn secondary" href="/books/the-dream-eaters-bargain/preview">Preview</a>
+          <a class="btn primary" href="PASTE-PURCHASE-LINK">Pre-order</a>
+        </div>
+
+        <p class="meta">Coming 2027</p>
+
+      </div>
+    </div>
+  </section>
+</Layout>
