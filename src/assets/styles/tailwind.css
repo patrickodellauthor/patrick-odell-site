@@ -214,3 +214,27 @@ section {
     max-width: 100%;
   }
 }
+
+/* ===============================
+   GLOBAL TYPE ALIGNMENT (NAV + FOOTER UNIFICATION)
+   =============================== */
+
+nav, header, footer {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* unify small UI text across nav + footer */
+nav a,
+nav button,
+footer a,
+footer p,
+footer small {
+  color: rgba(230, 220, 205, 0.72);
+  letter-spacing: 0.2px;
+}
+
+/* hover consistency */
+nav a:hover,
+footer a:hover {
+  color: rgba(250, 242, 230, 0.95);
+}
