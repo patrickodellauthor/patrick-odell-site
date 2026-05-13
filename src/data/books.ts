@@ -4,7 +4,12 @@ export const books = [
     title: "Gods and Monsters",
     series: "The Godfire Series",
     status: "published",
-    cover: "/gods-and-monsters-cover.jpg",
+
+    cover: {
+      src: "/gods-and-monsters-cover.jpg",
+      width: 1200,
+      height: 1800
+    },
 
     blurb: [
       "Supernatural fixer Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.",
@@ -22,10 +27,19 @@ export const books = [
     title: "Watchers in the Dark",
     series: "The Godfire Series",
     status: "published",
-    cover: "/watchers-in-the-dark-cover.jpg",
-    blurb: ["(add your real description here)"],
+
+    cover: {
+      src: "/watchers-in-the-dark-cover.jpg",
+      width: 1200,
+      height: 1800
+    },
+
+    blurb: [
+      "Add your real description here."
+    ],
+
     seo: {
-      description: "Watchers in the Dark by Patrick O’Dell"
+      description: "Watchers in the Dark by Patrick O’Dell — The Godfire Series"
     }
   },
 
@@ -34,7 +48,17 @@ export const books = [
     title: "The Dream Eater’s Bargain",
     series: "The Godfire Series",
     status: "coming-soon",
-    cover: "/dream-eaters-bargain-cover.jpg",
-    blurb: ["Coming soon"]
+
+    cover: {
+      src: "/dream-eaters-bargain-cover.jpg",
+      width: 1200,
+      height: 1800
+    },
+
+    blurb: ["Coming soon"],
+
+    seo: {
+      description: "The Dream Eater’s Bargain by Patrick O’Dell — Coming Soon"
+    }
   }
 ];
