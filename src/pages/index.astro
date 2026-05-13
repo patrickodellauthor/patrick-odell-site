@@ -2,7 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout metadata={{ title: "Patrick O’Dell | Author" }}>
+<Layout
+  metadata={{
+    title: "Patrick O’Dell | Author",
+    description:
+      "Fantasy and urban fantasy fiction exploring hidden systems beneath reality, fractured identity, and the cost of transformation.",
+  }}
+>
 
   <!-- HERO -->
   <section class="hero">
@@ -54,7 +60,8 @@ import Layout from "../layouts/Layout.astro";
         <p class="about-text">
           Patrick O’Dell writes fantasy and urban fantasy fiction focused on
           fractured identity, hidden systems beneath reality, and the cost of
-          transformation.
+          transformation. His work blends character-driven storytelling with
+          layered mythologies and structural worldbuilding.
         </p>
 
         <a class="btn secondary" href="/about">
@@ -66,7 +73,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- NEWS -->
+  <!-- NEWS / UPDATES -->
   <section class="section">
     <div class="container narrow">
 
@@ -86,7 +93,34 @@ import Layout from "../layouts/Layout.astro";
           <h3>The Godfire Series Continues</h3>
           <p>
             Work continues across multiple entries in The Godfire Series,
-            including revisions and world expansion.
+            including revisions, lore development, and expansion of the world
+            beneath the narrative.
+          </p>
+        </article>
+
+        <article class="dispatch-card">
+          <div class="dispatch-meta">
+            <span>Website</span>
+            <span>May 2026</span>
+          </div>
+
+          <h3>Site Rebuilding in Progress</h3>
+          <p>
+            The official Patrick O’Dell website is undergoing a redesign focused
+            on a warmer, more immersive reading experience and expanded lore access.
+          </p>
+        </article>
+
+        <article class="dispatch-card">
+          <div class="dispatch-meta">
+            <span>Lore</span>
+            <span>May 2026</span>
+          </div>
+
+          <h3>World Archive Expansion</h3>
+          <p>
+            Elderspeech systems, timeline entries, and worldbuilding references
+            are being prepared for deeper integration into the site.
           </p>
         </article>
 
@@ -95,4 +129,102 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
+  <!-- FEATURED BOOK -->
+  <section class="section">
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="section-kicker">Featured Release</span>
+        <h2>Gods and Monsters</h2>
+      </div>
+
+      <div class="featured-book">
+
+        <img
+          src="/gods-and-monsters-cover.jpg"
+          alt="Gods and Monsters Cover"
+        />
+
+        <div class="featured-content">
+
+          <span class="series-tag">
+            The Godfire Series
+          </span>
+
+          <p>
+            Haunted by the past and hunted by forces beyond understanding,
+            Elias Fetch must decide what he is willing to become to save
+            the people he loves.
+          </p>
+
+          <div class="buttons left">
+            <a class="btn primary" href="/books/gods-and-monsters">
+              View Book
+            </a>
+
+            <a class="btn secondary" href="#">
+              Preorder
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LORE -->
+  <section class="section alt">
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="section-kicker">Lore Archive</span>
+        <h2>Worlds Beneath the Story</h2>
+      </div>
+
+      <p class="about-text">
+        Explore timelines, entities, systems, Elderspeech archives,
+        and the deeper structures behind The Godfire Series.
+      </p>
+
+      <a class="btn secondary" href="/lore">
+        Explore Lore
+      </a>
+
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+/* AUTHOR INTRO */
+.author-intro {
+  padding-top: 110px;
+}
+
+.author-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.author-photo {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease;
+}
+
+.author-photo:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 860px) {
+  .author-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
