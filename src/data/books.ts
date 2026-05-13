@@ -7,8 +7,8 @@ export const books = [
 
     cover: {
       src: "/gods-and-monsters-cover.jpg",
-      width: 1200,
-      height: 1800
+      width: 600,
+      height: 900
     },
 
     blurb: [
@@ -30,12 +30,13 @@ export const books = [
 
     cover: {
       src: "/watchers-in-the-dark-cover.jpg",
-      width: 1200,
-      height: 1800
+      width: 600,
+      height: 900
     },
 
     blurb: [
-      "Add your real description here."
+      "A continuation in The Godfire Series.",
+      "Details to be expanded."
     ],
 
     seo: {
@@ -51,11 +52,13 @@ export const books = [
 
     cover: {
       src: "/dream-eaters-bargain-cover.jpg",
-      width: 1200,
-      height: 1800
+      width: 600,
+      height: 900
     },
 
-    blurb: ["Coming soon"],
+    blurb: [
+      "Coming soon."
+    ],
 
     seo: {
       description: "The Dream Eater’s Bargain by Patrick O’Dell — Coming Soon"
