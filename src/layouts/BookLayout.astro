@@ -15,5 +15,38 @@ const { title, description } = Astro.props;
     description,
   }}
 >
-  <slot />
+  <div class="book-page">
+    <div class="book-container">
+      <slot />
+    </div>
+  </div>
 </Layout>
+
+<style>
+.book-page {
+  padding: 80px 20px;
+}
+
+.book-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* OPTIONAL: restore consistent book typography baseline */
+.book-container h1,
+.book-container h2 {
+  text-align: left;
+}
+
+.book-container p {
+  line-height: 1.8;
+  color: rgba(230,220,205,0.82);
+}
+
+/* optional safety so images don’t explode layout */
+.book-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
