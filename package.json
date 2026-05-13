@@ -7,23 +7,30 @@
   "engines": {
     "node": ">=22.12.0"
   },
+
   "lint-staged": {
-  "*": "prettier --write"
-},
+    "*.{astro,js,ts,css,md,json}": "prettier --write"
+  },
+
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+
+    "test": "echo \"No tests defined\"",
+
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
+
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "fix:prettier": "prettier --write ."
   },
+
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
@@ -36,6 +43,7 @@
     "lodash.merge": "^4.6.2",
     "unpic": "^4.2.2"
   },
+
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/mdx": "^5.0.4",
@@ -66,6 +74,7 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.59.2"
   },
+
   "overrides": {
     "yaml": ">=2.8.3"
   }
