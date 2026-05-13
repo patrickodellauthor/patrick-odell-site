@@ -1,74 +1,63 @@
 ---
 import Layout from "./Layout.astro";
 
-const { title, cover, children } = Astro.props;
+interface Props {
+  title: string;
+  series?: string;
+  cover: string;
+  blurb: string[];
+  actions?: {
+    label: string;
+    href: string;
+    type?: "primary" | "secondary";
+  }[];
+  meta?: string;
+}
+
+const {
+  title,
+  series,
+  cover,
+  blurb = [],
+  actions = [],
+  meta,
+} = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout metadata={{ title: `${title} | Patrick O’Dell` }}>
+
   <section class="book-hero">
     <div class="container">
 
-      <img class="cover" src={cover} alt={title} />
+      <!-- COVER -->
+      <img class="cover" src={cover} alt={`${title} cover`} />
 
+      <!-- INFO -->
       <div class="info">
+
         <h1>{title}</h1>
-        <slot name="series" />
 
-        <div class="blurb">
-          {children}
-        </div>
+        {series && <p class="series">{series}</p>}
 
-        <div class="cta">
-          <a href="#" class="btn">Preorder</a>
-        </div>
+        {blurb.map((b) => (
+          <p class="blurb">{b}</p>
+        ))}
+
+        {actions.length > 0 && (
+          <div class="actions">
+            {actions.map((a) => (
+              <a class={`btn ${a.type ?? "secondary"}`} href={a.href}>
+                {a.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {meta && <p class="meta">{meta}</p>}
 
       </div>
 
     </div>
   </section>
+
 </Layout>
-
-<style>
-.book-hero {
-  padding: 80px 20px;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.cover {
-  width: 280px;
-  border-radius: 8px;
-}
-
-.info h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.blurb {
-  margin-top: 20px;
-  opacity: 0.8;
-  line-height: 1.7;
-}
-
-.cta {
-  margin-top: 30px;
-}
-
-.btn {
-  padding: 10px 16px;
-  border: 1px solid rgba(255,255,255,0.3);
-  text-decoration: none;
-  color: inherit;
-}
-
-.btn:hover {
-  background: rgba(255,255,255,0.05);
-}
-</style>
