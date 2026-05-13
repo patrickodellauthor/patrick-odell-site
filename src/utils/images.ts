@@ -66,12 +66,22 @@ export const adaptOpenGraphImages = async (
 
   const adaptedImages = await Promise.all(
     images.map(async (image) => {
-      // If image already has width and height, use them directly (for public folder images)
+      // If image already has width and height, return it directly (for public folder images)
       if (image?.url && image?.width && image?.height) {
         return {
           url: image.url,
           width: image.width,
           height: image.height,
+        };
+      }
+
+      // For public folder images without dimensions, don't try to optimize
+      if (image?.url && image.url.startsWith('/')) {
+        // Return with default dimensions if missing
+        return {
+          url: image.url,
+          width: image?.width || defaultWidth,
+          height: image?.height || defaultHeight,
         };
       }
 
