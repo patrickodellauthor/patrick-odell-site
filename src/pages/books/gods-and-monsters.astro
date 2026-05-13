@@ -1,24 +1,38 @@
 ---
-import BookLayout from "../../layouts/BookLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<BookLayout
-  title="Gods and Monsters"
-  cover="/gods-and-monsters-cover.jpg"
->
+<Layout title="Gods and Monsters | Patrick O’Dell">
+  <section class="book-hero">
+    <div class="container">
 
-  <span slot="series">The Godfire Series</span>
+      <img class="cover" src="/gods-and-monsters-cover.jpg" alt="Gods and Monsters cover" />
 
-  <p>
-    Supernatural detective Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
-  </p>
+      <div class="info">
+        <h1>Gods and Monsters</h1>
 
-  <p>
-    When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
-  </p>
+        <p class="series">The Godfire Series</p>
 
-  <p>
-    Something ancient is moving beneath the surface... and it knows his name.
-  </p>
+        <p class="blurb">
+          Supernatural fixer Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
+        </p>
 
-</BookLayout>
+        <p class="blurb">
+          When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
+        </p>
+
+        <p class="blurb">
+          Something ancient is moving beneath the surface... and it knows his name.
+        </p>
+
+        <div class="actions">
+          <a class="btn secondary" href="/books/gods-and-monsters/preview">Preview</a>
+          <a class="btn primary" href="PASTE-PURCHASE-LINK">Pre-order</a>
+        </div>
+
+        <p class="meta">Coming February 2027</p>
+
+      </div>
+    </div>
+  </section>
+</Layout>
