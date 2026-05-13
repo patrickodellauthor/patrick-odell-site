@@ -1,0 +1,122 @@
+---
+const events = [
+  {
+    title: "Reading at New Orleans Book Festival",
+    date: "2026-06-14",
+    location: "New Orleans, LA",
+    type: "Reading",
+    status: "Upcoming",
+    excerpt: "A quiet reading from upcoming work and discussion of worldbuilding."
+  },
+  {
+    title: "Gods and Monsters — Launch Week Signing",
+    date: "2026-05-01",
+    location: "Baton Rouge, LA",
+    type: "Signing",
+    status: "Past",
+    excerpt: "Launch week appearance and signing session."
+  }
+];
+
+const sorted = events.sort(
+  (a, b) => new Date(b.date) - new Date(a.date)
+);
+---
+
+<main class="events-container">
+
+  <header class="events-header">
+    <h1>Events</h1>
+    <p>Readings, releases, and appearances.</p>
+  </header>
+
+  <section class="events-list">
+
+    {sorted.map((event) => (
+      <article class="event-item">
+
+        <div class="event-meta">
+          <span>{new Date(event.date).toLocaleDateString()}</span>
+          <span>{event.type}</span>
+          <span class={event.status.toLowerCase()}>
+            {event.status}
+          </span>
+        </div>
+
+        <h2>{event.title}</h2>
+
+        <div class="location">
+          {event.location}
+        </div>
+
+        <p class="excerpt">
+          {event.excerpt}
+        </p>
+
+      </article>
+    ))}
+
+  </section>
+
+</main>
+
+<style>
+.events-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  background: #0b0c10;
+  color: rgba(224,214,198,0.75);
+  font-family: ui-serif, Georgia, serif;
+}
+
+.events-header h1 {
+  font-size: 1.6rem;
+  color: rgba(245,236,220,0.92);
+  font-weight: 400;
+}
+
+.events-header p {
+  font-size: 0.9rem;
+  color: rgba(210,198,178,0.6);
+}
+
+.events-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.event-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding-bottom: 20px;
+}
+
+.event-meta {
+  font-size: 0.75rem;
+  color: rgba(210,198,178,0.5);
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.05rem;
+  color: rgba(245,236,220,0.9);
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: rgba(210,198,178,0.6);
+  margin-bottom: 6px;
+}
+
+.excerpt {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(210,198,178,0.65);
+}
+</style>
