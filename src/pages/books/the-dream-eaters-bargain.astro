@@ -1,44 +1,25 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import BookLayout from "../../layouts/BookLayout.astro";
 ---
 
-<Layout title="The Dream Eater’s Bargain | Patrick O’Dell">
-  <section class="book-page">
-    <div class="container">
+<BookLayout
+  title="The Dream Eater’s Bargain"
+  cover="/the-dream-eaters-bargain-cover.jpg"
+>
 
-      <img class="cover" src="/the-dream-eaters-bargain-cover.jpg" alt="Dream Eater’s Bargain cover" />
+  <span slot="series">The Godfire Series</span>
 
-      <h1>The Dream Eater’s Bargain</h1>
-      <p class="series">The Godfire Series</p>
+  <p>
+    Elias Fetch’s power is fading when Somnus, ruler of the Dream Realm, appears with an offer he cannot refuse.
+    His escaped Dream Lords are slipping into the minds of the living, turning dreams into something far more dangerous.
+  </p>
 
-      <p class="blurb">
-        Elias Fetch’s power is fading when Somnus, the ruler of the Dream Realm, offers him a bargain: hunt down escaped Dream Lords before they consume both worlds.
-      </p>
+  <p>
+    In exchange for restoring what he is losing, Elias is forced into a hunt across collapsing dreamscapes where memory and nightmare no longer have clear borders.
+  </p>
 
-      <p class="blurb">
-        The deeper he goes, the more the Dream Realm begins to reflect something personal, and dangerous.
-      </p>
+  <p>
+    But as the final pieces fall into place, Elias realizes the danger was never what he was sent to kill—and the cost of stopping it may outlast waking life itself.
+  </p>
 
-      <p class="blurb">
-        By the end of the hunt, Elias realizes the real threat was never what he was chasing.
-      </p>
-
-      <div class="actions">
-        <a href="#" class="btn">Preorder (Coming Soon)</a>
-        <a href="/books" class="btn secondary">Back to Books</a>
-      </div>
-
-    </div>
-  </section>
-</Layout>
-
-<style>
-.book-page { padding: 80px 20px; }
-.container { max-width: 800px; margin: 0 auto; text-align: center; }
-.cover { width: 260px; border-radius: 8px; margin-bottom: 20px; }
-.series { opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
-.blurb { text-align: left; margin: 16px auto; line-height: 1.6; max-width: 650px; opacity: 0.85; }
-.actions { margin-top: 30px; display: flex; gap: 12px; justify-content: center; }
-.btn { padding: 10px 14px; border: 1px solid black; text-decoration: none; color: black; }
-.secondary { opacity: 0.6; }
-</style>
+</BookLayout>
