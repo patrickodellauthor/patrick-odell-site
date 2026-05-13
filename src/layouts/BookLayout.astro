@@ -1,167 +1,22 @@
 ---
 import Layout from "./Layout.astro";
-import type { Book } from "../data/books";
+import { I18N } from "astrowind:config";
+
+const { language, textDirection } = I18N;
 
 interface Props {
-  book: Book;
+  title: string;
+  description?: string;
 }
 
-const { book } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <Layout
   metadata={{
-    title: `${book.title} | Patrick O’Dell`,
-    description: book.description,
-    openGraph: {
-      type: "book",
-      images: [
-        {
-          url: book.cover
-        }
-      ]
-    }
+    title,
+    description,
   }}
 >
-
-  <section class="book-page">
-    <div class="book-container">
-
-      <!-- COVER -->
-      <a href={book.links?.page ?? "#"} class="book-cover-link">
-        <img
-          src={book.cover}
-          alt={`${book.title} cover`}
-          width="320"
-          height="480"
-          loading="eager"
-          class="book-cover"
-        />
-      </a>
-
-      <!-- CONTENT -->
-      <div class="book-info">
-
-        {book.series && (
-          <span class="kicker">{book.series}</span>
-        )}
-
-        <h1>{book.title}</h1>
-
-        {book.description && (
-          <p class="description">{book.description}</p>
-        )}
-
-        <div class="actions">
-          {book.links?.preview && (
-            <a class="btn secondary" href={book.links.preview}>
-              Preview
-            </a>
-          )}
-
-          {book.links?.buy && (
-            <a class="btn primary" href={book.links.buy}>
-              Buy / Pre-order
-            </a>
-          )}
-
-          {book.links?.page && (
-            <a class="btn secondary" href="/books">
-              Back to Books
-            </a>
-          )}
-        </div>
-
-        {book.releaseDate && (
-          <p class="meta">{book.releaseDate}</p>
-        )}
-
-      </div>
-
-    </div>
-  </section>
-
+  <slot />
 </Layout>
-
-<style>
-
-.book-page {
-  padding: 80px 20px;
-}
-
-.book-container {
-  max-width: 1000px;
-  margin: 0 auto;
-
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.book-cover {
-  width: 320px;
-  height: auto;
-
-  border-radius: 10px;
-
-  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
-
-  transition: transform 0.25s ease;
-}
-
-.book-cover:hover {
-  transform: translateY(-4px);
-}
-
-.book-info {
-  max-width: 520px;
-}
-
-.kicker {
-  display: block;
-  margin-bottom: 10px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  opacity: 0.6;
-}
-
-h1 {
-  margin-bottom: 14px;
-}
-
-.description {
-  line-height: 1.75;
-  opacity: 0.85;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-
-  margin-top: 20px;
-}
-
-.meta {
-  margin-top: 18px;
-  font-size: 0.85rem;
-  opacity: 0.6;
-}
-
-/* RESPONSIVE */
-@media (max-width: 860px) {
-  .book-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .book-info {
-    max-width: 100%;
-  }
-}
-
-</style>
