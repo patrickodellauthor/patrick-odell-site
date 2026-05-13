@@ -1,40 +1,212 @@
-<footer class="bg-[#0b0c10] text-[rgba(224,214,198,0.78)] mt-24 border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-16">
+---
+const year = new Date().getFullYear();
+---
 
-    <!-- Branding -->
-    <div class="mb-10">
-      <img src="/logo.svg" alt="Patrick O'Dell" class="h-8 opacity-80" />
+<footer class="site-footer" id="top">
+  <div class="footer-inner">
+
+    <!-- =========================
+         IDENTITY
+    ========================== -->
+    <div class="footer-brand">
+      <div class="footer-name">Patrick O’Dell</div>
+      <div class="footer-tagline">Fantasy & Urban Fantasy Fiction</div>
     </div>
 
-    <!-- Links -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm opacity-80 mb-12">
-      <a href="/books">Books</a>
-      <a href="/lore">Lore</a>
-      <a href="/events">Events</a>
-      <a href="/contact">Contact</a>
-    </div>
+    <!-- =========================
+         NEWSLETTER
+    ========================== -->
+    <div class="newsletter">
 
-    <!-- Newsletter -->
-    <div class="max-w-md">
-      <h3 class="text-lg mb-2 text-[rgba(245,236,220,0.92)]">
+      <div class="newsletter-title">
         Dispatches from the Archive
-      </h3>
+      </div>
 
-      <p class="text-sm mb-4 opacity-70">
+      <div class="newsletter-text">
         Occasional updates on new work, releases, and world material.
-      </p>
+      </div>
 
-      <form class="flex gap-2">
-        <input
-          type="email"
-          placeholder="Email address"
-          class="flex-1 bg-transparent border border-white/20 px-3 py-2 text-sm"
-        />
-        <button class="px-4 py-2 border border-white/30 text-sm">
-          Subscribe
-        </button>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Email address" required />
+        <button type="submit">Subscribe</button>
       </form>
+
+    </div>
+
+    <!-- =========================
+         UTILITY LINKS
+    ========================== -->
+    <div class="footer-utility">
+
+      <div class="footer-links">
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+      </div>
+
+      <div class="footer-meta">
+        <div>© {year} Patrick O’Dell. All Rights Reserved.</div>
+        <div class="affiliate-disclosure">
+          This site may contain affiliate links, meaning I may earn a commission at no additional cost to you.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
+    <div class="back-to-top">
+      <a href="#top">Back to top ↑</a>
     </div>
 
   </div>
 </footer>
+
+<style>
+.site-footer {
+  margin-top: 100px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: #0b0c10;
+  color: rgba(224, 214, 198, 0.75);
+}
+
+.footer-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 70px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+/* =========================
+   IDENTITY
+========================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-name {
+  font-size: 0.95rem;
+  color: rgba(245,236,220,0.9);
+  letter-spacing: 0.3px;
+}
+
+.footer-tagline {
+  font-size: 0.75rem;
+  color: rgba(210,198,178,0.55);
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-title {
+  font-size: 1rem;
+  color: rgba(245,236,220,0.9);
+}
+
+.newsletter-text {
+  font-size: 0.85rem;
+  color: rgba(210,198,178,0.6);
+  line-height: 1.5;
+  max-width: 520px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 12px;
+  color: rgba(245,236,220,0.85);
+  font-size: 0.85rem;
+}
+
+.newsletter-form button {
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: rgba(245,236,220,0.85);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* =========================
+   UTILITY
+========================= */
+
+.footer-utility {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.75rem;
+  color: rgba(210,198,178,0.45);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: rgba(245,236,220,0.8);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Affiliate disclosure = subtle legal layer */
+.affiliate-disclosure {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top {
+  margin-top: 10px;
+}
+
+.back-to-top a {
+  font-size: 0.75rem;
+  color: rgba(210,198,178,0.5);
+  text-decoration: none;
+}
+
+.back-to-top a:hover {
+  color: rgba(245,236,220,0.85);
+}
+</style>
