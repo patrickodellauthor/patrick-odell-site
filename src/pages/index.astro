@@ -91,6 +91,44 @@ import Layout from "../layouts/Layout.astro";
   </section>
 </Layout>
 
+<!-- NEWS FEED -->
+<section class="section alt">
+  <div class="container">
+
+    <h2>Dispatches</h2>
+
+    <div class="news-feed">
+
+      <article class="news-item">
+        <span class="tag">Update</span>
+        <h3>Writing Progress</h3>
+        <p>
+          Work continues on The Godfire Series as Elias Fetch’s story deepens into darker territory.
+        </p>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">Lore</span>
+        <h3>World Expansion Note</h3>
+        <p>
+          New structural elements of the Lore system are being refined behind the scenes.
+        </p>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">Book</span>
+        <h3>Watchers in the Dark</h3>
+        <p>
+          New material is being prepared for upcoming previews and excerpt releases.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
 <style>
 .hero {
   padding: 90px 20px 70px;
@@ -201,4 +239,36 @@ import Layout from "../layouts/Layout.astro";
 .dispatch-meta {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.35);
+}
+
+.news-feed {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.news-item {
+  padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.news-item h3 {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.news-item p {
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
 </style>
