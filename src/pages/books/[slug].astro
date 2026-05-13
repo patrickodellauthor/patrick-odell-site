@@ -1,8 +1,8 @@
 ---
-import BookLayout from "../../layouts/BookLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { books } from "../../data/books";
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   return books.map((book) => ({
     params: { slug: book.slug },
     props: { book },
@@ -12,15 +12,48 @@ export async function getStaticPaths() {
 const { book } = Astro.props;
 ---
 
-<BookLayout
-  title={book.title}
-  series={book.series}
-  cover={book.cover}
-  blurb={[book.excerpt]}
-  meta={book.status}
-  seo={book.seo}
-  actions={[
-    { label: "Preview", href: `/books/${book.slug}/preview`, type: "secondary" },
-    { label: "Pre-order", href: "#", type: "primary" }
-  ]}
-/>
+<Layout
+  metadata={{
+    title: `${book.title} | Patrick O’Dell`,
+    description: book.seo?.description ?? book.blurb?.[0],
+    openGraph: {
+      images: [
+        {
+          url: book.cover,
+          width: 1200,
+          height: 1800
+        }
+      ]
+    }
+  }}
+>
+
+  <section class="book-hero">
+    <div class="container">
+
+      <img src={book.cover} alt={book.title} class="cover" />
+
+      <div class="info">
+
+        <h1>{book.title}</h1>
+
+        <p class="series">{book.series}</p>
+
+        {book.blurb?.map((line) => (
+          <p class="blurb">{line}</p>
+        ))}
+
+        <div class="actions">
+          {book.status === "published" ? (
+            <a class="btn primary" href="#">Buy / Preorder</a>
+          ) : (
+            <span>Coming Soon</span>
+          )}
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
