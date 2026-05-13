@@ -1,0 +1,26 @@
+---
+import BookLayout from "../../layouts/BookLayout.astro";
+import { books } from "../../data/books";
+
+export async function getStaticPaths() {
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: { book },
+  }));
+}
+
+const { book } = Astro.props;
+---
+
+<BookLayout
+  title={book.title}
+  series={book.series}
+  cover={book.cover}
+  blurb={[book.excerpt]}
+  meta={book.status}
+  seo={book.seo}
+  actions={[
+    { label: "Preview", href: `/books/${book.slug}/preview`, type: "secondary" },
+    { label: "Pre-order", href: "#", type: "primary" }
+  ]}
+/>
