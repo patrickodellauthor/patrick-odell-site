@@ -1,25 +1,38 @@
 ---
-import BookLayout from "../../layouts/BookLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<BookLayout
-  title="Watchers in the Dark"
-  cover="/watchers-in-the-dark-cover.jpg"
->
+<Layout title="Watchers in the Dark | Patrick O’Dell">
+  <section class="book-hero">
+    <div class="container">
 
-  <span slot="series">The Godfire Series</span>
+      <img class="cover" src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
 
-  <p>
-    Elias Fetch makes a living cleaning up other people’s supernatural messes, yet even he has limits.
-    When a soft-spoken stranger named Louis arrives in New Orleans with a problem that feels wrong in all the ways Elias has learned to fear, he takes the job anyway.
-  </p>
+      <div class="info">
+        <h1>Watchers in the Dark</h1>
 
-  <p>
-    What begins as routine work unravels into something older than the city itself—where drained bodies, fractured identities, and quiet distortions in reality begin to surface.
-  </p>
+        <p class="series">The Godfire Series</p>
 
-  <p>
-    As Elias is pulled deeper into the pattern, he discovers the truth is not hunting Louis—it is bound to him, shaped by a history he refuses to name.
-  </p>
+        <p class="blurb">
+          Elias Fetch makes a living cleaning up supernatural messes, but even he has limits. When a soft-spoken stranger named Louis arrives in New Orleans with a disturbing problem, Elias is drawn into a case that feels wrong from the start.
+        </p>
 
-</BookLayout>
+        <p class="blurb">
+          What begins as a routine job unravels into something far older and more dangerous than the city itself, where drained bodies, fractured identities, and unseen forces begin to surface in the dark.
+        </p>
+
+        <p class="blurb">
+          As Elias and the others are pulled deeper into a conflict involving fallen angels and buried histories, he discovers the truth may be more terrifying than what he knows.
+        </p>
+
+        <div class="actions">
+          <a class="btn secondary" href="/books/watchers-in-the-dark/preview">Preview</a>
+          <a class="btn primary" href="PASTE-PURCHASE-LINK">Pre-order</a>
+        </div>
+
+        <p class="meta">Coming 2027</p>
+
+      </div>
+    </div>
+  </section>
+</Layout>
