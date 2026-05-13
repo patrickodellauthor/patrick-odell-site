@@ -3,26 +3,33 @@ import Layout from "../../layouts/Layout.astro";
 import { books } from "../../data/books";
 ---
 
-<Layout metadata={{ title: "Books | Patrick O’Dell" }}>
+<Layout
+  metadata={{
+    title: "Books | Patrick O’Dell",
+    description: "Explore The Godfire Series by Patrick O’Dell."
+  }}
+>
 
   <section class="section">
-    <div class="container narrow center">
+    <div class="container center">
 
-      <span class="kicker">The Godfire Series</span>
       <h1>Books</h1>
 
       <div class="books-grid">
 
         {books.map((book) => (
           <a class="book-card" href={`/books/${book.slug}`}>
-            <img src={book.cover} alt={book.title} />
             
-            <div class="book-info">
-              <h2>{book.title}</h2>
-              <p class="series">{book.series}</p>
-              <p class="excerpt">{book.excerpt}</p>
-              <span class="status">{book.status}</span>
-            </div>
+            <img
+              src={book.cover.src}
+              width={book.cover.width}
+              height={book.cover.height}
+              alt={book.title}
+            />
+
+            <h2>{book.title}</h2>
+            <p>{book.blurb?.[0]}</p>
+
           </a>
         ))}
 
@@ -32,68 +39,3 @@ import { books } from "../../data/books";
   </section>
 
 </Layout>
-
-<style>
-
-.container.center {
-  text-align: center;
-}
-
-.books-grid {
-  display: grid;
-  gap: 22px;
-  margin-top: 30px;
-}
-
-.book-card {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 18px;
-
-  padding: 18px;
-
-  border: 1px solid rgba(214,196,168,0.15);
-  border-radius: 10px;
-
-  text-decoration: none;
-  color: inherit;
-
-  background: rgba(255,255,255,0.02);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.04);
-}
-
-.book-card img {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
-.book-info h2 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.series {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  margin: 4px 0;
-}
-
-.excerpt {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-.status {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.75rem;
-  opacity: 0.6;
-}
-
-</style>
