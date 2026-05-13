@@ -4,40 +4,40 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout metadata={{ title: "Patrick O’Dell | Author" }}>
 
-  <!-- HERO (NOW FEATURED BOOK FOCUS) -->
-  <section class="hero">
-    <div class="container hero-container">
+  <!-- HERO / FEATURED BOOK -->
+  <section class="section hero-feature">
+    <div class="container split">
 
-      <div class="featured-book-hero">
-
+      <!-- BOOK IMAGE (CLICKABLE) -->
+      <a href="/books/gods-and-monsters" class="media">
         <img
           src="/gods-and-monsters-cover.jpg"
           alt="Gods and Monsters Cover"
-          class="hero-book-cover"
+          class="cover-image"
         />
+      </a>
 
-        <div class="hero-book-content">
+      <!-- BOOK TEXT -->
+      <div class="content">
 
-          <span class="series-tag">The Godfire Series</span>
+        <span class="section-kicker">Featured Release</span>
 
-          <h1>Gods and Monsters</h1>
+        <h1 class="title">Gods and Monsters</h1>
 
-          <p class="tagline">
-            Haunted by the past and hunted by forces beyond understanding,
-            Elias Fetch must decide what he is willing to become to save
-            the people he loves.
-          </p>
+        <p class="text">
+          Haunted by the past and hunted by forces beyond understanding,
+          Elias Fetch must decide what he is willing to become to save
+          the people he loves.
+        </p>
 
-          <div class="buttons">
-            <a class="btn primary" href="/books/gods-and-monsters">
-              View Book
-            </a>
+        <div class="buttons">
+          <a class="btn primary" href="/books/gods-and-monsters">
+            View Book
+          </a>
 
-            <a class="btn secondary" href="/books">
-              Explore Series
-            </a>
-          </div>
-
+          <a class="btn secondary" href="/books">
+            Explore Series
+          </a>
         </div>
 
       </div>
@@ -45,53 +45,38 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- NEWS / UPDATES -->
+  <!-- NEWS / UPDATES (SCROLLABLE BOX) -->
   <section class="section">
-    <div class="container narrow">
+    <div class="container split">
 
-      <div class="section-heading">
+      <div class="content">
+
         <span class="section-kicker">News & Updates</span>
-        <h2>Latest Dispatches</h2>
-      </div>
+        <h2 class="title-small">Latest Dispatches</h2>
 
-      <div class="dispatch-feed">
+        <div class="news-box">
 
-        <article class="dispatch-card">
-          <div class="dispatch-meta">
-            <span>Writing Update</span>
-            <span>May 2026</span>
+          <div class="news-item">
+            <span class="date">May 2026</span>
+            <p>The Godfire Series continues development across multiple entries.</p>
           </div>
 
-          <h3>The Godfire Series Continues</h3>
-          <p>
-            Work continues across multiple entries in The Godfire Series,
-            including revisions and expansion of world systems.
-          </p>
-        </article>
-
-        <article class="dispatch-card">
-          <div class="dispatch-meta">
-            <span>Website</span>
-            <span>May 2026</span>
+          <div class="news-item">
+            <span class="date">May 2026</span>
+            <p>The official website is being rebuilt for a warmer reading experience.</p>
           </div>
 
-          <h3>Site Rebuilding in Progress</h3>
-          <p>
-            The site is being redesigned for a warmer, more immersive reading experience.
-          </p>
-        </article>
-
-        <article class="dispatch-card">
-          <div class="dispatch-meta">
-            <span>Lore</span>
-            <span>May 2026</span>
+          <div class="news-item">
+            <span class="date">April 2026</span>
+            <p>New lore systems and Elderspeech archives are in preparation.</p>
           </div>
 
-          <h3>World Archive Expansion</h3>
-          <p>
-            Elderspeech systems and lore archives are being prepared for integration.
-          </p>
-        </article>
+          <div class="news-item">
+            <span class="date">March 2026</span>
+            <p>Additional worldbuilding documentation has been added to internal canon.</p>
+          </div>
+
+        </div>
 
       </div>
 
@@ -99,25 +84,26 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- AUTHOR -->
-  <section class="section author-intro">
-    <div class="container narrow author-grid">
+  <section class="section">
+    <div class="container split">
 
-      <a href="/about" class="author-photo-link">
+      <!-- AUTHOR IMAGE (CLICKABLE) -->
+      <a href="/about" class="media">
         <img
           src="/patrick-odell-author.jpg"
-          alt="Patrick O’Dell Author Photo"
-          class="author-photo"
+          alt="Patrick O’Dell"
+          class="author-image"
         />
       </a>
 
-      <div class="author-text">
+      <!-- AUTHOR TEXT -->
+      <div class="content">
 
-        <div class="section-heading">
-          <span class="section-kicker">Author</span>
-          <h2>Patrick O’Dell</h2>
-        </div>
+        <span class="section-kicker">Author</span>
 
-        <p class="about-text">
+        <h2 class="title-small">Patrick O’Dell</h2>
+
+        <p class="text">
           Patrick O’Dell writes fantasy and urban fantasy fiction centered on
           hidden systems beneath reality, fractured identity, and transformation.
         </p>
@@ -132,3 +118,106 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
 </Layout>
+
+<style>
+
+/* LAYOUT CORE */
+.split {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* IMAGES */
+.cover-image,
+.author-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  transition: transform 0.25s ease;
+  display: block;
+}
+
+.cover-image:hover,
+.author-image:hover {
+  transform: translateY(-4px);
+}
+
+/* TYPOGRAPHY (FIX SIZE ISSUES) */
+.title {
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+}
+
+.title-small {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(230,220,205,0.8);
+}
+
+/* KICKER */
+.section-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(188,170,146,0.55);
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+/* NEWS BOX (SCROLLABLE) */
+.news-box {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  border: 1px solid rgba(214,196,168,0.15);
+  padding: 14px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+}
+
+.news-item {
+  font-size: 0.9rem;
+}
+
+.news-item .date {
+  font-size: 0.72rem;
+  color: rgba(188,170,146,0.6);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+</style>
