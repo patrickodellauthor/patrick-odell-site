@@ -1,0 +1,87 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  metadata={{
+    title: "The Dream Eater’s Bargain | Patrick O’Dell",
+    description:
+      "The Dream Eater’s Bargain by Patrick O’Dell — A dark fantasy entry in The Godfire mythos."
+  }}
+>
+
+  <section class="book-page">
+    <div class="book-container">
+
+      <img
+        src="/the-dream-eaters-bargain-cover.jpg"
+        alt="The Dream Eater’s Bargain Cover"
+        width="320"
+        height="480"
+        loading="eager"
+      />
+
+      <div class="book-info">
+
+        <span class="kicker">Standalone / Godfire Mythos</span>
+
+        <h1>The Dream Eater’s Bargain</h1>
+
+        <p>
+          <!-- PLACEHOLDER -->
+          (Add your full synopsis here)
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="/books/the-dream-eaters-bargain/preview">Preview</a>
+          <a class="btn secondary" href="/books">Back to Series</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.book-page { padding: 80px 20px; }
+
+.book-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+}
+
+.book-container img {
+  width: 320px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
+
+.book-info { max-width: 520px; }
+
+.kicker {
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .book-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
