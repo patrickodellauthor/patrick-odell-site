@@ -16,7 +16,7 @@ import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
-export interface Props {
+interface Props {
   metadata?: MetaDataType;
   title?: string;
 }
@@ -24,7 +24,8 @@ export interface Props {
 const {
   metadata = {},
   title = "Patrick O’Dell",
-} = Astro.props;
+} = Astro.props as Props;
+
 const { language, textDirection } = I18N;
 ---
 
@@ -35,10 +36,12 @@ const { language, textDirection } = I18N;
     <Favicons />
     <CustomStyles />
     <ApplyColorMode />
+
     <Metadata
-  {...metadata}
-  title={title}
-/>
+      {...metadata}
+      title={title}
+    />
+
     <SiteVerification />
     <Analytics />
 
@@ -60,35 +63,36 @@ const { language, textDirection } = I18N;
           <nav class="menu">
 
             <a href="/">Home</a>
-<a href="/about">About</a>
+            <a href="/about">About</a>
 
-<div class="dropdown">
-  <button class="dropbtn">Books ▾</button>
-  <div class="dropdown-content">
-    <a href="/books">All Books</a>
-    <a href="/books/gods-and-monsters">Gods and Monsters</a>
-    <a href="/books/watchers-in-the-dark">Watchers in the Dark</a>
-    <a href="/books/the-dream-eaters-bargain">The Dream Eater’s Bargain</a>
-  </div>
-</div>
+            <div class="dropdown">
+              <button class="dropbtn">Books ▾</button>
 
-<div class="dropdown">
-  <button class="dropbtn">Lore ▾</button>
-  <div class="dropdown-content">
-    <a href="/lore">Overview</a>
-    <a href="/lore/timeline">Timeline</a>
-    <a href="/lore/bestiary">Bestiary</a>
-    <a href="/lore/elderspeech">Elderspeech</a>
-  </div>
-</div>
+              <div class="dropdown-content">
+                <a href="/books">All Books</a>
+                <a href="/books/gods-and-monsters">Gods and Monsters</a>
+                <a href="/books/watchers-in-the-dark">Watchers in the Dark</a>
+                <a href="/books/the-dream-eaters-bargain">The Dream Eater’s Bargain</a>
+              </div>
+            </div>
 
-<a href="/blog">Blog</a>
-<a href="/faq">FAQ</a>
-<a href="/media-kit">Media Kit</a>
-<a href="/contact">Contact</a>
+            <div class="dropdown">
+              <button class="dropbtn">Lore ▾</button>
+
+              <div class="dropdown-content">
+                <a href="/lore">Overview</a>
+                <a href="/lore/timeline">Timeline</a>
+                <a href="/lore/bestiary">Bestiary</a>
+                <a href="/lore/elderspeech">Elderspeech</a>
+              </div>
+            </div>
+
+            <a href="/blog">Blog</a>
+            <a href="/faq">FAQ</a>
+            <a href="/media-kit">Media Kit</a>
+            <a href="/contact">Contact</a>
 
           </nav>
-
         </div>
 
       </div>
@@ -187,7 +191,7 @@ const { language, textDirection } = I18N;
 }
 
 /* =========================
-   DROPDOWNS (CLEAN SYSTEM)
+   DROPDOWNS
    ========================= */
 
 .dropdown {
@@ -198,16 +202,17 @@ const { language, textDirection } = I18N;
 .dropdown-content {
   display: none;
   position: absolute;
+
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
 
-  padding-top: 10px; /* CRITICAL: removes hover gap issue */
+  padding-top: 10px;
   min-width: 200px;
+
   z-index: 9999;
 }
 
-/* THIS is the key fix */
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
   display: block;
