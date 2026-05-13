@@ -1,38 +1,19 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import BookLayout from "../../layouts/BookLayout.astro";
 ---
 
-<Layout metadata={{ title: "Watchers in the Dark | Patrick O’Dell" }}>
-  <section class="book-hero">
-    <div class="container">
-
-      <img class="cover" src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
-
-      <div class="info">
-        <h1>Watchers in the Dark</h1>
-
-        <p class="series">The Godfire Series</p>
-
-        <p class="blurb">
-          Elias Fetch makes a living cleaning up supernatural messes, but even he has limits. When a soft-spoken stranger named Louis arrives in New Orleans with a disturbing problem, Elias is drawn into a case that feels wrong from the start.
-        </p>
-
-        <p class="blurb">
-          What begins as a routine job unravels into something far older and more dangerous than the city itself, where drained bodies, fractured identities, and unseen forces begin to surface in the dark.
-        </p>
-
-        <p class="blurb">
-          As Elias and the others are pulled deeper into a conflict involving fallen angels and buried histories, he discovers the truth may be more terrifying than what he knows.
-        </p>
-
-        <div class="actions">
-          <a class="btn secondary" href="/books/watchers-in-the-dark/preview">Preview</a>
-          <a class="btn primary" href="PASTE-PURCHASE-LINK">Pre-order</a>
-        </div>
-
-        <p class="meta">Coming 2027</p>
-
-      </div>
-    </div>
-  </section>
-</Layout>
+<BookLayout
+  title="Watchers in the Dark"
+  series="The Godfire Series"
+  cover="/watchers-in-the-dark-cover.jpg"
+  blurb={[
+    "In the aftermath of unexplained disappearances across rural Georgia, Elias Fetch is pulled into an investigation that should not exist.",
+    "The deeper he goes, the more he realizes the pattern is not human—it is watching back.",
+    "Some things do not hunt. They observe. And waiting is part of the design."
+  ]}
+  actions={[
+    { label: "Preview", href: "/books/watchers-in-the-dark/preview", type: "secondary" },
+    { label: "Pre-order", href: "#", type: "primary" }
+  ]}
+  meta="Coming Soon"
+/>
