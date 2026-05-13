@@ -1,13 +1,10 @@
 import { books } from "./books";
 
+/**
+ * Temporary featured logic:
+ * - first published book becomes featured
+ * (we can upgrade this later to explicit featured flag or homepage config)
+ */
 export function getFeaturedBook() {
-  return books.find((b) => b.featured);
-}
-
-export function getBookBySlug(slug: string) {
-  return books.find((b) => b.slug === slug);
-}
-
-export function getBooksBySeries(series: string) {
-  return books.filter((b) => b.series === series);
+  return books.find((b) => b.status === "published") ?? books[0];
 }
