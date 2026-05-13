@@ -41,11 +41,25 @@ const mergedOg: MetaDataOpenGraph = merge(
 
 const adaptedOg = await adaptOpenGraphImages(mergedOg, Astro.site);
 
-// Filter out invalid images (prevents build crashes)
+// Filter out invalid images - ONLY images with ALL required properties
 const safeImages =
-  adaptedOg?.images?.filter((img) => img?.url && img?.width && img?.height) ?? [];
+  adaptedOg?.images?.filter((img) => {
+    // Must have url, width, and height
+    return img?.url && typeof img?.width === 'number' && typeof img?.height === 'number';
+  }) ?? [];
 
 const firstImage = safeImages[0];
+
+// Debug: Log what we're actually sending
+if (firstImage) {
+  console.log('📸 OpenGraph Image:', {
+    url: firstImage.url,
+    width: firstImage.width,
+    height: firstImage.height,
+  });
+} else {
+  console.log('⚠️  No valid OpenGraph image found');
+}
 
 // -----------------------------
 // OPEN GRAPH BUILDER
@@ -53,7 +67,8 @@ const firstImage = safeImages[0];
 function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefined {
   if (!og || !firstImage?.url) return undefined;
 
-  return {
+  // Ensure dimensions are numbers
+  const ogImage = {
     basic: {
       title: title || METADATA?.title?.default || '',
       type: og.type || 'website',
@@ -67,11 +82,13 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
     },
     image: {
       url: firstImage.url,
-      width: firstImage.width,
-      height: firstImage.height,
+      width: Number(firstImage.width),
+      height: Number(firstImage.height),
       alt: title || METADATA?.title?.default || '',
     },
   };
+
+  return ogImage;
 }
 
 // -----------------------------
