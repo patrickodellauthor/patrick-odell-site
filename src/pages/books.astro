@@ -37,6 +37,12 @@ import Layout from "../layouts/Layout.astro";
               Something ancient is moving beneath the surface... and it knows his name.
           </p>
 
+          <!-- ACTION BUTTONS -->
+          <div class="book-actions">
+            <span class="btn secondary">Preview</span>
+            <span class="btn primary">Pre-order</span>
+          </div>
+
           <p class="meta">
             Coming February 2027
           </p>
@@ -61,6 +67,12 @@ import Layout from "../layouts/Layout.astro";
               As Elias and the others are pulled deeper into a conflict involving fallen angels and buried histories, he discovers the truth may be more terrifying than what he knows.
           </p>
 
+          <!-- ACTION BUTTONS -->
+          <div class="book-actions">
+            <span class="btn secondary">Preview</span>
+            <span class="btn primary">Pre-order</span>
+          </div>
+
           <p class="meta">
             Coming 2027
           </p>
@@ -84,6 +96,12 @@ import Layout from "../layouts/Layout.astro";
           <p>
               But as the hunt reaches its end, Elias realizes the true danger is not what he has been chasing, and the price of saving the Dream Realm may be far greater than he is willing to pay.
           </p>
+
+          <!-- ACTION BUTTONS -->
+          <div class="book-actions">
+            <span class="btn secondary">Preview</span>
+            <span class="btn primary">Pre-order</span>
+          </div>
 
           <p class="meta">
            Coming 2027
@@ -119,18 +137,17 @@ h1 {
   margin-top: 10px;
 }
 
-/* IMPORTANT: now anchors behave like cards */
+/* CARD */
 .book-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
 
   padding: 0;
-
   background: transparent;
   border: none;
 
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .book-card:hover img {
@@ -142,6 +159,7 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* IMAGE */
 .book-card img {
   width: 100%;
   border-radius: 6px;
@@ -152,6 +170,7 @@ h1 {
   display: block;
 }
 
+/* TEXT */
 .book-card h2 {
   margin: 6px 0 4px;
   font-size: 1.35rem;
@@ -166,6 +185,7 @@ h1 {
   line-height: 1.65;
 }
 
+/* META */
 .meta {
   margin-top: 10px;
   font-size: 0.8rem;
@@ -173,36 +193,34 @@ h1 {
   letter-spacing: 0.3px;
 }
 
-.series-divider {
-  border: none;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
-  margin: 40px auto 60px auto;
-  max-width: 900px;
-}
-
-.series-header {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.series-header h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  letter-spacing: 0.2px;
-}
-
-.series-header p {
-  max-width: 680px;
-  line-height: 1.65;
-  opacity: 0.78;
-}
-
 .series-tag {
   font-size: 0.75rem;
   opacity: 0.5;
   letter-spacing: 0.4px;
   text-transform: uppercase;
+}
+
+/* BUTTONS */
+.book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn {
+  font-size: 0.8rem;
+  padding: 8px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.2px;
+}
+
+.btn.primary {
+  background: rgba(245, 236, 220, 0.92);
+  color: #0b0c10;
+}
+
+.btn.secondary {
+  border: 1px solid rgba(245, 236, 220, 0.35);
+  color: rgba(245, 236, 220, 0.85);
 }
 </style>
