@@ -5,11 +5,23 @@ import { books } from "../../data/books";
 export function getStaticPaths() {
   return books.map((book) => ({
     params: { slug: book.slug },
-    props: { book }
+    props: { book },
   }));
 }
 
 const { book } = Astro.props;
+
+// -----------------------------
+// SAFE IMAGE HANDLING (CRITICAL FIX)
+// -----------------------------
+const cover =
+  typeof book.cover === "string"
+    ? {
+        src: book.cover,
+        width: 600,
+        height: 900,
+      }
+    : book.cover;
 ---
 
 <Layout
@@ -20,12 +32,12 @@ const { book } = Astro.props;
     openGraph: {
       images: [
         {
-          url: book.cover.src,
-          width: book.cover.width,
-          height: book.cover.height
-        }
-      ]
-    }
+          url: cover.src,
+          width: cover.width,
+          height: cover.height,
+        },
+      ],
+    },
   }}
 >
 
@@ -33,17 +45,15 @@ const { book } = Astro.props;
     <div class="container">
 
       <img
-        src={book.cover.src}
-        width={book.cover.width}
-        height={book.cover.height}
+        src={cover.src}
+        width={cover.width}
+        height={cover.height}
         alt={book.title}
         class="cover"
       />
 
       <div class="info">
-
         <h1>{book.title}</h1>
-
         <p class="series">{book.series}</p>
 
         {book.blurb.map((line) => (
@@ -62,7 +72,6 @@ const { book } = Astro.props;
             <span class="meta">Coming Soon</span>
           )}
         </div>
-
       </div>
 
     </div>
