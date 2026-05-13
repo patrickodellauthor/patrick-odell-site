@@ -186,3 +186,133 @@ small,
 section {
   border-color: rgba(210, 198, 178, 0.12);
 }
+
+/* =========================
+   BOOK DETAIL PAGES
+   ========================= */
+
+.book-hero {
+  padding: 100px 20px;
+}
+
+.book-hero .container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.cover {
+  width: 340px;
+  border-radius: 8px;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.55),
+    0 0 1px rgba(255,255,255,0.04);
+
+  transition: transform 0.3s ease;
+}
+
+.cover:hover {
+  transform: translateY(-4px);
+}
+
+.info {
+  flex: 1;
+  max-width: 620px;
+}
+
+.info h1 {
+  margin-bottom: 10px;
+}
+
+.series {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  color: rgba(210,198,178,0.52);
+
+  margin-bottom: 24px;
+}
+
+.blurb {
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+
+  padding: 11px 16px;
+
+  border-radius: 6px;
+
+  font-size: 0.84rem;
+  letter-spacing: 0.2px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn.primary {
+  background: rgba(214, 196, 168, 0.92);
+  color: #0b0c10;
+}
+
+.btn.primary:hover {
+  background: rgba(228, 212, 186, 1);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(214,196,168,0.34);
+
+  color: rgba(228,220,204,0.84);
+
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  border-color: rgba(214,196,168,0.68);
+
+  color: rgba(240,232,216,1);
+}
+
+.meta {
+  font-size: 0.82rem;
+
+  color: rgba(200,190,176,0.52);
+
+  letter-spacing: 0.25px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 900px) {
+  .book-hero .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .info {
+    max-width: 100%;
+  }
+}
