@@ -3,272 +3,423 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Patrick O’Dell | Author">
+
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h1 class="title">Patrick O’Dell</h1>
-      <p class="subtitle">Fantasy & Urban Fantasy Author</p>
+    <div class="container hero-container">
+
+      <img
+        src="/patrick-odell-logo.png"
+        alt="Patrick O'Dell Author Logo"
+        class="hero-logo"
+      />
 
       <p class="tagline">
-        Stories of broken systems, hidden structures beneath reality, and the cost of power.
+        Stories of broken systems, hidden structures beneath reality,
+        and the cost of power.
       </p>
 
       <div class="buttons">
-        <a class="btn primary" href="/books">Enter The Godfire Series</a>
-        <a class="btn secondary" href="/about">About</a>
+        <a class="btn primary" href="/books">
+          Explore The Godfire Series
+        </a>
+
+        <a class="btn secondary" href="/about">
+          About the Author
+        </a>
       </div>
+
     </div>
   </section>
 
-<!-- DISPATCH -->
-<section class="dispatch">
-  <div class="container">
-    <p class="dispatch-label">Latest Dispatch</p>
-
-    <p class="dispatch-text">
-      Work continues on the Godfire series. New material is being written in silence.
-    </p>
-
-    <p class="dispatch-meta">
-      Updated recently — Patrick O’Dell
-    </p>
-  </div>
-</section>
-
-  <!-- FEATURED BOOK -->
-  <section id="books" class="section">
+  <!-- DISPATCHES -->
+  <section class="section dispatch-section">
     <div class="container narrow">
-      <h2>Featured Book</h2>
 
-      <hr class="section-divider" />
+      <div class="section-heading">
+        <span class="section-kicker">News & Updates</span>
+        <h2>Dispatches</h2>
+      </div>
 
-      <div class="book">
-        <img src="/gods-and-monsters-cover.jpg" alt="Gods and Monsters Cover" />
+      <div class="dispatch-feed">
 
-        <div class="book-info">
-          <h3>Gods and Monsters</h3>
+        <!-- ENTRY 1 -->
+        <article class="dispatch-card">
+          <div class="dispatch-meta">
+            <span>Writing Update</span>
+            <span>May 2026</span>
+          </div>
 
-          <span class="series-tag">The Godfire Series</span>
+          <h3>The Godfire Series Continues</h3>
 
           <p>
-            Haunted by the past and hunted by forces beyond understanding, Elias Fetch must decide what he is willing to become to save the people he loves.
+            Work continues across multiple entries in The Godfire Series,
+            including ongoing revisions, lore development, and structural
+            expansion of the world beneath the narrative.
           </p>
+        </article>
 
-          <a class="btn primary" href="/books">Explore Books</a>
-        </div>
+        <!-- ENTRY 2 -->
+        <article class="dispatch-card">
+          <div class="dispatch-meta">
+            <span>Website</span>
+            <span>May 2026</span>
+          </div>
+
+          <h3>Author Site Reconstruction</h3>
+
+          <p>
+            The official Patrick O’Dell website is currently undergoing
+            a full redesign focused on a cleaner publishing aesthetic,
+            expanded lore archives, and future release support.
+          </p>
+        </article>
+
+        <!-- ENTRY 3 -->
+        <article class="dispatch-card">
+          <div class="dispatch-meta">
+            <span>Lore</span>
+            <span>May 2026</span>
+          </div>
+
+          <h3>World Archive Expansion</h3>
+
+          <p>
+            Additional lore systems, terminology archives, and Elderspeech
+            references are being prepared for future integration.
+          </p>
+        </article>
+
       </div>
+
     </div>
   </section>
 
-  <!-- ABOUT PREVIEW -->
-  <section class="section alt">
-    <div class="container narrow">
-      <h2>About</h2>
-
-      <hr class="section-divider" />
-
-      <p class="about-text">
-        Patrick O’Dell writes fantasy and urban fantasy fiction centered on fractured identities, harsh worlds, and the things people become when certainty begins to fail.
-      </p>
-
-      <a class="btn secondary" href="/about">Read More</a>
-    </div>
-  </section>
-
-  <!-- WORLDS TEASER -->
+  <!-- FEATURED BOOK -->
   <section class="section">
     <div class="container narrow">
-      <h2>Worlds & Lore</h2>
 
-      <hr class="section-divider" />
+      <div class="section-heading">
+        <span class="section-kicker">Featured Release</span>
+        <h2>Gods and Monsters</h2>
+      </div>
 
-      <p class="lore-text">
-        Step behind the stories into the worlds beneath.
-      </p>
+      <div class="featured-book">
 
-      <a class="btn secondary" href="/worlds">Explore Lore</a>
+        <img
+          src="/gods-and-monsters-cover.jpg"
+          alt="Gods and Monsters Cover"
+        />
+
+        <div class="featured-content">
+
+          <span class="series-tag">
+            The Godfire Series
+          </span>
+
+          <p>
+            Haunted by the past and hunted by forces beyond understanding,
+            Elias Fetch must decide what he is willing to become to save
+            the people he loves.
+          </p>
+
+          <div class="buttons left">
+            <a class="btn primary" href="/books/gods-and-monsters">
+              View Book
+            </a>
+
+            <a class="btn secondary" href="#">
+              Preorder
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
-</Layout>
 
-<!-- NEWS FEED -->
-<section class="section alt">
-  <div class="container">
+  <!-- ABOUT -->
+  <section class="section alt">
+    <div class="container narrow">
 
-    <h2>Dispatches</h2>
+      <div class="section-heading">
+        <span class="section-kicker">About</span>
+        <h2>Patrick O’Dell</h2>
+      </div>
 
-    <div class="news-feed">
+      <p class="about-text">
+        Patrick O’Dell writes fantasy and urban fantasy fiction centered on
+        fractured identities, hidden systems beneath reality, and the cost
+        of becoming something irreversible.
+      </p>
 
-      <article class="news-item">
-        <span class="tag">Update</span>
-        <h3>Writing Progress</h3>
-        <p>
-          Work continues on The Godfire Series as Elias Fetch’s story deepens into darker territory.
-        </p>
-      </article>
-
-      <article class="news-item">
-        <span class="tag">Lore</span>
-        <h3>World Expansion Note</h3>
-        <p>
-          New structural elements of the Lore system are being refined behind the scenes.
-        </p>
-      </article>
-
-      <article class="news-item">
-        <span class="tag">Book</span>
-        <h3>Watchers in the Dark</h3>
-        <p>
-          New material is being prepared for upcoming previews and excerpt releases.
-        </p>
-      </article>
+      <a class="btn secondary" href="/about">
+        Read More
+      </a>
 
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- LORE -->
+  <section class="section">
+    <div class="container narrow">
 
+      <div class="section-heading">
+        <span class="section-kicker">Lore Archive</span>
+        <h2>Worlds Beneath the Story</h2>
+      </div>
+
+      <p class="about-text">
+        Explore timelines, entities, systems, Elderspeech archives,
+        and the deeper structures behind The Godfire Series.
+      </p>
+
+      <a class="btn secondary" href="/lore">
+        Explore Lore
+      </a>
+
+    </div>
+  </section>
+
+</Layout>
 
 <style>
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  padding: 90px 20px 70px;
+  padding: 110px 20px 80px;
   text-align: center;
 }
 
-.title {
-  font-size: 2.4rem;
-  font-weight: 400;
-  letter-spacing: 0.3px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
-
-.tagline {
-  max-width: 520px;
-  margin: 0 auto 26px;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.section {
-  padding: 70px 20px;
-}
-
-.section.alt {
-  background: rgba(255,255,255,0.015);
-}
-
-.container {
+.hero-container {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.book {
-  display: flex;
-  gap: 26px;
-  align-items: flex-start;
-  margin-top: 18px;
+.hero-logo {
+  width: min(760px, 92%);
+  margin: 0 auto 40px;
+  display: block;
 }
 
-.book img {
-  width: 170px;
-  border-radius: 6px;
-  opacity: 0.95;
-}
-
-.book-info {
-  flex: 1;
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-
-.primary {
-  background: rgba(255,255,255,0.92);
-  color: #0a0a0a;
-}
-
-.secondary {
-  border: 1px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.85);
-}
-
-.dispatch {
-  padding: 40px 20px 10px;
-  text-align: center;
-}
-
-.dispatch .container {
+.tagline {
   max-width: 700px;
+  margin: 0 auto 30px;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgba(214, 200, 178, 0.72);
+}
+
+/* =========================
+   GLOBAL SECTIONS
+========================= */
+
+.section {
+  padding: 90px 20px;
+}
+
+.section.alt {
+  background: rgba(255,255,255,0.02);
+}
+
+.container {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.dispatch-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 10px;
+.narrow {
+  max-width: 860px;
 }
 
-.dispatch-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 10px;
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(188, 170, 146, 0.45);
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.buttons.left {
+  justify-content: flex-start;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  border-radius: 4px;
+
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: rgba(214, 196, 168, 0.9);
+  color: #111;
+}
+
+.primary:hover {
+  background: rgba(228, 212, 186, 1);
+}
+
+.secondary {
+  border: 1px solid rgba(214, 196, 168, 0.22);
+  color: rgba(228, 216, 198, 0.82);
+}
+
+.secondary:hover {
+  border-color: rgba(214, 196, 168, 0.5);
+  background: rgba(255,255,255,0.03);
+}
+
+/* =========================
+   DISPATCHES
+========================= */
+
+.dispatch-feed {
+  display: grid;
+  gap: 20px;
+}
+
+.dispatch-card {
+  padding: 24px;
+
+  border: 1px solid rgba(214, 196, 168, 0.08);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.01)
+    );
+
+  border-radius: 6px;
 }
 
 .dispatch-meta {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
-}
+  display: flex;
+  justify-content: space-between;
 
-.news-feed {
-  display: grid;
-  gap: 18px;
-  margin-top: 20px;
-}
+  margin-bottom: 14px;
 
-.news-item {
-  padding: 16px 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.2);
-  border-radius: 8px;
-}
-
-.news-item h3 {
-  margin: 6px 0;
-  font-size: 1.05rem;
-}
-
-.news-item p {
-  opacity: 0.75;
-  font-size: 0.95rem;
-}
-
-.tag {
-  font-size: 0.7rem;
-  letter-spacing: 0.3px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.5;
+
+  color: rgba(188, 170, 146, 0.42);
 }
 
+.dispatch-card h3 {
+  margin-bottom: 12px;
+}
+
+.dispatch-card p {
+  margin: 0;
+}
+
+/* =========================
+   FEATURED BOOK
+========================= */
+
+.featured-book {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.featured-book img {
+  width: 100%;
+  border-radius: 6px;
+
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.5);
+}
+
+.featured-content {
+  padding-top: 10px;
+}
+
+.series-tag {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(188, 170, 146, 0.46);
+}
+
+.about-text {
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 860px) {
+
+  .featured-book {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-book img {
+    max-width: 340px;
+  }
+
+  .buttons.left {
+    justify-content: center;
+  }
+
+  .featured-content {
+    text-align: center;
+  }
+}
 </style>
