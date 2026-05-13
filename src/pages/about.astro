@@ -2,66 +2,529 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout metadata={{ title: "About | Patrick O’Dell" }}>
+<Layout
+  metadata={{
+    title: "About | Patrick O’Dell",
+    description:
+      "Learn more about fantasy and urban fantasy author Patrick O’Dell, creator of The Godfire Series.",
+  }}
+>
 
-<section class="section">
-  <div class="container narrow">
+  <!-- =========================
+       ABOUT HERO
+  ========================== -->
 
-    <h1>Patrick O’Dell</h1>
+  <section class="about-hero">
 
-    <p class="about-lead">
-      I write fantasy and urban fantasy fiction about systems beneath reality,
-      fractured identity, and the cost of becoming something you cannot undo.
-    </p>
+    <div class="container about-hero-grid">
 
-    <p>
-      My work focuses on the idea that reality is structured—quietly, invisibly—
-      and that people only notice those structures when they begin to break.
-    </p>
+      <!-- AUTHOR IMAGE -->
+      <div class="hero-image-wrap">
 
-  </div>
-</section>
+        <img
+          src="/patrick-odell-author.jpg"
+          alt="Patrick O’Dell Author Portrait"
+          class="hero-image"
+        />
 
-<section class="section alt">
-  <div class="container narrow">
+      </div>
 
-    <h2>What I Write</h2>
+      <!-- HERO TEXT -->
+      <div class="hero-content">
 
-    <p>
-      The Godfire Series explores hidden frameworks of existence,
-      power that reshapes perception, and the consequences of understanding too much.
-    </p>
+        <span class="kicker">About the Author</span>
 
-  </div>
-</section>
+        <h1>Patrick O’Dell</h1>
 
-<section class="section">
-  <div class="container narrow">
+        <p class="hero-intro">
+          [WRITE A SHORT 2–4 SENTENCE INTRODUCTION HERE.]
+        </p>
 
-    <h2>Start Here</h2>
+        <div class="hero-links">
 
-    <a class="btn primary" href="/books/gods-and-monsters">
-      Read Gods and Monsters
-    </a>
+          <a href="/books" class="btn primary">
+            Explore the Books
+          </a>
 
-  </div>
-</section>
+          <a href="/contact" class="btn secondary">
+            Contact
+          </a>
 
-<section class="section alt">
-  <div class="container narrow">
+        </div>
 
-    <h2>Stay Connected</h2>
+      </div>
 
-    <p>
-      Get updates on new releases and worldbuilding expansions.
-    </p>
+    </div>
 
-    <form>
-      <input type="email" placeholder="Email address" />
-      <button class="btn primary">Subscribe</button>
-    </form>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================
+       MAIN BIOGRAPHY
+  ========================== -->
+
+  <section class="about-section">
+
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="kicker">Biography</span>
+        <h2>The Long Story</h2>
+      </div>
+
+      <div class="prose-block">
+
+        <p>
+          [WRITE YOUR FIRST MAIN BIOGRAPHY PARAGRAPH HERE.]
+        </p>
+
+        <p>
+          [WRITE YOUR SECOND MAIN BIOGRAPHY PARAGRAPH HERE.]
+        </p>
+
+        <p>
+          [WRITE YOUR THIRD MAIN BIOGRAPHY PARAGRAPH HERE.]
+        </p>
+
+        <p>
+          [OPTIONAL FOURTH PARAGRAPH.]
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       WRITING FOCUS
+  ========================== -->
+
+  <section class="about-section alt">
+
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="kicker">Writing</span>
+        <h2>Focus & Themes</h2>
+      </div>
+
+      <div class="prose-block">
+
+        <p>
+          [DESCRIBE YOUR THEMES, STYLE, GENRES, OR STORYTELLING APPROACH.]
+        </p>
+
+        <p>
+          [DISCUSS THE TYPES OF STORIES YOU LIKE TO WRITE.]
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CURRENT PROJECTS
+  ========================== -->
+
+  <section class="about-section">
+
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="kicker">Current Projects</span>
+        <h2>What I'm Working On</h2>
+      </div>
+
+      <div class="project-list">
+
+        <!-- PROJECT -->
+        <article class="project-item">
+
+          <h3>The Godfire Series</h3>
+
+          <p>
+            [WRITE ABOUT THE SERIES HERE.]
+          </p>
+
+        </article>
+
+        <!-- PROJECT -->
+        <article class="project-item">
+
+          <h3>Lore Archives</h3>
+
+          <p>
+            [WRITE ABOUT YOUR WORLD ARCHIVES, ELDERSPEECH, TIMELINES, ETC.]
+          </p>
+
+        </article>
+
+        <!-- PROJECT -->
+        <article class="project-item">
+
+          <h3>Upcoming Releases</h3>
+
+          <p>
+            [OPTIONAL AREA FOR UPCOMING BOOKS OR FUTURE PLANS.]
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       OPTIONAL QUICK FACTS
+  ========================== -->
+
+  <section class="about-section alt">
+
+    <div class="container narrow">
+
+      <div class="section-heading">
+        <span class="kicker">Quick Facts</span>
+        <h2>At a Glance</h2>
+      </div>
+
+      <div class="facts-grid">
+
+        <div class="fact-card">
+          <span class="fact-label">Genres</span>
+          <p>[Fantasy / Urban Fantasy / Horror / etc.]</p>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-label">Current Series</span>
+          <p>[The Godfire Series]</p>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-label">Favorite Themes</span>
+          <p>[Transformation, identity, hidden systems, etc.]</p>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-label">Current Status</span>
+          <p>[Writing / Revising / Developing Lore]</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       NEWSLETTER CTA
+  ========================== -->
+
+  <section class="about-section newsletter-section">
+
+    <div class="container narrow center">
+
+      <span class="kicker">Newsletter</span>
+
+      <h2>Stay Connected</h2>
+
+      <p class="newsletter-text">
+        [WRITE A SHORT NEWSLETTER INVITATION HERE.]
+      </p>
+
+      <!-- REPLACE WITH YOUR NEWSLETTER EMBED -->
+      <form class="newsletter-form">
+
+        <input
+          type="email"
+          placeholder="Email address"
+        />
+
+        <button type="submit" class="btn primary">
+          Subscribe
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
 
 </Layout>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.narrow {
+  max-width: 760px;
+}
+
+.center {
+  text-align: center;
+}
+
+.about-section {
+  padding: 84px 20px;
+}
+
+.about-section.alt {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.01)
+    );
+}
+
+.section-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero {
+  padding: 70px 20px 90px;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 12px;
+
+  box-shadow:
+    0 28px 80px rgba(0,0,0,0.38);
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-intro {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.hero-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.kicker {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(188,170,146,0.58);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.08;
+
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.15;
+
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.98rem;
+  line-height: 1.9;
+
+  color: rgba(230,220,205,0.8);
+}
+
+/* =========================
+   PROSE
+========================= */
+
+.prose-block {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.project-item {
+  padding-bottom: 30px;
+
+  border-bottom:
+    1px solid rgba(210,198,178,0.12);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+/* =========================
+   FACTS
+========================= */
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.fact-card {
+  padding: 22px;
+
+  border:
+    1px solid rgba(210,198,178,0.12);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255,255,255,0.015);
+}
+
+.fact-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(188,170,146,0.58);
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter-section {
+  padding-bottom: 110px;
+}
+
+.newsletter-text {
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  width: 320px;
+
+  padding: 14px 16px;
+
+  border-radius: 6px;
+
+  border:
+    1px solid rgba(210,198,178,0.18);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  color:
+    rgba(240,232,220,0.9);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+
+  .hero-image-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  .about-section {
+    padding: 72px 20px;
+  }
+}
+
+</style>
