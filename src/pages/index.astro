@@ -1,9 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { books } from "../data/books";
+import { getFeaturedBook } from "../data/book-utils";
 
-// Featured book is now system-driven (prepares for automation step C)
-const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
+const featured = getFeaturedBook();
 ---
 
 <Layout
@@ -20,8 +19,10 @@ const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
 
       <a href={`/books/${featured.slug}`} class="hero-media">
         <img
-          src={featured.cover}
-          alt={`${featured.title} Cover`}
+          src={featured.cover.src}
+          width={featured.cover.width}
+          height={featured.cover.height}
+          alt={featured.title}
           class="hero-image"
         />
       </a>
@@ -33,7 +34,7 @@ const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
         <h1>{featured.title}</h1>
 
         <p>
-          {featured.excerpt}
+          {featured.blurb?.[0]}
         </p>
 
         <div class="buttons">
@@ -64,42 +65,22 @@ const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
 
         <article class="news-item">
           <span class="date">May 2026</span>
-          <p>
-            The Godfire Series continues development across multiple entries,
-            including ongoing revisions and expanded worldbuilding systems.
-          </p>
+          <p>The Godfire Series continues development across multiple entries.</p>
         </article>
 
         <article class="news-item">
           <span class="date">May 2026</span>
-          <p>
-            The official Patrick O’Dell website is being rebuilt around a
-            warmer, editorial-style reading experience.
-          </p>
+          <p>The official website is being rebuilt for an editorial reading experience.</p>
         </article>
 
         <article class="news-item">
           <span class="date">April 2026</span>
-          <p>
-            New Elderspeech systems, lore archives, and timeline structures
-            are currently being prepared for site integration.
-          </p>
+          <p>Elderspeech systems and lore archives are being integrated.</p>
         </article>
 
         <article class="news-item">
           <span class="date">March 2026</span>
-          <p>
-            Internal canon documentation and structural worldbuilding archives
-            continue expanding behind the scenes.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <span class="date">February 2026</span>
-          <p>
-            Additional Godfire Series material and supporting narrative systems
-            entered active development.
-          </p>
+          <p>Worldbuilding documentation continues expanding.</p>
         </article>
 
       </div>
@@ -127,8 +108,7 @@ const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
 
         <p>
           Patrick O’Dell writes fantasy and urban fantasy fiction centered on
-          hidden systems beneath reality, fractured identity, transformation,
-          and the cost of power.
+          hidden systems beneath reality, fractured identity, and transformation.
         </p>
 
         <a class="btn secondary" href="/about">
@@ -141,231 +121,3 @@ const featured = books.find((b) => b.slug === "gods-and-monsters") ?? books[0];
   </section>
 
 </Layout>
-
-<style>
-
-/* =========================
-   GLOBAL LAYOUT (REFINED FLOW)
-========================= */
-
-.section {
-  padding: 70px 20px;
-}
-
-.section + .section {
-  border-top: 1px solid rgba(210,198,178,0.05);
-}
-
-.container.center {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-/* =========================
-   HERO (BOOK-FIRST FOCUS)
-========================= */
-
-.hero {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.hero-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 56px;
-}
-
-.hero-media {
-  flex-shrink: 0;
-}
-
-.hero-image {
-  width: 270px;
-  border-radius: 8px;
-
-  display: block;
-
-  box-shadow: 0 24px 60px rgba(0,0,0,0.42);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-image:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 75px rgba(0,0,0,0.5);
-}
-
-.hero-text {
-  max-width: 480px;
-}
-
-/* =========================
-   AUTHOR SECTION
-========================= */
-
-.author-section {
-  padding-top: 50px;
-  padding-bottom: 90px;
-}
-
-.author-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 46px;
-}
-
-.author-text {
-  max-width: 520px;
-}
-
-.author-image {
-  width: 185px;
-  border-radius: 10px;
-
-  display: block;
-
-  box-shadow: 0 22px 55px rgba(0,0,0,0.34);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.author-image:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 70px rgba(0,0,0,0.45);
-}
-
-/* =========================
-   TYPOGRAPHY (UNIFIED SYSTEM ALIGNMENT)
-========================= */
-
-.kicker {
-  display: block;
-  margin-bottom: 10px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  color: rgba(188,170,146,0.58);
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: 1.1;
-  margin-bottom: 14px;
-}
-
-h2 {
-  font-size: 1.65rem;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-p {
-  font-size: 0.98rem;
-  line-height: 1.82;
-  color: rgba(230,220,205,0.78);
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-/* =========================
-   NEWS FEED (CENTERED BUT CONTROLLED WIDTH)
-========================= */
-
-.news-section {
-  padding-top: 40px;
-}
-
-.news-box {
-  max-width: 780px;
-  margin: 26px auto 0;
-
-  max-height: 420px;
-  overflow-y: auto;
-
-  padding-right: 6px;
-
-  text-align: left;
-}
-
-.news-item {
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(210,198,178,0.10);
-}
-
-.news-item:last-child {
-  border-bottom: none;
-}
-
-.date {
-  display: block;
-  margin-bottom: 6px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: rgba(188,170,146,0.58);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 860px) {
-
-  .hero-layout,
-  .author-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text,
-  .author-text {
-    max-width: 100%;
-  }
-
-  .hero-image {
-    width: 240px;
-  }
-
-  .author-image {
-    width: 170px;
-  }
-
-  .buttons {
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 1.85rem;
-  }
-
-  h2 {
-    font-size: 1.45rem;
-  }
-
-  .section {
-    padding: 62px 20px;
-  }
-}
-
-</style>
