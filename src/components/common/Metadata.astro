@@ -24,6 +24,9 @@ const {
   twitter = {},
 } = Astro.props;
 
+// -----------------------------
+// SAFE OG DEFAULT (IMPORTANT FIX)
+// -----------------------------
 const mergedOg: MetaDataOpenGraph = merge(
   {
     url: canonical,
@@ -38,19 +41,23 @@ const mergedOg: MetaDataOpenGraph = merge(
 
 const adaptedOg = await adaptOpenGraphImages(mergedOg, Astro.site);
 
-const firstImage = adaptedOg?.images?.[0];
+// 🔥 HARD GUARD: drop invalid images (prevents build crash)
+const safeImages =
+  adaptedOg?.images?.filter((img) => img?.url && img?.width && img?.height) ?? [];
 
+const firstImage = safeImages[0];
+
+// -----------------------------
+// OPEN GRAPH BUILDER
+// -----------------------------
 function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefined {
-  if (!og) return undefined;
-
-  const imageUrl = firstImage?.url || '';
-  if (!imageUrl) return undefined;
+  if (!og || !firstImage?.url) return undefined;
 
   return {
     basic: {
       title: title || METADATA?.title?.default || '',
       type: og.type || 'website',
-      image: imageUrl,
+      image: firstImage.url,
       url: og.url,
     },
     optional: {
@@ -59,54 +66,41 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
       siteName: og.siteName,
     },
     image: {
-      url: imageUrl,
-      width: firstImage?.width,
-      height: firstImage?.height,
+      url: firstImage.url,
+      width: firstImage.width,
+      height: firstImage.height,
       alt: title || METADATA?.title?.default || '',
     },
   };
 }
 
+// -----------------------------
+// TWITTER
+// -----------------------------
 const mergedTwitter = merge(
   {
-    card: (adaptedOg?.images?.length ? 'summary_large_image' : 'summary') as 'summary_large_image' | 'summary',
+    card: safeImages.length ? 'summary_large_image' : 'summary',
   },
-  METADATA?.twitter
-    ? {
-        card: METADATA.twitter.cardType as 'summary_large_image' | 'summary' | undefined,
-        site: METADATA.twitter.site,
-        creator: METADATA.twitter.handle,
-      }
-    : {},
-  twitter
-    ? {
-        card: twitter.cardType as 'summary_large_image' | 'summary' | undefined,
-        site: twitter.site,
-        creator: twitter.handle,
-      }
-    : {}
+  METADATA?.twitter ?? {},
+  twitter ?? {}
 );
 
+// -----------------------------
+// SEO PROPS
+// -----------------------------
 const seoProps: SEOProps = {
   title: title || METADATA?.title?.default || '',
   titleTemplate: ignoreTitleTemplate ? '%s' : METADATA?.title?.template || '%s',
-  canonical: canonical,
-  noindex:
-    typeof robots?.index !== 'undefined'
-      ? !robots.index
-      : typeof METADATA?.robots?.index !== 'undefined'
-        ? !METADATA.robots.index
-        : true,
-  nofollow:
-    typeof robots?.follow !== 'undefined'
-      ? !robots.follow
-      : typeof METADATA?.robots?.follow !== 'undefined'
-        ? !METADATA.robots.follow
-        : true,
+  canonical,
+
+  noindex: METADATA?.robots?.index === false,
+  nofollow: METADATA?.robots?.follow === false,
+
   description: description || METADATA?.description,
   openGraph: buildOpenGraph(adaptedOg),
   twitter: mergedTwitter,
-  surpressWarnings: true,
+
+  suppressWarnings: true,
 };
 ---
 
