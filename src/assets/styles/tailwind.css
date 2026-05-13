@@ -123,7 +123,10 @@
 body {
   font-family: ui-serif, Georgia, "Times New Roman", serif;
   background: #0b0c10;
-  color: rgba(255, 255, 255, 0.84);
+
+  /* warm parchment base instead of pure white */
+  color: rgba(232, 224, 210, 0.86);
+
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -131,12 +134,12 @@ body {
 
 /* HEADINGS — editorial weight refinement */
 h1, h2, h3 {
-  color: rgba(255, 255, 255, 0.94);
+  color: rgba(245, 236, 220, 0.92); /* warm highlight layer */
   letter-spacing: 0.25px;
   line-height: 1.15;
 }
 
-/* Scale tuning (slightly more cinematic, less “blog template”) */
+/* Scale tuning (cinematic / imprint feel) */
 h1 {
   font-size: 3rem;
   font-weight: 500;
@@ -153,30 +156,33 @@ h3 {
   font-weight: 400;
 }
 
-/* PARAGRAPHS — slightly more breathing room */
+/* PARAGRAPHS — softer ink density */
 p {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(224, 214, 198, 0.78);
   font-weight: 300;
   line-height: 1.75;
 }
 
-/* LINKS — more restrained, less bright jump */
+/* LINKS — restrained ink lift */
 a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(226, 212, 190, 0.78);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgba(255, 255, 255, 0.96);
+  color: rgba(245, 236, 220, 0.95);
 }
 
 /* SMALL / META TEXT */
-small, .meta, .tag, .series-tag {
-  color: rgba(255, 255, 255, 0.48);
+small,
+.meta,
+.tag,
+.series-tag {
+  color: rgba(210, 198, 178, 0.55);
   letter-spacing: 0.3px;
 }
 
-/* Subtle literary texture */
+/* Subtle structural refinement */
 section {
   border-color: rgba(255, 255, 255, 0.06);
 }
