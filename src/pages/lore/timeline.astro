@@ -1,1 +1,56 @@
 
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Timeline | Lore">
+  <section class="page">
+    <div class="container">
+
+      <h1>Timeline</h1>
+
+      <p class="intro">
+        A somewhat-linear record of events tied to The Godfire series.
+      </p>
+
+      <ul class="timeline">
+        <li>
+          <h3>Before the Known Record</h3>
+          <p>Something moved through reality long before names were given to it.</p>
+        </li>
+
+        <li>
+          <h3>Emergence Events</h3>
+          <p>Unexplained incidents begin appearing across isolated regions.</p>
+        </li>
+
+        <li>
+          <h3>Locust Grove Incident</h3>
+          <p>The events that pull Elias Fetch back into his past.</p>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page { padding: 80px 20px; }
+.container { max-width: 800px; margin: 0 auto; }
+h1 { font-size: 2.4rem; }
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.timeline li {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+h3 { margin: 0 0 6px; }
+p { opacity: 0.75; margin: 0; }
+</style>
