@@ -59,13 +59,9 @@ const pageMetadata = {
 
         <div class="nav-center">
 
-          <a class="logo" href="/">
-            <img
-              src="/patrick-odell-logo.png"
-              alt="Patrick O’Dell"
-              class="nav-logo"
-            />
-          </a>
+          <a class="logo" href="/" aria-label="Patrick O’Dell Home">
+  <img src="/patrick-odell-logo.png" alt="Patrick O’Dell" class="nav-logo" />
+</a>
 
           <nav class="menu">
 
@@ -160,16 +156,14 @@ const pageMetadata = {
 
   border-bottom: 1px solid rgba(210,198,178,0.10);
 
-  /* 👇 THIS is the key fix: unify navbar font feel with body */
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
+ font-family: ui-serif, Georgia, "Times New Roman", serif;
   color: rgba(230,220,205,0.78);
 }
 
 .nav-inner {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 18px 24px;
-
+  padding: 22px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,15 +244,15 @@ const pageMetadata = {
 }
 
 .nav-logo {
-  height: 200px;
+  height: 84px;
   width: auto;
   display: block;
-  opacity: 0.95;
   object-fit: contain;
+  transition: transform 0.25s ease;
 }
 
 .nav-logo:hover {
-  opacity: 1;
+  transform: scale(1.02);
 }
 
 body {
