@@ -15,16 +15,7 @@ const { book } = Astro.props;
 <Layout
   metadata={{
     title: `${book.title} | Patrick O’Dell`,
-    description: book.seo?.description ?? book.blurb?.[0],
-    openGraph: {
-      images: [
-        {
-          url: book.cover.src,
-          width: book.cover.width,
-          height: book.cover.height
-        }
-      ]
-    }
+    description: book.seo?.description ?? book.blurb?.[0]
   }}
 >
 
@@ -52,7 +43,10 @@ const { book } = Astro.props;
         <div class="actions">
           {book.status === "published" ? (
             <>
-              <a class="btn primary" href="#">Buy / Preorder</a>
+              <a class="btn primary" href="#">
+                Buy / Preorder
+              </a>
+
               <a class="btn secondary" href={`/books/${book.slug}/preview`}>
                 Preview
               </a>
