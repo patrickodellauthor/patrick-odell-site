@@ -115,3 +115,56 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* ===============================
+   LITERARY TYPOGRAPHY SYSTEM
+   =============================== */
+
+body {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  background: #0b0c10;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.2px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Paragraph rhythm */
+p {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 300;
+}
+
+/* Links */
+a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Subtle literary texture */
+section {
+  border-color: rgba(255, 255, 255, 0.06);
+}
