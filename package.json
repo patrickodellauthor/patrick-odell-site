@@ -4,12 +4,9 @@
   "description": "AstroWind: A free template using Astro 6 and Tailwind CSS v4. Astro starter theme.",
   "type": "module",
   "private": true,
+
   "engines": {
     "node": ">=22.12.0"
-  },
-
-  "lint-staged": {
-    "*.{astro,js,ts,css,md,json}": "prettier --write"
   },
 
   "scripts": {
