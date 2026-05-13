@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout metadata={{ title: "Patrick O’Dell | Author" }} }}>
+<Layout metadata={{ title: "Patrick O’Dell | Author" }}>
 
   <!-- HERO -->
   <section class="hero">
@@ -32,18 +32,52 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- DISPATCHES -->
-  <section class="section dispatch-section">
+  <!-- AUTHOR INTRO (NEW SECTION) -->
+  <section class="section author-intro">
+    <div class="container narrow author-grid">
+
+      <a href="/about" class="author-photo-link">
+        <img
+          src="/patrick-odell-author.jpg"
+          alt="Patrick O’Dell Author Photo"
+          class="author-photo"
+        />
+      </a>
+
+      <div class="author-text">
+
+        <div class="section-heading">
+          <span class="section-kicker">Author</span>
+          <h2>Patrick O’Dell</h2>
+        </div>
+
+        <p class="about-text">
+          Patrick O’Dell writes fantasy and urban fantasy fiction focused on
+          fractured identity, hidden systems beneath reality, and the cost of
+          transformation. His work blends character-driven storytelling with
+          layered mythologies and structural worldbuilding.
+        </p>
+
+        <a class="btn secondary" href="/about">
+          Read Full Bio
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWS / UPDATES (RENAMED FROM "DISPATCHES") -->
+  <section class="section">
     <div class="container narrow">
 
       <div class="section-heading">
         <span class="section-kicker">News & Updates</span>
-        <h2>Dispatches</h2>
+        <h2>Latest Updates</h2>
       </div>
 
       <div class="dispatch-feed">
 
-        <!-- ENTRY 1 -->
         <article class="dispatch-card">
           <div class="dispatch-meta">
             <span>Writing Update</span>
@@ -51,31 +85,26 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <h3>The Godfire Series Continues</h3>
-
           <p>
             Work continues across multiple entries in The Godfire Series,
-            including ongoing revisions, lore development, and structural
-            expansion of the world beneath the narrative.
+            including revisions, lore development, and expansion of the world
+            beneath the narrative.
           </p>
         </article>
 
-        <!-- ENTRY 2 -->
         <article class="dispatch-card">
           <div class="dispatch-meta">
             <span>Website</span>
             <span>May 2026</span>
           </div>
 
-          <h3>Author Site Reconstruction</h3>
-
+          <h3>Site Rebuilding in Progress</h3>
           <p>
-            The official Patrick O’Dell website is currently undergoing
-            a full redesign focused on a cleaner publishing aesthetic,
-            expanded lore archives, and future release support.
+            The official Patrick O’Dell website is undergoing a redesign focused
+            on a warmer, more immersive reading experience and expanded lore access.
           </p>
         </article>
 
-        <!-- ENTRY 3 -->
         <article class="dispatch-card">
           <div class="dispatch-meta">
             <span>Lore</span>
@@ -83,10 +112,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <h3>World Archive Expansion</h3>
-
           <p>
-            Additional lore systems, terminology archives, and Elderspeech
-            references are being prepared for future integration.
+            Elderspeech systems, timeline entries, and worldbuilding references
+            are being prepared for deeper integration into the site.
           </p>
         </article>
 
@@ -140,30 +168,8 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section alt">
-    <div class="container narrow">
-
-      <div class="section-heading">
-        <span class="section-kicker">About</span>
-        <h2>Patrick O’Dell</h2>
-      </div>
-
-      <p class="about-text">
-        Patrick O’Dell writes fantasy and urban fantasy fiction centered on
-        fractured identities, hidden systems beneath reality, and the cost
-        of becoming something irreversible.
-      </p>
-
-      <a class="btn secondary" href="/about">
-        Read More
-      </a>
-
-    </div>
-  </section>
-
   <!-- LORE -->
-  <section class="section">
+  <section class="section alt">
     <div class="container narrow">
 
       <div class="section-heading">
@@ -186,240 +192,35 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-/* =========================
-   HERO
-========================= */
 
-.hero {
-  padding: 110px 20px 80px;
-  text-align: center;
+/* AUTHOR INTRO */
+.author-intro {
+  padding-top: 110px;
 }
 
-.hero-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.hero-logo {
-  width: min(760px, 92%);
-  margin: 0 auto 40px;
-  display: block;
-}
-
-.tagline {
-  max-width: 700px;
-  margin: 0 auto 30px;
-
-  font-size: 1rem;
-  line-height: 1.8;
-
-  color: rgba(214, 200, 178, 0.72);
-}
-
-/* =========================
-   GLOBAL SECTIONS
-========================= */
-
-.section {
-  padding: 90px 20px;
-}
-
-.section.alt {
-  background: rgba(255,255,255,0.02);
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.narrow {
-  max-width: 860px;
-}
-
-.section-heading {
-  margin-bottom: 30px;
-}
-
-.section-kicker {
-  display: block;
-
-  margin-bottom: 8px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  color: rgba(188, 170, 146, 0.45);
-}
-
-.section-heading h2 {
-  margin: 0;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.buttons.left {
-  justify-content: flex-start;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 11px 18px;
-
-  border-radius: 4px;
-
-  font-size: 0.84rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.primary {
-  background: rgba(214, 196, 168, 0.9);
-  color: #111;
-}
-
-.primary:hover {
-  background: rgba(228, 212, 186, 1);
-}
-
-.secondary {
-  border: 1px solid rgba(214, 196, 168, 0.22);
-  color: rgba(228, 216, 198, 0.82);
-}
-
-.secondary:hover {
-  border-color: rgba(214, 196, 168, 0.5);
-  background: rgba(255,255,255,0.03);
-}
-
-/* =========================
-   DISPATCHES
-========================= */
-
-.dispatch-feed {
+.author-grid {
   display: grid;
-  gap: 20px;
-}
-
-.dispatch-card {
-  padding: 24px;
-
-  border: 1px solid rgba(214, 196, 168, 0.08);
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0.01)
-    );
-
-  border-radius: 6px;
-}
-
-.dispatch-meta {
-  display: flex;
-  justify-content: space-between;
-
-  margin-bottom: 14px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  color: rgba(188, 170, 146, 0.42);
-}
-
-.dispatch-card h3 {
-  margin-bottom: 12px;
-}
-
-.dispatch-card p {
-  margin: 0;
-}
-
-/* =========================
-   FEATURED BOOK
-========================= */
-
-.featured-book {
-  display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
 }
 
-.featured-book img {
+.author-photo {
   width: 100%;
-  border-radius: 6px;
-
-  box-shadow:
-    0 24px 60px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease;
 }
 
-.featured-content {
-  padding-top: 10px;
+.author-photo:hover {
+  transform: translateY(-4px);
 }
-
-.series-tag {
-  display: inline-block;
-
-  margin-bottom: 18px;
-
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: rgba(188, 170, 146, 0.46);
-}
-
-.about-text {
-  max-width: 720px;
-  margin-bottom: 24px;
-}
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 860px) {
-
-  .featured-book {
+  .author-grid {
     grid-template-columns: 1fr;
-  }
-
-  .featured-book img {
-    max-width: 340px;
-  }
-
-  .buttons.left {
-    justify-content: center;
-  }
-
-  .featured-content {
     text-align: center;
   }
 }
+
 </style>
