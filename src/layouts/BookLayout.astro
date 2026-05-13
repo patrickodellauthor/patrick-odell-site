@@ -5,13 +5,18 @@ interface Props {
   title: string;
   series?: string;
   cover: string;
-  blurb: string[];
+  blurb?: string[];
   actions?: {
     label: string;
     href: string;
     type?: "primary" | "secondary";
   }[];
   meta?: string;
+
+  seo?: {
+    description?: string;
+    image?: string;
+  };
 }
 
 const {
@@ -21,27 +26,65 @@ const {
   blurb = [],
   actions = [],
   meta,
+  seo,
 } = Astro.props;
 ---
 
-<Layout metadata={{ title: `${title} | Patrick O’Dell` }}>
+<Layout
+  metadata={{
+    title: `${title} | Patrick O’Dell`,
+    description: seo?.description ?? blurb?.[0],
+
+    openGraph: {
+      title,
+      description: seo?.description ?? blurb?.[0],
+      type: "article",
+      siteName: "Patrick O’Dell",
+      images: seo?.image
+        ? [
+            {
+              url: seo.image,
+            },
+          ]
+        : cover
+        ? [
+            {
+              url: cover,
+            },
+          ]
+        : undefined,
+    },
+
+    twitter: {
+      cardType: "summary_large_image",
+    },
+  }}
+>
 
   <section class="book-hero">
     <div class="container">
 
       <!-- COVER -->
-      <img class="cover" src={cover} alt={`${title} cover`} />
+      <img
+        class="cover"
+        src={cover}
+        alt={`${title} cover`}
+      />
 
       <!-- INFO -->
       <div class="info">
 
         <h1>{title}</h1>
 
-        {series && <p class="series">{series}</p>}
+        {series && (
+          <p class="series">{series}</p>
+        )}
 
-        {blurb.map((b) => (
-          <p class="blurb">{b}</p>
-        ))}
+        {blurb.length > 0 &&
+          blurb.map((b) => (
+            <p class="blurb">{b}</p>
+          ))
+        }
 
         {actions.length > 0 && (
           <div class="actions">
@@ -53,7 +96,9 @@ const {
           </div>
         )}
 
-        {meta && <p class="meta">{meta}</p>}
+        {meta && (
+          <p class="meta">{meta}</p>
+        )}
 
       </div>
 
