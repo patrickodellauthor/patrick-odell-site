@@ -1,84 +1,24 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import BookLayout from "../../layouts/BookLayout.astro";
 ---
 
-<Layout title="Gods and Monsters | Patrick O’Dell">
-  <section class="book-page">
-    <div class="container">
+<BookLayout
+  title="Gods and Monsters"
+  cover="/gods-and-monsters-cover.jpg"
+>
 
-      <img class="cover" src="/gods-and-monsters-cover.jpg" alt="Gods and Monsters cover" />
+  <span slot="series">The Godfire Series</span>
 
-      <h1>Gods and Monsters</h1>
-      <p class="series">The Godfire Series</p>
+  <p>
+    Supernatural detective Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
+  </p>
 
-      <p class="blurb">
-        Supernatural detective Elias Fetch returns to Locust Grove, Georgia when a series of unexplained deaths begins to surface.
-      </p>
+  <p>
+    When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
+  </p>
 
-      <p class="blurb">
-        When the case turns personal, he is drawn into a spiral of grief, memory, and impossible events that challenge everything he believes about reality.
-      </p>
+  <p>
+    Something ancient is moving beneath the surface... and it knows his name.
+  </p>
 
-      <p class="blurb">
-        Something ancient is moving beneath the surface... and it knows his name.
-      </p>
-
-      <div class="actions">
-        <a href="#" class="btn">Preorder (Coming Soon)</a>
-        <a href="/books" class="btn secondary">Back to Books</a>
-      </div>
-
-    </div>
-  </section>
-</Layout>
-
-<style>
-.book-page {
-  padding: 80px 20px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cover {
-  width: 260px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.series {
-  opacity: 0.6;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.8rem;
-}
-
-.blurb {
-  text-align: left;
-  margin: 16px auto;
-  line-height: 1.6;
-  max-width: 650px;
-  opacity: 0.85;
-}
-
-.actions {
-  margin-top: 30px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.btn {
-  padding: 10px 14px;
-  border: 1px solid black;
-  text-decoration: none;
-  color: black;
-}
-
-.secondary {
-  opacity: 0.6;
-}
-</style>
+</BookLayout>
