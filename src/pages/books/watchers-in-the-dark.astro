@@ -1,44 +1,25 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import BookLayout from "../../layouts/BookLayout.astro";
 ---
 
-<Layout title="Watchers in the Dark | Patrick O’Dell">
-  <section class="book-page">
-    <div class="container">
+<BookLayout
+  title="Watchers in the Dark"
+  cover="/watchers-in-the-dark-cover.jpg"
+>
 
-      <img class="cover" src="/watchers-in-the-dark-cover.jpg" alt="Watchers in the Dark cover" />
+  <span slot="series">The Godfire Series</span>
 
-      <h1>Watchers in the Dark</h1>
-      <p class="series">The Godfire Series</p>
+  <p>
+    Elias Fetch makes a living cleaning up other people’s supernatural messes, yet even he has limits.
+    When a soft-spoken stranger named Louis arrives in New Orleans with a problem that feels wrong in all the ways Elias has learned to fear, he takes the job anyway.
+  </p>
 
-      <p class="blurb">
-        Elias Fetch makes a living cleaning up supernatural messes, but even he has limits. When a soft-spoken stranger named Louis arrives in New Orleans with a disturbing problem, Elias is pulled into a case that feels wrong from the start.
-      </p>
+  <p>
+    What begins as routine work unravels into something older than the city itself—where drained bodies, fractured identities, and quiet distortions in reality begin to surface.
+  </p>
 
-      <p class="blurb">
-        What begins as a routine job unravels into something far older and more dangerous than the city itself.
-      </p>
+  <p>
+    As Elias is pulled deeper into the pattern, he discovers the truth is not hunting Louis—it is bound to him, shaped by a history he refuses to name.
+  </p>
 
-      <p class="blurb">
-        As Elias digs deeper, he realizes the truth may be more dangerous than the problem itself.
-      </p>
-
-      <div class="actions">
-        <a href="#" class="btn">Preorder (Coming Soon)</a>
-        <a href="/books" class="btn secondary">Back to Books</a>
-      </div>
-
-    </div>
-  </section>
-</Layout>
-
-<style>
-.book-page { padding: 80px 20px; }
-.container { max-width: 800px; margin: 0 auto; text-align: center; }
-.cover { width: 260px; border-radius: 8px; margin-bottom: 20px; }
-.series { opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
-.blurb { text-align: left; margin: 16px auto; line-height: 1.6; max-width: 650px; opacity: 0.85; }
-.actions { margin-top: 30px; display: flex; gap: 12px; justify-content: center; }
-.btn { padding: 10px 14px; border: 1px solid black; text-decoration: none; color: black; }
-.secondary { opacity: 0.6; }
-</style>
+</BookLayout>
