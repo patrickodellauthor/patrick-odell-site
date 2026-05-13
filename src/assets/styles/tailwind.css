@@ -14,12 +14,15 @@
   --color-muted: var(--aw-color-text-muted);
 
   --font-sans:
-    'var(--aw-font-sans, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: 'var(--aw-font-serif, ui-serif)', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-heading: 'var(--aw-font-heading, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif;
+    'var(--aw-font-sans, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  --animate-fade: fadeInUp 1s both;
+  --font-serif:
+    'var(--aw-font-serif, ui-serif)', ui-serif, Georgia, Cambria,
+    'Times New Roman', Times, serif;
+
+  --font-heading:
+    'var(--aw-font-heading, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif;
 
   @keyframes fadeInUp {
     0% {
@@ -31,119 +34,49 @@
       transform: translateY(0);
     }
   }
-}
 
-@utility bg-page {
-  background-color: var(--aw-color-bg-page);
-}
-
-@utility bg-dark {
-  background-color: var(--aw-color-bg-page-dark);
-}
-
-@utility bg-light {
-  background-color: var(--aw-color-bg-page);
-}
-
-@utility text-page {
-  color: var(--aw-color-text-page);
-}
-
-@utility text-muted {
-  color: var(--aw-color-text-muted);
-}
-
-@utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
-}
-
-@utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
-}
-
-@utility btn-secondary {
-  @apply btn;
-}
-
-@utility btn-tertiary {
-  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
-}
-
-#header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
-}
-.dark #header.scroll > div:first-child,
-#header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
-  box-shadow: none;
-}
-
-#header.expanded nav {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  bottom: 70px !important;
-  padding: 0 5px;
-}
-
-.dropdown:focus .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-[astro-icon].icon-light > * {
-  stroke-width: 1.2;
-}
-
-[astro-icon].icon-bold > * {
-  stroke-width: 2.4;
-}
-
-[data-aw-toggle-menu] path {
-  @apply transition;
-}
-[data-aw-toggle-menu].expanded g > path:first-child {
-  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
-}
-[data-aw-toggle-menu].expanded g > path:last-child {
-  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
-}
-
-.dd *:first-child {
-  margin-top: 0;
+  --animate-fade: fadeInUp 1s both;
 }
 
 /* ===============================
-   LITERARY TYPOGRAPHY SYSTEM
+   BASE PAGE BACKGROUND (WARM SHIFT)
+   =============================== */
+
+@utility bg-page {
+  background-color: #15130f; /* warm ink-black (replaces cold near-black) */
+}
+
+@utility bg-dark {
+  background-color: #12110f;
+}
+
+@utility bg-light {
+  background-color: #f4efe6;
+}
+
+/* ===============================
+   TEXT SYSTEM (WARM, READABLE)
    =============================== */
 
 body {
   font-family: ui-serif, Georgia, "Times New Roman", serif;
-  background: #0b0c10;
-
-  /* warm parchment base instead of pure white */
-  color: rgba(232, 224, 210, 0.86);
-
+  background: #15130f;
+  color: rgba(240, 232, 220, 0.88);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* HEADINGS — editorial weight refinement */
+/* HEADINGS */
 h1, h2, h3 {
-  color: rgba(245, 236, 220, 0.92); /* warm highlight layer */
+  color: rgba(245, 238, 226, 0.92);
   letter-spacing: 0.25px;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-/* Scale tuning (cinematic / imprint feel) */
 h1 {
   font-size: 3rem;
   font-weight: 500;
-  letter-spacing: 0.3px;
 }
 
 h2 {
@@ -156,40 +89,74 @@ h3 {
   font-weight: 400;
 }
 
-/* PARAGRAPHS — softer ink density */
+/* PARAGRAPHS */
 p {
-  color: rgba(224, 214, 198, 0.78);
+  color: rgba(230, 220, 205, 0.78);
   font-weight: 300;
   line-height: 1.75;
 }
 
-/* LINKS — restrained ink lift */
+/* LINKS */
 a {
   color: rgba(226, 212, 190, 0.78);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgba(245, 236, 220, 0.95);
+  color: rgba(250, 242, 230, 0.95);
 }
 
-/* SMALL / META TEXT */
+/* META TEXT */
 small,
 .meta,
 .tag,
 .series-tag {
-  color: rgba(210, 198, 178, 0.55);
+  color: rgba(210, 198, 178, 0.6);
   letter-spacing: 0.3px;
 }
 
-/* Subtle structural refinement */
+/* ===============================
+   BUTTON SYSTEM (FIXED - SINGLE SOURCE OF TRUTH)
+   =============================== */
+
+@utility btn {
+  @apply inline-flex items-center justify-center rounded-md border font-medium text-center transition;
+  @apply px-6 py-3 text-sm;
+  @apply border-gray-400/30;
+  color: rgba(240, 232, 220, 0.9);
+}
+
+@utility btn-primary {
+  @apply btn;
+  background: rgba(214, 196, 168, 0.92);
+  color: #15130f;
+}
+
+@utility btn-primary:hover {
+  background: rgba(228, 212, 186, 1);
+}
+
+@utility btn-secondary {
+  @apply btn;
+  background: transparent;
+}
+
+@utility btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(214, 196, 168, 0.5);
+}
+
+/* ===============================
+   STRUCTURE
+   =============================== */
+
 section {
   border-color: rgba(210, 198, 178, 0.12);
 }
 
-/* =========================
-   BOOK DETAIL PAGES
-   ========================= */
+/* ===============================
+   BOOK PAGES (kept, lightly warmed)
+   =============================== */
 
 .book-hero {
   padding: 100px 20px;
@@ -198,7 +165,6 @@ section {
 .book-hero .container {
   max-width: 1100px;
   margin: 0 auto;
-
   display: flex;
   gap: 50px;
   align-items: flex-start;
@@ -207,16 +173,7 @@ section {
 .cover {
   width: 340px;
   border-radius: 8px;
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.55),
-    0 0 1px rgba(255,255,255,0.04);
-
-  transition: transform 0.3s ease;
-}
-
-.cover:hover {
-  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
 }
 
 .info {
@@ -224,82 +181,15 @@ section {
   max-width: 620px;
 }
 
-.info h1 {
-  margin-bottom: 10px;
-}
-
-.series {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-
-  color: rgba(210,198,178,0.52);
-
-  margin-bottom: 24px;
-}
-
-.blurb {
-  margin-bottom: 18px;
-}
-
 .actions {
   display: flex;
   gap: 12px;
-
   margin-top: 30px;
-  margin-bottom: 20px;
 }
 
-.btn {
-  display: inline-block;
-
-  padding: 11px 16px;
-
-  border-radius: 6px;
-
-  font-size: 0.84rem;
-  letter-spacing: 0.2px;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.btn.primary {
-  background: rgba(214, 196, 168, 0.92);
-  color: #0b0c10;
-}
-
-.btn.primary:hover {
-  background: rgba(228, 212, 186, 1);
-}
-
-.btn.secondary {
-  border: 1px solid rgba(214,196,168,0.34);
-
-  color: rgba(228,220,204,0.84);
-
-  background: transparent;
-}
-
-.btn.secondary:hover {
-  border-color: rgba(214,196,168,0.68);
-
-  color: rgba(240,232,216,1);
-}
-
-.meta {
-  font-size: 0.82rem;
-
-  color: rgba(200,190,176,0.52);
-
-  letter-spacing: 0.25px;
-}
-
-/* =========================
+/* ===============================
    MOBILE
-   ========================= */
+   =============================== */
 
 @media (max-width: 900px) {
   .book-hero .container {
