@@ -11,6 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+
 import Footer from '~/components/Footer.astro';
 
 import { ClientRouter } from 'astro:transitions';
@@ -57,6 +58,7 @@ const { language, textDirection } = I18N;
     <header class="nav">
       <div class="nav-inner">
 
+        <!-- LEFT / CENTER BRAND -->
         <div class="nav-center">
           <a class="logo" href="/">Patrick O’Dell</a>
           <div class="subtitle">The Godfire Series</div>
@@ -68,7 +70,6 @@ const { language, textDirection } = I18N;
 
             <div class="dropdown">
               <button class="dropbtn">Books ▾</button>
-
               <div class="dropdown-content">
                 <a href="/books">All Books</a>
                 <a href="/books/gods-and-monsters">Gods and Monsters</a>
@@ -79,7 +80,6 @@ const { language, textDirection } = I18N;
 
             <div class="dropdown">
               <button class="dropbtn">Lore ▾</button>
-
               <div class="dropdown-content">
                 <a href="/lore">Overview</a>
                 <a href="/lore/timeline">Timeline</a>
@@ -96,28 +96,65 @@ const { language, textDirection } = I18N;
           </nav>
         </div>
 
+        <!-- RIGHT: SOCIAL ICONS -->
+        <div class="nav-social">
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/patrickodellauthor/" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/patrickodellauthor" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zM17.5 6.5a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@patrickodellauthor" target="_blank" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M21 8.5a6.5 6.5 0 0 1-4-1.4v6.6a5.8 5.8 0 1 1-5.8-5.8c.2 0 .4 0 .6.02v2.8a3 3 0 1 0 2.2 2.9V2h2.8a4.5 4.5 0 0 0 4.2 4.5z"/>
+            </svg>
+          </a>
+
+          <!-- Threads -->
+          <a href="https://www.threads.com/@patrickodellauthor" target="_blank" aria-label="Threads">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm1-11c-2.2 0-3.5 1.3-3.5 3.2h1.8c0-1 .7-1.5 1.7-1.5 1.1 0 1.7.6 1.7 1.6 0 1.1-.8 1.6-2.1 1.6h-.7v1.6h.8c1.6 0 2.3.6 2.3 1.7 0 1-.8 1.7-2 1.7-1.2 0-2-.6-2-1.8h-1.8c0 2 1.5 3.3 3.8 3.3 2.4 0 3.9-1.3 3.9-3.1 0-1.3-.7-2.1-2-2.5 1.2-.4 1.8-1.2 1.8-2.4C16 9.2 14.5 8 13 8z"/>
+            </svg>
+          </a>
+
+          <!-- Bluesky -->
+          <a href="https://bsky.app/profile/patrickodellauthor.bsky.social" target="_blank" aria-label="Bluesky">
+            <svg viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M12 11c-2-3-5-4-7-4 0 4 2 7 5 8-2 1-4 3-4 6 3 0 5-2 6-4 1 2 3 4 6 4 0-3-2-5-4-6 3-1 5-4 5-8-2 0-5 1-7 4z"/>
+            </svg>
+          </a>
+
+        </div>
+
       </div>
     </header>
 
     <!-- PAGE CONTENT -->
-    <main>
-      <slot />
-    </main>
+    <slot />
 
     <Footer />
-
     <BasicScripts />
 
   </body>
 </html>
 
 <style>
+
 /* =========================
    NAVBAR CORE
-   ========================= */
+========================= */
 
 .nav {
-  overflow: visible;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -134,114 +171,109 @@ const { language, textDirection } = I18N;
   padding: 18px 24px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
+/* CENTER BLOCK */
 .nav-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  flex: 1;
 }
 
-/* =========================
-   BRANDING
-   ========================= */
+/* BRAND */
 
 .logo {
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-weight: 400;
-  letter-spacing: 0.4px;
   font-size: 0.95rem;
 }
 
 .subtitle {
   font-size: 0.75rem;
-  letter-spacing: 0.3px;
   color: rgba(255,255,255,0.45);
 }
 
-/* =========================
-   MENU
-   ========================= */
+/* MENU */
 
 .menu {
   display: flex;
   gap: 22px;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .menu a,
 .dropbtn {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
   font: inherit;
-  font-weight: 300;
   font-size: 0.92rem;
-  letter-spacing: 0.25px;
-
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
 
 .menu a:hover,
 .dropbtn:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255,255,255,0.95);
 }
 
-/* =========================
-   DROPDOWNS
-   ========================= */
+/* DROPDOWNS */
 
 .dropdown {
   position: relative;
-  display: inline-flex;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-
-  padding-top: 10px;
   min-width: 200px;
-
+  padding-top: 10px;
   z-index: 9999;
 }
 
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown-content a {
   display: block;
   padding: 10px 14px;
-
-  background: rgba(12, 12, 14, 0.96);
+  background: rgba(12,12,14,0.96);
   border: 1px solid rgba(255,255,255,0.08);
-
-  color: rgba(255,255,255,0.75);
 }
 
-.dropdown-content a:hover {
-  background: rgba(255,255,255,0.06);
+/* SOCIALS */
+
+.nav-social {
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
 
-/* =========================
-   PAGE BASE
-   ========================= */
+.icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(210,198,178,0.6);
+  transition: color 0.2s ease;
+}
+
+.nav-social a:hover .icon {
+  color: rgba(245,236,220,0.92);
+}
+
+/* PAGE BASE */
 
 body {
   margin: 0;
 }
+
 </style>
