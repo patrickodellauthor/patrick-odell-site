@@ -11,6 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import Footer from '~/components/Footer.astro';
 
 import { ClientRouter } from 'astro:transitions';
 
@@ -99,7 +100,11 @@ const { language, textDirection } = I18N;
     </header>
 
     <!-- PAGE CONTENT -->
-    <slot />
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
 
     <BasicScripts />
 
