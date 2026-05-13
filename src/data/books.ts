@@ -18,7 +18,7 @@ export const books = [
     ],
 
     seo: {
-      description: "Gods and Monsters by Patrick O’Dell — The Godfire Series"
+      description: "Gods and Monsters by Patrick O’Dell"
     }
   },
 
@@ -34,13 +34,10 @@ export const books = [
       height: 900
     },
 
-    blurb: [
-      "A continuation in The Godfire Series.",
-      "Details to be expanded."
-    ],
+    blurb: ["(add your real description here)"],
 
     seo: {
-      description: "Watchers in the Dark by Patrick O’Dell — The Godfire Series"
+      description: "Watchers in the Dark by Patrick O’Dell"
     }
   },
 
@@ -56,12 +53,10 @@ export const books = [
       height: 900
     },
 
-    blurb: [
-      "Coming soon."
-    ],
+    blurb: ["Coming soon"],
 
     seo: {
-      description: "The Dream Eater’s Bargain by Patrick O’Dell — Coming Soon"
+      description: "The Dream Eater’s Bargain by Patrick O’Dell"
     }
   }
 ];
