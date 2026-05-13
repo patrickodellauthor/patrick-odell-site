@@ -59,8 +59,13 @@ const pageMetadata = {
 
         <div class="nav-center">
 
-          <a class="logo" href="/">Patrick O’Dell</a>
-          <div class="subtitle">The Godfire Series</div>
+          <a class="logo" href="/">
+            <img
+              src="/patrick-odell-logo.png"
+              alt="Patrick O’Dell"
+              class="nav-logo"
+            />
+          </a>
 
           <nav class="menu">
 
@@ -244,6 +249,16 @@ const pageMetadata = {
   color: rgba(250,242,230,0.95);
 }
 
+.nav-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+.nav-logo:hover {
+  opacity: 1;
+}
 body {
   margin: 0;
 }
