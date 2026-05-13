@@ -2,11 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout metadata={{ title: "Patrick O’Dell | Author" }}>
+<Layout
+  metadata={{
+    title: "Patrick O’Dell | Author",
+    description:
+      "Official website of Patrick O’Dell, author of The Godfire Series — fantasy and urban fantasy fiction focused on hidden systems, transformation, and the structures beneath reality.",
+  }}
+>
 
-  <!-- FEATURED BOOK (CENTERED HERO) -->
+  <!-- FEATURED BOOK / HERO -->
   <section class="section hero">
-    <div class="container center">
+    <div class="container center hero-layout">
 
       <a href="/books/gods-and-monsters" class="hero-media">
         <img
@@ -32,6 +38,7 @@ import Layout from "../layouts/Layout.astro";
           <a class="btn primary" href="/books/gods-and-monsters">
             View Book
           </a>
+
           <a class="btn secondary" href="/books">
             Explore Series
           </a>
@@ -42,53 +49,80 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- NEWS (CENTERED + LARGER + ELEVATED) -->
-  <section class="section">
+  <!-- NEWS & UPDATES -->
+  <section class="section news-section">
     <div class="container center">
 
-      <span class="kicker">News & Updates</span>
-      <h2>Latest Dispatches</h2>
+      <div class="section-heading">
+        <span class="kicker">News & Updates</span>
+        <h2>Latest Updates</h2>
+      </div>
 
       <div class="news-box">
 
-        <div class="news-item">
+        <article class="news-item">
           <span class="date">May 2026</span>
-          <p>The Godfire Series continues development across multiple entries.</p>
-        </div>
 
-        <div class="news-item">
+          <p>
+            The Godfire Series continues development across multiple entries,
+            including ongoing revisions and expanded worldbuilding systems.
+          </p>
+        </article>
+
+        <article class="news-item">
           <span class="date">May 2026</span>
-          <p>The website is being rebuilt for a warmer, more immersive reading experience.</p>
-        </div>
 
-        <div class="news-item">
+          <p>
+            The official Patrick O’Dell website is being rebuilt around a
+            warmer, editorial-style reading experience.
+          </p>
+        </article>
+
+        <article class="news-item">
           <span class="date">April 2026</span>
-          <p>New Elderspeech systems and lore archives are being integrated.</p>
-        </div>
 
-        <div class="news-item">
+          <p>
+            New Elderspeech systems, lore archives, and timeline structures
+            are currently being prepared for site integration.
+          </p>
+        </article>
+
+        <article class="news-item">
           <span class="date">March 2026</span>
-          <p>Expanded worldbuilding documentation added to internal canon.</p>
-        </div>
+
+          <p>
+            Internal canon documentation and structural worldbuilding archives
+            continue expanding behind the scenes.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <span class="date">February 2026</span>
+
+          <p>
+            Additional Godfire Series material and supporting narrative systems
+            entered active development.
+          </p>
+        </article>
 
       </div>
 
     </div>
   </section>
 
-  <!-- AUTHOR (CENTERED BIO BLOCK) -->
-  <section class="section">
-    <div class="container center">
+  <!-- AUTHOR -->
+  <section class="section author-section">
+    <div class="container center author-layout">
 
-      <a href="/about">
+      <a href="/about" class="author-media">
         <img
           src="/patrick-odell-author.jpg"
-          alt="Patrick O’Dell"
+          alt="Patrick O’Dell Author Portrait"
           class="author-image"
         />
       </a>
 
-      <div class="hero-text">
+      <div class="author-text">
 
         <span class="kicker">Author</span>
 
@@ -96,7 +130,8 @@ import Layout from "../layouts/Layout.astro";
 
         <p>
           Patrick O’Dell writes fantasy and urban fantasy fiction centered on
-          hidden systems beneath reality, fractured identity, and transformation.
+          hidden systems beneath reality, fractured identity, transformation,
+          and the cost of power.
         </p>
 
         <a class="btn secondary" href="/about">
@@ -112,115 +147,263 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
 
-/* CORE CENTERED SYSTEM */
-.container.center {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+/* =========================
+   GLOBAL LAYOUT
+========================= */
+
+.section {
+  padding: 72px 20px;
 }
 
-/* HERO IMAGE */
+.section + .section {
+  border-top: 1px solid rgba(210,198,178,0.06);
+}
+
+.container.center {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+}
+
+.hero-media {
+  flex-shrink: 0;
+}
+
 .hero-image {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto 28px;
-  display: block;
+  width: 260px;
   border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-  transition: transform 0.25s ease;
+
+  display: block;
+
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.42);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .hero-image:hover {
   transform: translateY(-4px);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.48);
 }
 
-/* AUTHOR IMAGE */
+.hero-text {
+  max-width: 470px;
+}
+
+.hero-text p {
+  margin-top: 0;
+}
+
+/* =========================
+   AUTHOR
+========================= */
+
+.author-section {
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.author-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+}
+
+.author-text {
+  max-width: 500px;
+}
+
 .author-image {
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
-  margin: 0 auto 24px;
+  width: 185px;
+
   display: block;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 22px 55px rgba(0,0,0,0.34);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
-/* TYPOGRAPHY */
+.author-image:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 28px 65px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
 .kicker {
+  display: block;
+
+  margin-bottom: 10px;
+
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(188,170,146,0.55);
-  display: block;
-  margin-bottom: 10px;
+
+  color: rgba(188,170,146,0.58);
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
+  font-size: 2rem;
+  line-height: 1.08;
+
+  margin-bottom: 14px;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+  line-height: 1.15;
+
   margin-bottom: 12px;
 }
 
 p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: rgba(230,220,205,0.8);
-  max-width: 640px;
-  margin: 0 auto;
+  font-size: 0.98rem;
+  line-height: 1.82;
+
+  color: rgba(230,220,205,0.78);
 }
 
-/* NEWS BOX (CENTERED + LARGER) */
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-top: 24px;
+}
+
+.btn {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   NEWS FEED
+========================= */
+
+.news-section {
+  padding-top: 44px;
+}
+
 .news-box {
-  margin-top: 22px;
-  max-height: 320px;
+  max-width: 760px;
+
+  margin: 0 auto;
+  margin-top: 26px;
+
+  max-height: 420px;
   overflow-y: auto;
 
-  padding: 18px;
-  border-radius: 8px;
-
-  border: 1px solid rgba(214,196,168,0.18);
-  background: rgba(255,255,255,0.02);
+  padding: 10px 8px 10px 0;
 
   text-align: left;
 }
 
 .news-item {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 22px 0;
+
+  border-bottom:
+    1px solid rgba(210,198,178,0.12);
 }
 
 .news-item:last-child {
   border-bottom: none;
 }
 
-.news-item .date {
-  font-size: 0.72rem;
-  color: rgba(188,170,146,0.6);
+.news-item p {
+  margin: 0;
+}
+
+.date {
   display: block;
-  margin-bottom: 4px;
+
+  margin-bottom: 7px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: rgba(188,170,146,0.58);
 }
 
-/* BUTTONS */
-.buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* SECTION SPACING FIX */
-.section {
-  padding: 80px 20px;
-}
-
-/* RESPONSIVE */
 @media (max-width: 860px) {
-  h1 { font-size: 1.9rem; }
-  h2 { font-size: 1.4rem; }
+
+  .hero-layout,
+  .author-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-text,
+  .author-text {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    width: 240px;
+  }
+
+  .author-image {
+    width: 170px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .section {
+    padding: 64px 20px;
+  }
 }
 
 </style>
