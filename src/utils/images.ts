@@ -91,11 +91,14 @@ export const adaptOpenGraphImages = async (
         }
 
         if (typeof _image === 'object') {
-          return {
-            url: 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '',
-            width: 'width' in _image && typeof _image.width === 'number' ? _image.width : undefined,
-            height: 'height' in _image && typeof _image.height === 'number' ? _image.height : undefined,
-          };
+          const url = 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '';
+          const width = 'width' in _image && typeof _image.width === 'number' ? _image.width : undefined;
+          const height = 'height' in _image && typeof _image.height === 'number' ? _image.height : undefined;
+          
+          // Only return an image object if we have all required properties
+          if (url && width && height) {
+            return { url, width, height };
+          }
         }
         return {
           url: '',
