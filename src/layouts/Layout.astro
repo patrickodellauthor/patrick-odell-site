@@ -19,9 +19,10 @@ import type { MetaData as MetaDataType } from '~/types';
 
 interface Props {
   metadata?: MetaDataType;
+  footer?: boolean;
 }
 
-const { metadata = {} } = Astro.props as Props;
+const { metadata = {}, footer = true } = Astro.props as Props;
 
 const { language, textDirection } = I18N;
 
@@ -137,7 +138,7 @@ const pageMetadata = {
 
     <slot />
 
-    <Footer />
+    {footer && <Footer />}
     <BasicScripts />
 
   </body>
