@@ -1,1 +1,125 @@
 
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = [
+  {
+    title: "Welcome to the Blog",
+    date: "2026-05-13",
+    excerpt: "Thoughts on writing, worldbuilding, and upcoming projects.",
+    slug: "#"
+  },
+  {
+    title: "Building The Godfire Series",
+    date: "2026-05-01",
+    excerpt: "A look at how the series came together and what’s coming next.",
+    slug: "#"
+  },
+  {
+    title: "Urban Fantasy vs Traditional Fantasy",
+    date: "2026-04-20",
+    excerpt: "Why I prefer grounded magic systems with humor and consequence.",
+    slug: "#"
+  }
+];
+---
+
+<Layout
+  metadata={{
+    title: "Blog | Patrick O’Dell",
+    description: "Updates, writing notes, and worldbuilding from Patrick O’Dell"
+  }}
+>
+
+<section class="blog">
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Blog</h1>
+      <p>Notes, updates, and behind-the-scenes writing thoughts.</p>
+    </header>
+
+    <div class="grid">
+
+      {posts.map((post) => (
+        <a class="card" href={`/blog/${post.slug}`}>
+          <div class="meta">{post.date}</div>
+          <h2>{post.title}</h2>
+          <p>{post.excerpt}</p>
+        </a>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+</Layout>
+
+<style>
+.blog {
+  padding: 90px 24px 120px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h1 {
+  margin-bottom: 12px;
+}
+
+.header p {
+  opacity: 0.8;
+  font-size: 1.05rem;
+}
+
+/* BLOG GRID */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* POST CARD */
+.card {
+  display: block;
+  padding: 20px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.05);
+}
+
+.meta {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.card p {
+  opacity: 0.8;
+  font-size: 1rem;
+}
+</style>
