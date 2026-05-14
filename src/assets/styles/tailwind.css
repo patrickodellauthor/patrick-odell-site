@@ -137,7 +137,6 @@ small,
   color: #15130f;
 }
 
-/* hover state MUST be normal CSS */
 .btn-primary:hover {
   background: rgba(228, 212, 186, 1);
 }
@@ -148,7 +147,6 @@ small,
   background: transparent;
 }
 
-/* hover state MUST be normal CSS */
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(214, 196, 168, 0.5);
