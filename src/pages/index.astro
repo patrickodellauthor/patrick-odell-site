@@ -55,57 +55,124 @@ const featured = books[0];
 
 </section>
 
+<section class="author-section">
+
+  <div class="author-container">
+
+    <div class="author-text">
+
+      <p class="eyebrow">AUTHOR</p>
+
+      <h2>Patrick O’Dell</h2>
+
+      <p>
+        Patrick O’Dell writes dark fantasy and supernatural fiction focused on
+        impossible worlds, cosmic horror, fae mythology, and fractured realities.
+      </p>
+
+      <p>
+        Current projects include The Godfire Series and multiple connected lore systems,
+        including Elderspeech and the realm known as Otherside.
+      </p>
+
+      <a href="/about" class="secondary-btn">
+        Learn More
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="updates-section">
+
+  <div class="updates-container">
+
+    <p class="eyebrow">LATEST</p>
+
+    <h2>Updates & News</h2>
+
+    <div class="updates-grid">
+
+      <div class="update-card">
+        <h3>The Dream Eater’s Bargain</h3>
+        <p>
+          Currently in development as the third entry in The Godfire Series.
+        </p>
+      </div>
+
+      <div class="update-card">
+        <h3>Worldbuilding Archive</h3>
+        <p>
+          Expanded lore sections and Elderspeech archives are planned for the site.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 </Layout>
 
 <style>
 .hero {
-  padding: 90px 24px 120px;
+  padding: 70px 24px 100px;
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 480px 1fr;
-  gap: 70px;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
 
   align-items: center;
 }
 
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
 .hero-image img {
   width: 100%;
-  max-width: 480px;
+  max-width: 380px;
 
   border-radius: 12px;
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.55);
+    0 24px 60px rgba(0,0,0,0.5);
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 620px;
 }
 
 .hero-content h1 {
-  margin: 16px 0 24px;
+  margin: 14px 0 22px;
+  font-size: 3rem;
 }
 
 .hero-content p {
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   opacity: 0.7;
 }
 
 .hero-actions {
   display: flex;
-  gap: 18px;
-  margin-top: 36px;
+  gap: 16px;
+  margin-top: 34px;
 }
 
 .primary-btn,
@@ -130,16 +197,60 @@ const featured = books[0];
   transform: translateY(-2px);
 }
 
+.author-section,
+.updates-section {
+  padding: 0 24px 100px;
+}
+
+.author-container,
+.updates-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.author-text {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.author-text h2,
+.updates-container h2 {
+  margin-bottom: 20px;
+}
+
+.author-text p {
+  margin-bottom: 18px;
+}
+
+.updates-container {
+  text-align: center;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+.update-card {
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.update-card h3 {
+  margin-bottom: 14px;
+}
+
 @media (max-width: 980px) {
 
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .hero-image img {
-    max-width: 360px;
-    margin: 0 auto;
   }
 
   .hero-content {
@@ -148,6 +259,10 @@ const featured = books[0];
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 320px;
   }
 }
 </style>
