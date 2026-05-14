@@ -1,33 +1,16 @@
-
 ---
 import Layout from "../../layouts/Layout.astro";
+import { posts } from "../../data/blog";
 
-const posts = [
-  {
-    title: "Welcome to the Blog",
-    date: "2026-05-13",
-    excerpt: "Thoughts on writing, worldbuilding, and upcoming projects.",
-    slug: "#"
-  },
-  {
-    title: "Building The Godfire Series",
-    date: "2026-05-01",
-    excerpt: "A look at how the series came together and what’s coming next.",
-    slug: "#"
-  },
-  {
-    title: "Urban Fantasy vs Traditional Fantasy",
-    date: "2026-04-20",
-    excerpt: "Why I prefer grounded magic systems with humor and consequence.",
-    slug: "#"
-  }
-];
+const sorted = posts.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 ---
 
 <Layout
   metadata={{
     title: "Blog | Patrick O’Dell",
-    description: "Updates, writing notes, and worldbuilding from Patrick O’Dell"
+    description: "Writing updates, thoughts, and urban fantasy development notes."
   }}
 >
 
@@ -37,16 +20,16 @@ const posts = [
 
     <header class="header">
       <h1>Blog</h1>
-      <p>Notes, updates, and behind-the-scenes writing thoughts.</p>
+      <p>Writing updates, worldbuilding, and behind-the-scenes notes.</p>
     </header>
 
     <div class="grid">
 
-      {posts.map((post) => (
+      {sorted.map((post) => (
         <a class="card" href={`/blog/${post.slug}`}>
           <div class="meta">{post.date}</div>
           <h2>{post.title}</h2>
-          <p>{post.excerpt}</p>
+          <p>{post.description}</p>
         </a>
       ))}
 
@@ -60,7 +43,7 @@ const posts = [
 
 <style>
 .blog {
-  padding: 90px 24px 120px;
+  padding: 90px 24px;
 }
 
 .container {
@@ -73,27 +56,20 @@ const posts = [
   margin-bottom: 60px;
 }
 
-.header h1 {
-  margin-bottom: 12px;
-}
-
 .header p {
   opacity: 0.8;
-  font-size: 1.05rem;
 }
 
-/* BLOG GRID */
 .grid {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
-/* POST CARD */
 .card {
   display: block;
-  padding: 20px 22px;
-  border-radius: 12px;
+  padding: 18px 20px;
+  border-radius: 10px;
   text-decoration: none;
 
   background: rgba(255,255,255,0.03);
@@ -110,16 +86,14 @@ const posts = [
 .meta {
   font-size: 0.85rem;
   opacity: 0.6;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
 .card p {
   opacity: 0.8;
-  font-size: 1rem;
 }
 </style>
