@@ -7,7 +7,6 @@ import type { SEOProps } from 'astro-seo';
 import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData, MetaDataOpenGraph } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
-
 import { adaptOpenGraphImages } from '~/utils/images';
 
 export interface Props extends MetaData {
@@ -41,34 +40,36 @@ const mergedOg: MetaDataOpenGraph = merge(
 
 const adaptedOg = await adaptOpenGraphImages(mergedOg, Astro.site);
 
-// Filter out invalid images - ONLY images with ALL required properties
+// -----------------------------
+// SAFE IMAGE FILTER (CRITICAL FIX)
+// -----------------------------
 const safeImages =
-  adaptedOg?.images?.filter((img) => {
-    // Must have url, width, and height
-    return img?.url && typeof img?.width === 'number' && typeof img?.height === 'number';
-  }) ?? [];
+  adaptedOg?.images
+    ?.filter((img) =>
+      img?.url &&
+      typeof img?.width === 'number' &&
+      typeof img?.height === 'number' &&
+      img.width > 0 &&
+      img.height > 0
+    )
+    .map((img) => ({
+      url: img.url,
+      width: Number(img.width),
+      height: Number(img.height),
+    })) ?? [];
 
 const firstImage = safeImages[0];
 
-// Debug: Log what we're actually sending
-if (firstImage) {
-  console.log('📸 OpenGraph Image:', {
-    url: firstImage.url,
-    width: firstImage.width,
-    height: firstImage.height,
-  });
-} else {
-  console.log('⚠️  No valid OpenGraph image found');
-}
+// fallback guard (prevents build crash)
+const hasValidImage = Boolean(firstImage?.url && firstImage?.width && firstImage?.height);
 
 // -----------------------------
 // OPEN GRAPH BUILDER
 // -----------------------------
 function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefined {
-  if (!og || !firstImage?.url) return undefined;
+  if (!og || !hasValidImage) return undefined;
 
-  // Ensure dimensions are numbers
-  const ogImage = {
+  return {
     basic: {
       title: title || METADATA?.title?.default || '',
       type: og.type || 'website',
@@ -82,13 +83,11 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
     },
     image: {
       url: firstImage.url,
-      width: Number(firstImage.width),
-      height: Number(firstImage.height),
+      width: firstImage.width,
+      height: firstImage.height,
       alt: title || METADATA?.title?.default || '',
     },
   };
-
-  return ogImage;
 }
 
 // -----------------------------
@@ -96,7 +95,7 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
 // -----------------------------
 const mergedTwitter = merge(
   {
-    card: safeImages.length ? 'summary_large_image' : 'summary',
+    card: hasValidImage ? 'summary_large_image' : 'summary',
   },
   METADATA?.twitter ?? {},
   twitter ?? {}
@@ -107,7 +106,10 @@ const mergedTwitter = merge(
 // -----------------------------
 const seoProps: SEOProps = {
   title: title || METADATA?.title?.default || '',
-  titleTemplate: ignoreTitleTemplate ? '%s' : METADATA?.title?.template || '%s',
+  titleTemplate: ignoreTitleTemplate
+    ? '%s'
+    : METADATA?.title?.template || '%s',
+
   canonical,
 
   noindex:
@@ -123,6 +125,7 @@ const seoProps: SEOProps = {
   description: description || METADATA?.description,
 
   openGraph: buildOpenGraph(adaptedOg),
+
   twitter: mergedTwitter,
 
   surpressWarnings: true,
