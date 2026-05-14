@@ -2,122 +2,123 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("post"))
-  .filter((post) => !post.data.draft)
-  .sort(
-    (a, b) =>
-      new Date(b.data.publishDate ?? 0).getTime() -
-      new Date(a.data.publishDate ?? 0).getTime()
-  );
+const posts = await getCollection("post");
 ---
 
 <Layout
   metadata={{
     title: "Blog | Patrick O’Dell",
-    description: "Updates, stories, and thoughts from Patrick O’Dell"
+    description: "Blog posts by Patrick O’Dell"
   }}
 >
 
-<section class="blog">
+<section class="blog-page">
+
   <div class="container">
 
-    <header class="blog-header">
+    <header class="header">
       <h1>Blog</h1>
-      <p>Updates, writing notes, and behind-the-scenes worldbuilding.</p>
+      <p>Notes, updates, and behind-the-scenes writing from Patrick O’Dell.</p>
     </header>
 
-    <div class="posts">
-      {posts.map((post) => (
-        <a class="post-card" href={`/blog/${post.slug}`}>
-          
-          {post.data.image && (
-            <img src={post.data.image} alt={post.data.title} />
-          )}
+    <div class="posts-grid">
 
-          <div class="content">
-            <h2>{post.data.title}</h2>
+      {posts
+        .filter((post) => !post.data.draft)
+        .sort((a, b) => {
+          const aDate = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+          const bDate = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+          return bDate - aDate;
+        })
+        .map((post) => (
+          <a class="post-card" href={`/blog/${post.id}`}>
 
-            {post.data.excerpt && (
-              <p>{post.data.excerpt}</p>
-            )}
+            <div class="post-content">
 
-            {post.data.publishDate && (
-              <small>
-                {new Date(post.data.publishDate).toLocaleDateString()}
-              </small>
-            )}
-          </div>
+              <h2>{post.data.title}</h2>
 
-        </a>
-      ))}
+              {post.data.excerpt && (
+                <p class="excerpt">{post.data.excerpt}</p>
+              )}
+
+              {post.data.publishDate && (
+                <div class="meta">
+                  {new Date(post.data.publishDate).toLocaleDateString()}
+                </div>
+              )}
+
+            </div>
+
+          </a>
+        ))}
+
     </div>
 
   </div>
+
 </section>
 
 </Layout>
 
 <style>
-.blog {
-  padding: 80px 24px 120px;
+.blog-page {
+  padding: 90px 24px;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.blog-header {
+.header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.blog-header h1 {
+.header h1 {
   margin-bottom: 10px;
 }
 
-.posts {
+.header p {
+  opacity: 0.75;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
 .post-card {
   display: block;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.08);
+  padding: 22px;
   border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .post-card:hover {
   transform: translateY(-4px);
+  background: rgba(255,255,255,0.05);
 }
 
-.post-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+.post-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
 }
 
-.content {
-  padding: 16px;
-}
-
-.content h2 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.content p {
+.excerpt {
+  opacity: 0.8;
   font-size: 0.95rem;
-  opacity: 0.85;
+  margin-bottom: 12px;
 }
 
-small {
-  display: block;
-  margin-top: 10px;
+.meta {
+  font-size: 0.85rem;
   opacity: 0.6;
 }
 </style>
