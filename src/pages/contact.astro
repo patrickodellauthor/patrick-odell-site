@@ -1,5 +1,5 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/Layout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -10,20 +10,18 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} footer={false}>
 
-  <!-- HERO -->
   <HeroText
     tagline="Contact"
     title="Let’s Talk"
-    subtitle="If you’ve read my work, spotted a typo, have theories, questions, or just want to say hello — I’m always happy to hear from readers."
+    subtitle="If you’ve read my books, have questions, theories, or just want to say hello — I’m always happy to hear from readers."
   />
 
-  <!-- CONTACT FORM -->
   <ContactUs
     id="form"
     title="Send a message"
-    subtitle="Drop a note below. I read everything that comes in (yes, even the long ones). I’ll usually respond within a few days."
+    subtitle="Drop a note below. I read everything, and I usually respond within a few days."
     inputs={[
       {
         type: 'text',
@@ -41,34 +39,29 @@ const metadata = {
     }}
     disclaimer={{
       label:
-        'By sending this message, you understand it will go directly to the author’s inbox.',
+        'By sending this message, you agree that your message will be delivered directly to the author.',
     }}
     description="Messages go to: patrickodellauthor@gmail.com"
   />
 
-  <!-- CONTACT INFO -->
   <Features2
-    title="What you can contact me about"
+    title="What you can reach out about"
     items={[
       {
         title: 'Books & Stories',
-        description:
-          'Thoughts, questions, theories, or “I can’t believe that happened” reactions.',
+        description: 'Questions, theories, reactions, or favorite moments.',
       },
       {
         title: 'Reader Messages',
-        description:
-          'I genuinely enjoy hearing how the stories land — confusion, excitement, and everything in between.',
+        description: 'I genuinely enjoy hearing from readers.',
       },
       {
         title: 'Media & Interviews',
-        description:
-          'Podcasts, interviews, guest features, or anything press-related.',
+        description: 'Podcasts, interviews, guest posts, and press.',
       },
       {
         title: 'Collaborations',
-        description:
-          'Creative projects, crossovers, or other writing-related work.',
+        description: 'Creative or writing-related projects.',
       },
       {
         title: 'Email',
