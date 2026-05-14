@@ -22,6 +22,7 @@ interface Props {
 }
 
 const { metadata = {} } = Astro.props as Props;
+
 const { language, textDirection } = I18N;
 
 const pageMetadata = {
@@ -40,6 +41,7 @@ const pageMetadata = {
     <ApplyColorMode />
 
     <Metadata {...pageMetadata} />
+
     <SiteVerification />
     <Analytics />
 
@@ -48,7 +50,7 @@ const pageMetadata = {
 
   <body class="antialiased text-default bg-page tracking-tight">
 
-    <!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
     <header class="nav">
       <div class="nav-inner">
 
@@ -63,7 +65,7 @@ const pageMetadata = {
             <a href="/">Home</a>
             <a href="/about">About</a>
 
-            <!-- BOOKS -->
+            <!-- BOOKS DROPDOWN -->
             <div class="dropdown">
               <button class="dropbtn">Books ▾</button>
               <div class="dropdown-content">
@@ -74,7 +76,7 @@ const pageMetadata = {
               </div>
             </div>
 
-            <!-- LORE -->
+            <!-- LORE DROPDOWN -->
             <div class="dropdown">
               <button class="dropbtn">Lore ▾</button>
               <div class="dropdown-content">
@@ -91,10 +93,9 @@ const pageMetadata = {
             <a href="/contact">Contact</a>
 
           </nav>
-
         </div>
 
-        <!-- SOCIAL ICONS (RESTORED) -->
+        <!-- SOCIALS -->
         <div class="nav-social">
 
           <a href="https://www.facebook.com/patrickodellauthor/" target="_blank" aria-label="Facebook">
@@ -109,19 +110,19 @@ const pageMetadata = {
             </svg>
           </a>
 
-          <a href="https://www.tiktok.com/@patrickodellauthor" target="_blank">
+          <a href="https://www.tiktok.com/@patrickodellauthor" target="_blank" aria-label="TikTok">
             <svg viewBox="0 0 24 24" class="icon">
               <path fill="currentColor" d="M21 8.5a6.5 6.5 0 0 1-4-1.4v6.6a5.8 5.8 0 1 1-5.8-5.8c.2 0 .4 0 .6.02v2.8a3 3 0 1 0 2.2 2.9V2h2.8a4.5 4.5 0 0 0 4.2 4.5z"/>
             </svg>
           </a>
 
-          <a href="https://www.threads.com/@patrickodellauthor" target="_blank">
+          <a href="https://www.threads.com/@patrickodellauthor" target="_blank" aria-label="Threads">
             <svg viewBox="0 0 24 24" class="icon">
               <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
             </svg>
           </a>
 
-          <a href="https://bsky.app/profile/patrickodellauthor.bsky.social" target="_blank">
+          <a href="https://bsky.app/profile/patrickodellauthor.bsky.social" target="_blank" aria-label="Bluesky">
             <svg viewBox="0 0 24 24" class="icon">
               <path fill="currentColor" d="M12 11c-2-3-5-4-7-4 0 4 2 7 5 8-2 1-4 3-4 6 3 0 5-2 6-4 1 2 3 4 6 4 0-3-2-5-4-6 3-1 5-4 5-8-2 0-5 1-7 4z"/>
             </svg>
@@ -139,3 +140,143 @@ const pageMetadata = {
 
   </body>
 </html>
+
+<style>
+/* =========================
+   NAV BASE
+   ========================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 14, 12, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(210,198,178,0.10);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+}
+
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+/* =========================
+   MENU
+   ========================= */
+
+.menu {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu a,
+.dropbtn {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.85;
+  font-size: 0.92rem;
+}
+
+.menu a:hover,
+.dropbtn:hover {
+  opacity: 1;
+  color: rgba(250,242,230,0.95);
+}
+
+/* =========================
+   DROPDOWNS (FIXED VISIBILITY)
+   ========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 10px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  background: rgba(18,16,14,0.96);
+}
+
+/* =========================
+   SOCIAL ICON FIX (IMPORTANT)
+   ========================= */
+
+.nav-social {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.nav-social svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+  color: rgba(210,198,178,0.6);
+}
+
+.nav-social a:hover svg {
+  color: rgba(250,242,230,0.95);
+}
+
+/* =========================
+   LOGO
+   ========================= */
+
+.nav-logo {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   SAFETY RESET
+   ========================= */
+
+body {
+  margin: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+</style>
