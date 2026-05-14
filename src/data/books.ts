@@ -3,7 +3,7 @@ export const books = [
     slug: "gods-and-monsters",
     title: "Gods and Monsters",
     series: "The Godfire Series",
-    status: "published",
+    status: "unpublished",
 
     cover: {
       src: "/gods-and-monsters-cover.jpg",
@@ -26,7 +26,7 @@ export const books = [
     slug: "watchers-in-the-dark",
     title: "Watchers in the Dark",
     series: "The Godfire Series",
-    status: "published",
+    status: "unpublished",
 
     cover: {
       src: "/watchers-in-the-dark-cover.jpg",
@@ -34,7 +34,7 @@ export const books = [
       height: 900
     },
 
-    blurb: ["(add your real description here)"],
+    blurb: ["Coming 2027"],
 
     seo: {
       description: "Watchers in the Dark by Patrick O’Dell"
@@ -48,12 +48,12 @@ export const books = [
     status: "coming-soon",
 
     cover: {
-      src: "/dream-eaters-bargain-cover.jpg",
+      src: "/the-dream-eaters-bargain-cover.jpg",
       width: 600,
       height: 900
     },
 
-    blurb: ["Coming soon"],
+    blurb: ["Coming 2027"],
 
     seo: {
       description: "The Dream Eater’s Bargain by Patrick O’Dell"
