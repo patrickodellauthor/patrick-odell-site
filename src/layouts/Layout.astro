@@ -19,12 +19,10 @@ import type { MetaData as MetaDataType } from '~/types';
 
 interface Props {
   metadata?: MetaDataType;
-  footer?: boolean;
 }
 
 const {
   metadata = {},
-  footer = true,
 } = Astro.props as Props;
 
 const { language, textDirection } = I18N;
@@ -54,7 +52,6 @@ const pageMetadata = {
 
   <body class="antialiased text-default bg-page tracking-tight">
 
-    <!-- NAV -->
     <header class="nav">
       <div class="nav-inner">
 
@@ -65,7 +62,6 @@ const pageMetadata = {
           </a>
 
           <nav class="menu">
-
             <a href="/">Home</a>
             <a href="/about">About</a>
 
@@ -93,12 +89,10 @@ const pageMetadata = {
             <a href="/faq">FAQ</a>
             <a href="/media-kit">Media Kit</a>
             <a href="/contact">Contact</a>
-
           </nav>
 
         </div>
 
-        <!-- SOCIALS -->
         <div class="nav-social">
           <a href="https://www.facebook.com/patrickodellauthor/" target="_blank">FB</a>
           <a href="https://www.instagram.com/patrickodellauthor" target="_blank">IG</a>
@@ -112,8 +106,7 @@ const pageMetadata = {
 
     <slot />
 
-    {footer && <Footer />}
-
+    <Footer />
     <BasicScripts />
   </body>
 </html>
