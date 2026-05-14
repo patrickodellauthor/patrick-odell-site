@@ -6,74 +6,76 @@ import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Contact',
+  description: 'Contact author Patrick O’Dell',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <!-- HERO -->
+  <HeroText
+    tagline="Contact"
+    title="Let’s Talk"
+    subtitle="If you’ve read my work, spotted a typo, have theories, questions, or just want to say hello — I’m always happy to hear from readers."
+  />
 
+  <!-- CONTACT FORM -->
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Send a message"
+    subtitle="Drop a note below. I read everything that comes in (yes, even the long ones). I’ll usually respond within a few days."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Your Name',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: 'Your Email',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Your Message',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'By sending this message, you understand it will go directly to the author’s inbox.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Messages go to: patrickodellauthor@gmail.com"
   />
 
-  <!-- Features2 Widget ************** -->
-
+  <!-- CONTACT INFO -->
   <Features2
-    title="We are here to help!"
+    title="What you can contact me about"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
+        title: 'Books & Stories',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Thoughts, questions, theories, or “I can’t believe that happened” reactions.',
       },
       {
-        title: 'Technical support',
+        title: 'Reader Messages',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'I genuinely enjoy hearing how the stories land — confusion, excitement, and everything in between.',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        title: 'Media & Interviews',
+        description:
+          'Podcasts, interviews, guest features, or anything press-related.',
+      },
+      {
+        title: 'Collaborations',
+        description:
+          'Creative projects, crossovers, or other writing-related work.',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'patrickodellauthor@gmail.com',
         icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
       },
     ]}
   />
+
 </Layout>
