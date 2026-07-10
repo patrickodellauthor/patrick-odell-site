@@ -2,7 +2,7 @@ export const books = [
   {
     slug: 'gods-and-monsters',
     title: 'Gods and Monsters',
-    series: 'The Godfire Series',
+    series: 'The Godfire Sage',
     status: 'unpublished',
 
     cover: {
@@ -25,7 +25,7 @@ export const books = [
   {
     slug: 'watchers-in-the-dark',
     title: 'Watchers in the Dark',
-    series: 'The Godfire Series',
+    series: 'The Godfire Sage',
     status: 'unpublished',
 
     cover: {
@@ -44,7 +44,7 @@ export const books = [
   {
     slug: 'the-dream-eaters-bargain',
     title: 'The Dream Eater’s Bargain',
-    series: 'The Godfire Series',
+    series: 'The Godfire Sage',
     status: 'coming-soon',
 
     cover: {
