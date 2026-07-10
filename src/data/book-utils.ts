@@ -1,4 +1,4 @@
-import { books } from "./books";
+import { books } from './books';
 
 /**
  * Temporary featured logic:
@@ -6,5 +6,5 @@ import { books } from "./books";
  * (we can upgrade this later to explicit featured flag or homepage config)
  */
 export function getFeaturedBook() {
-  return books.find((b) => b.status === "published") ?? books[0];
+  return books.find((b) => b.status === 'published') ?? books[0];
 }

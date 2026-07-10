@@ -1,19 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout metadata={{ title: "Lore | Patrick O’Dell" }}>
+<Layout metadata={{ title: 'Lore | Patrick O’Dell' }}>
   <section class="page">
     <div class="container">
-
       <h1>Lore</h1>
 
-      <p class="intro">
-        A fragmented record of places, histories, and systems that shape The Godfire series.
-      </p>
+      <p class="intro">A fragmented record of places, histories, and systems that shape The Godfire series.</p>
 
       <div class="grid">
-
         <a class="card" href="/lore/timeline">
           <h2>Timeline</h2>
           <p>Events that shaped the realms before and during Elias Fetch’s story.</p>
@@ -28,39 +24,45 @@ import Layout from "../../layouts/Layout.astro";
           <h2>Elderspeech</h2>
           <p>Fragments of language, invocation, and meaning in the language known as Elderspeech.</p>
         </a>
-
       </div>
-
     </div>
   </section>
 </Layout>
 
 <style>
-.page { padding: 80px 20px; }
-.container { max-width: 900px; margin: 0 auto; }
-h1 { font-size: 2.4rem; margin-bottom: 10px; }
+  .page {
+    padding: 80px 20px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
 
-.intro {
-  opacity: 0.75;
-  margin-bottom: 40px;
-  max-width: 600px;
-}
+  .intro {
+    opacity: 0.75;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
 
-.card {
-  padding: 18px;
-  border: 1px solid rgba(0,0,0,0.1);
-  text-decoration: none;
-  color: inherit;
-  border-radius: 10px;
-}
+  .card {
+    padding: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+  }
 
-.card:hover {
-  transform: translateY(-2px);
-}
+  .card:hover {
+    transform: translateY(-2px);
+  }
 </style>

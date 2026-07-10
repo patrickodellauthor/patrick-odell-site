@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { books } from "../../data/books";
+import Layout from '../../layouts/Layout.astro';
+import { books } from '../../data/books';
 
 export function getStaticPaths() {
   return books.map((book) => ({
@@ -15,7 +15,7 @@ const { book } = Astro.props;
 // SAFE IMAGE HANDLING (CRITICAL FIX)
 // -----------------------------
 const cover =
-  typeof book.cover === "string"
+  typeof book.cover === 'string'
     ? {
         src: book.cover,
         width: 600,
@@ -40,41 +40,33 @@ const cover =
     },
   }}
 >
-
   <section class="book-hero">
     <div class="container">
-
-      <img
-        src={cover.src}
-        width={cover.width}
-        height={cover.height}
-        alt={book.title}
-        class="cover"
-      />
+      <img src={cover.src} width={cover.width} height={cover.height} alt={book.title} class="cover" />
 
       <div class="info">
         <h1>{book.title}</h1>
         <p class="series">{book.series}</p>
 
-        {book.blurb.map((line) => (
-          <p class="blurb">{line}</p>
-        ))}
+        {book.blurb.map((line) => <p class="blurb">{line}</p>)}
 
         <div class="actions">
-          {book.status === "Coming Soon" ? (
-            <>
-              <a class="btn btn-primary" href="#">Buy / Preorder</a>
-              <a class="btn btn-secondary" href={`/books/${book.slug}/preview`}>
-                Preview
-              </a>
-            </>
-          ) : (
-            <span class="meta">Coming Soon</span>
-          )}
+          {
+            book.status === 'Coming Soon' ? (
+              <>
+                <a class="btn btn-primary" href="#">
+                  Buy / Preorder
+                </a>
+                <a class="btn btn-secondary" href={`/books/${book.slug}/preview`}>
+                  Preview
+                </a>
+              </>
+            ) : (
+              <span class="meta">Coming Soon</span>
+            )
+          }
         </div>
       </div>
-
     </div>
   </section>
-
 </Layout>

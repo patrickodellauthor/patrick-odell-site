@@ -1,11 +1,10 @@
-
 ---
-title: "Welcome"
-excerpt: "First post on the new blog system."
+title: 'Welcome'
+excerpt: 'First post on the new blog system.'
 publishDate: 2026-05-13
 draft: false
-tags: ["intro"]
-author: "Patrick O’Dell"
+tags: ['intro']
+author: 'Patrick O’Dell'
 ---
 
 Welcome to the blog.

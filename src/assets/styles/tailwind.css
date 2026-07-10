@@ -18,15 +18,12 @@
   --color-muted: var(--aw-color-text-muted);
 
   --font-sans:
-    'var(--aw-font-sans, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    'var(--aw-font-sans, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
 
-  --font-serif:
-    'var(--aw-font-serif, ui-serif)', ui-serif, Georgia, Cambria,
-    'Times New Roman', Times, serif;
+  --font-serif: 'var(--aw-font-serif, ui-serif)', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
-  --font-heading:
-    'var(--aw-font-heading, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'var(--aw-font-heading, ui-sans-serif)', ui-sans-serif, system-ui, sans-serif;
 
   @keyframes fadeInUp {
     0% {
@@ -63,7 +60,7 @@
    =============================== */
 
 body {
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-family: ui-serif, Georgia, 'Times New Roman', serif;
   background: #15130f;
   color: rgba(240, 232, 220, 0.88);
   line-height: 1.75;
@@ -72,7 +69,9 @@ body {
 }
 
 /* HEADINGS */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: rgba(245, 238, 226, 0.92);
   letter-spacing: 0.25px;
   line-height: 1.2;
@@ -179,7 +178,7 @@ section {
 .cover {
   width: 340px;
   border-radius: 8px;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
 }
 
 .info {
@@ -217,8 +216,10 @@ section {
    GLOBAL TYPE ALIGNMENT (NAV + FOOTER UNIFICATION)
    =============================== */
 
-nav, header, footer {
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
+nav,
+header,
+footer {
+  font-family: ui-serif, Georgia, 'Times New Roman', serif;
 }
 
 /* unify small UI text across nav + footer */

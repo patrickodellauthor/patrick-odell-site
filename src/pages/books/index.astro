@@ -1,136 +1,117 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { books } from "../../data/books";
+import Layout from '../../layouts/Layout.astro';
+import { books } from '../../data/books';
 ---
 
 <Layout
   metadata={{
-    title: "Books | Patrick O’Dell",
-    description: "Books by Patrick O’Dell"
+    title: 'Books | Patrick O’Dell',
+    description: 'Books by Patrick O’Dell',
   }}
 >
+  <section class="books-page">
+    <div class="books-container">
+      <div class="books-header">
+        <h1>Books</h1>
+        <p>Stories of supernatural horror, dark humor, and irreverent magic.</p>
+      </div>
 
-<section class="books-page">
+      <div class="books-grid">
+        {
+          books.map((book) => (
+            <a class="book-card" href={`/books/${book.slug}`}>
+              <img
+                src={book.cover.src}
+                width={book.cover.width}
+                height={book.cover.height}
+                alt={book.title}
+                class="book-cover"
+              />
 
-  <div class="books-container">
+              <div class="book-info">
+                <p class="series">{book.series}</p>
 
-    <div class="books-header">
-      <h1>Books</h1>
-      <p>
-        Stories of supernatural horror, dark humor, and irreverent magic.
-      </p>
+                <h2>{book.title}</h2>
+
+                <p class="status">{book.status === 'coming-soon' ? 'Coming Soon' : ''}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
-
-    <div class="books-grid">
-
-      {books.map((book) => (
-
-        <a class="book-card" href={`/books/${book.slug}`}>
-
-          <img
-            src={book.cover.src}
-            width={book.cover.width}
-            height={book.cover.height}
-            alt={book.title}
-            class="book-cover"
-          />
-
-          <div class="book-info">
-
-            <p class="series">{book.series}</p>
-
-            <h2>{book.title}</h2>
-
-            <p class="status">
-              {book.status === "coming-soon"
-                ? "Coming Soon"
-                }
-            </p>
-
-          </div>
-
-        </a>
-
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
-
+  </section>
 </Layout>
 
 <style>
-.books-page {
-  padding: 80px 24px 120px;
-}
+  .books-page {
+    padding: 80px 24px 120px;
+  }
 
-.books-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .books-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.books-header {
-  text-align: center;
-  margin-bottom: 70px;
-}
+  .books-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
 
-.books-header h1 {
-  margin-bottom: 18px;
-}
+  .books-header h1 {
+    margin-bottom: 18px;
+  }
 
-.books-header p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-}
+  .books-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
 
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 50px;
-}
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+  }
 
-.book-card {
-  text-decoration: none;
-  transition: transform 0.25s ease;
-}
+  .book-card {
+    text-decoration: none;
+    transition: transform 0.25s ease;
+  }
 
-.book-card:hover {
-  transform: translateY(-4px);
-}
+  .book-card:hover {
+    transform: translateY(-4px);
+  }
 
-.book-cover {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+  .book-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
 
-  border-radius: 10px;
+    border-radius: 10px;
 
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.45);
-}
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
 
-.book-info {
-  padding-top: 18px;
-  text-align: center;
-}
+  .book-info {
+    padding-top: 18px;
+    text-align: center;
+  }
 
-.series {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
+  .series {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
 
-.book-info h2 {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
+  .book-info h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
 
-.status {
-  opacity: 0.75;
-  font-size: 0.95rem;
-}
+  .status {
+    opacity: 0.75;
+    font-size: 0.95rem;
+  }
 </style>

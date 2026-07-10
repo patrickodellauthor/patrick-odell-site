@@ -25,16 +25,16 @@ import '@fontsource-variable/inter';
   :root {
     --bg: #0b0c10;
     --panel: #11131a;
-    --text: rgba(255,255,255,0.88);
-    --muted: rgba(255,255,255,0.55);
-    --faint: rgba(255,255,255,0.25);
+    --text: rgba(255, 255, 255, 0.88);
+    --muted: rgba(255, 255, 255, 0.55);
+    --faint: rgba(255, 255, 255, 0.25);
     --accent: #d6c7a1;
   }
 
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-family: ui-serif, Georgia, 'Times New Roman', serif;
     line-height: 1.6;
   }
 
@@ -47,21 +47,24 @@ import '@fontsource-variable/inter';
     color: var(--accent);
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-weight: 400;
     letter-spacing: 0.2px;
   }
 
   body::before {
-    content: "";
+    content: '';
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%);
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 60%);
     pointer-events: none;
     z-index: 0;
   }
 
-  section, header {
+  section,
+  header {
     position: relative;
     z-index: 1;
   }

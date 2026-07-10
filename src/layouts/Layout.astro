@@ -26,8 +26,8 @@ const { metadata = {} } = Astro.props as Props;
 const { language, textDirection } = I18N;
 
 const pageMetadata = {
-  title: metadata.title ?? "Patrick O’Dell | Author",
-  description: metadata.description ?? "Official website of author Patrick O’Dell.",
+  title: metadata.title ?? 'Patrick O’Dell | Author',
+  description: metadata.description ?? 'Official website of author Patrick O’Dell.',
   ...metadata,
 };
 ---
@@ -49,20 +49,13 @@ const pageMetadata = {
   </head>
 
   <body class="antialiased bg-page tracking-tight">
-
     <!-- ================= NAVBAR ================= -->
     <header class="nav">
       <div class="nav-inner">
-
         <div class="nav-center">
-
           <!-- LOGO -->
           <a class="logo" href="/" aria-label="Home">
-            <img
-              src="/patrick-odell-logo.png"
-              alt="Patrick O’Dell"
-              class="nav-logo"
-            />
+            <img src="/patrick-odell-logo.png" alt="Patrick O’Dell" class="nav-logo" />
           </a>
 
           <!-- MENU -->
@@ -95,44 +88,52 @@ const pageMetadata = {
             <a href="/media-kit">Media Kit</a>
             <a href="/contact">Contact</a>
           </nav>
-
         </div>
 
         <!-- SOCIAL ICONS -->
         <div class="nav-social">
-
           <a href="https://www.facebook.com/patrickodellauthor/" target="_blank" aria-label="Facebook">
             <svg viewBox="0 0 24 24" class="icon">
-              <path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/>
+              <path
+                fill="currentColor"
+                d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"
+              ></path>
             </svg>
           </a>
 
           <a href="https://www.instagram.com/patrickodellauthor" target="_blank" aria-label="Instagram">
             <svg viewBox="0 0 24 24" class="icon">
-              <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z"/>
+              <path
+                fill="currentColor"
+                d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z"
+              ></path>
             </svg>
           </a>
 
           <a href="https://www.tiktok.com/@patrickodellauthor" target="_blank" aria-label="TikTok">
             <svg viewBox="0 0 24 24" class="icon">
-              <path fill="currentColor" d="M21 8.5a6.5 6.5 0 0 1-4-1.4v6.6a5.8 5.8 0 1 1-5.8-5.8c.2 0 .4 0 .6.02v2.8a3 3 0 1 0 2.2 2.9V2h2.8a4.5 4.5 0 0 0 4.2 4.5z"/>
+              <path
+                fill="currentColor"
+                d="M21 8.5a6.5 6.5 0 0 1-4-1.4v6.6a5.8 5.8 0 1 1-5.8-5.8c.2 0 .4 0 .6.02v2.8a3 3 0 1 0 2.2 2.9V2h2.8a4.5 4.5 0 0 0 4.2 4.5z"
+              ></path>
             </svg>
           </a>
 
           <a href="https://www.threads.com/@patrickodellauthor" target="_blank" aria-label="Threads">
             <svg viewBox="0 0 24 24" class="icon">
-              <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+              <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
             </svg>
           </a>
 
           <a href="https://bsky.app/profile/patrickodellauthor.bsky.social" target="_blank" aria-label="Bluesky">
             <svg viewBox="0 0 24 24" class="icon">
-              <path fill="currentColor" d="M12 11c-2-3-5-4-7-4 0 4 2 7 5 8-2 1-4 3-4 6 3 0 5-2 6-4 1 2 3 4 6 4 0-3-2-5-4-6 3-1 5-4 5-8-2 0-5 1-7 4z"/>
+              <path
+                fill="currentColor"
+                d="M12 11c-2-3-5-4-7-4 0 4 2 7 5 8-2 1-4 3-4 6 3 0 5-2 6-4 1 2 3 4 6 4 0-3-2-5-4-6 3-1 5-4 5-8-2 0-5 1-7 4z"
+              ></path>
             </svg>
           </a>
-
         </div>
-
       </div>
     </header>
 
@@ -140,121 +141,120 @@ const pageMetadata = {
 
     <Footer />
     <BasicScripts />
-
   </body>
 </html>
 
 <style>
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
 
-  background: rgba(15, 14, 12, 0.72);
-  backdrop-filter: blur(14px);
+    background: rgba(15, 14, 12, 0.72);
+    backdrop-filter: blur(14px);
 
-  border-bottom: 1px solid rgba(210,198,178,0.10);
+    border-bottom: 1px solid rgba(210, 198, 178, 0.1);
 
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
-  font-size: 16px;
-  color: rgba(230,220,205,0.78);
-}
+    font-family: ui-serif, Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    color: rgba(230, 220, 205, 0.78);
+  }
 
-.nav-inner {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 22px 24px;
+  .nav-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 22px 24px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.nav-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-}
+  .nav-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
 
-.menu {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .menu {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.menu a,
-.dropbtn {
-  font: inherit;
-  color: inherit;
-  text-decoration: none;
-  font-size: 0.92rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  opacity: 0.85;
-}
+  .menu a,
+  .dropbtn {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.92rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.85;
+  }
 
-.menu a:hover,
-.dropbtn:hover {
-  opacity: 1;
-  color: rgba(250,242,230,0.95);
-}
+  .menu a:hover,
+  .dropbtn:hover {
+    opacity: 1;
+    color: rgba(250, 242, 230, 0.95);
+  }
 
-.dropdown {
-  position: relative;
-}
+  .dropdown {
+    position: relative;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-top: 10px;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10px;
+  }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-.dropdown-content a {
-  display: block;
-  padding: 10px 14px;
-  background: rgba(18,16,14,0.96);
-}
+  .dropdown-content a {
+    display: block;
+    padding: 10px 14px;
+    background: rgba(18, 16, 14, 0.96);
+  }
 
-.nav-social {
-  display: flex;
-  gap: 14px;
-}
+  .nav-social {
+    display: flex;
+    gap: 14px;
+  }
 
-.icon {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  color: rgba(210,198,178,0.6);
-}
+  .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    color: rgba(210, 198, 178, 0.6);
+  }
 
-.nav-social a:hover .icon {
-  color: rgba(250,242,230,0.95);
-}
+  .nav-social a:hover .icon {
+    color: rgba(250, 242, 230, 0.95);
+  }
 
-.nav-logo {
-  height: 225px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  transition: transform 0.25s ease;
-}
+  .nav-logo {
+    height: 225px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
 
-.nav-logo:hover {
-  transform: scale(1.02);
-}
+  .nav-logo:hover {
+    transform: scale(1.02);
+  }
 
-body {
-  margin: 0;
-}
+  body {
+    margin: 0;
+  }
 </style>
