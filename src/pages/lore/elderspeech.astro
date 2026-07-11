@@ -1,22 +1,91 @@
 ---
 import Layout from '../../layouts/Layout.astro';
----
 
+const words = [
+  { term: "Avar", meaning: "God.", note: "From “Avar etha Dravek” — the words on the old book’s spine: “Gods and Monsters.”" },
+  { term: "Bryn’velen", meaning: "The name of a fae house or lineage.", note: "Vain, self-obsessed, and preoccupied with pomp and ceremony — “not the worst of the fae, by any means.”" },
+  { term: "Dhorath", meaning: "Ancient territorial force; the forest spirits." },
+  { term: "Dravek", meaning: "Monster." },
+  { term: "Én Réthen", meaning: "The endless fen; the swamp-deep beyond memory.", note: "The sentence King Nemora threatens: to be forgotten in Én Réthen." },
+  { term: "Érelwyn", meaning: "The Otherside." },
+  { term: "Etha", meaning: "And." },
+  { term: "Ghal’ban", meaning: "A name — a deity or ancestral spirit invoked as both blessing and oath.", note: "“Ghal’ban wash over you” — and the Rock of Ghal’ban, a site of ritual supplication named in their honor." },
+  { term: "Khor Ar’Thala", meaning: "“House of the High Spirit.”", note: "The Elderspeech root of the word “church,” worn down over centuries into the Greek kyriakón." },
+  { term: "Leth", meaning: "Law; imposed order.", note: "Root of the shouted command “Leth’kha!”" },
+  { term: "Mírathwen", meaning: "Shadowed mists; twilight realm." },
+  { term: "Myrithal", meaning: "The dream realm." },
+  { term: "Naelén", meaning: "Rise up / swell forth." },
+  { term: "Naéthar", meaning: "Step forth / arise.", note: "Ceremonial imperative." },
+  { term: "Ne’thaelor", meaning: "That which stands in opposition." },
+  { term: "Orin", meaning: "A species of goblin, said to speak the language of plants." },
+  { term: "Py’relore", meaning: "Fire from within.", note: "Glowing stones said to carry a living ember at their heart — treasures of legend, fought over and feared." },
+  { term: "Sa’valinn lïta", meaning: "A shield of shining light.", note: "Sa’valinn — shield / shelter / barrier. Lïta — of light; glimmering; shining. Shouted as a ward, it pulses outward in defense." },
+  { term: "Shaéth", meaning: "What / which." },
+  { term: "Thes’myr", meaning: "To hold in remembered cognition." },
+  { term: "Tìr’liath", meaning: "The Grey Lands.", note: "The Elderspeech name for the human world." },
+  { term: "Vera’dith", meaning: "Dirty blood.", note: "A slur cast at those of mixed lineage — half-bloods, seen as tainted by both worlds they belong to." },
+  { term: "Voraketh", meaning: "That which devours." },
+];
+---
 <Layout metadata={{ title: 'Elderspeech | Lore' }}>
   <section class="page">
     <div class="container">
       <h1>Elderspeech</h1>
-
       <p class="intro">Fragments of an older language. Meaning is unstable and context-dependent.</p>
 
       <div class="block">
-        <h3>On Structure</h3>
-        <p>Elderspeech is not a fixed language. It shifts depending on intent, memory, and speaker perception.</p>
+        <h3>What Elderspeech Is</h3>
+        <p>Elderspeech is a synthetic, constructed language system built from semantic root units and functional morphological markers. Rather than relying on fixed dictionary translations, Elderspeech derives meaning from how its components are combined — its words function as compressed, structural conceptual units. It is not a fixed language. It shifts depending on intent, memory, and speaker perception.</p>
+      </div>
+
+      <div class="block">
+        <h3>Philosophy of Construction</h3>
+        <p>Elderspeech operates on the principle that language is not a representation of meaning, but a structured containment of meaning. Words do not merely describe ideas; they encode stabilized conceptual forms. Each word is designed for high semantic density — the ability to carry multiple layers of meaning within a single, stable, and impact-driven structure.</p>
+      </div>
+
+      <div class="block">
+        <h3>Phonological Principles</h3>
+        <p>The language favors hard consonants — k, th, v, r, d, t, g — while vowels are used sparingly and deliberately. It actively avoids overly soft phoneme clustering and the repetition of identical syllables. Words typically run one to four syllables, and by default, stress falls on the first or primary root syllable.</p>
+      </div>
+
+      <div class="block">
+        <h3>Morphological Structure</h3>
+        <p>Words are built from three layers, functioning as ontological classifications rather than standard grammar:</p>
+        <ul>
+          <li><strong>Root Unit</strong> — core meaning; the foundational identity of the word.</li>
+          <li><strong>Modifier Unit</strong> — state or condition; refines how the root exists or operates.</li>
+          <li><strong>Structural Suffix</strong> — ontological completion; the type of thing the word is becoming.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>The Glottal Divider</h3>
+        <p>The mark ( ’ ) is a hard seam between roots. It separates root units while preserving compound unity, preventing phonetic blending and allowing multiple concepts to compress into a single word — Root’Root’Suffix.</p>
+      </div>
+
+      <div class="block">
+        <h3>Pronunciation & Stress</h3>
+        <p>Every word carries one dominant, primary stress — almost always on the first semantic root syllable. In longer words, a lighter secondary stress may fall on the final root or the first modifier after a glottal break, which resets stress entirely. Structural suffixes are spoken softer and shorter, unless finalizing a command, and words closing on k, t, or kh cut off cleanly with no trailing vowel — a sound built for finality. Elderspeech avoids emotional inflection: a rising tone marks something unresolved, a flat tone marks stability, and a falling tone marks completion.</p>
+      </div>
+
+      <div class="block">
+        <h3>Words from <em>Gods and Monsters</em></h3>
+        <p class="section-note">A curated lexicon of terms confirmed in use across the first novel.</p>
+        <dl class="glossary">
+          {words.map((w) => (
+            <div class="entry">
+              <dt>{w.term}</dt>
+              <dd>
+                {w.meaning}
+                {w.note && <span class="note"> {w.note}</span>}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </div>
   </section>
 </Layout>
-
 <style>
   .page {
     padding: 80px 20px;
@@ -25,21 +94,62 @@ import Layout from '../../layouts/Layout.astro';
     max-width: 800px;
     margin: 0 auto;
   }
-
   h1 {
     font-size: 2.4rem;
   }
-
   .block {
     margin-top: 20px;
     padding: 16px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
-
   .intro {
     opacity: 0.75;
   }
   p {
     opacity: 0.8;
+  }
+  ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    opacity: 0.8;
+  }
+  ul li {
+    margin-bottom: 6px;
+  }
+  .section-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 16px;
+  }
+  .glossary {
+    display: grid;
+    gap: 14px;
+  }
+  .entry {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .entry dt {
+    font-weight: 600;
+    opacity: 0.95;
+  }
+  .entry dd {
+    margin: 0;
+    opacity: 0.8;
+  }
+  .entry .note {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    font-style: italic;
+  }
+  @media (max-width: 560px) {
+    .entry {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
