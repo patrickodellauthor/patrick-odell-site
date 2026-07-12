@@ -2,8 +2,8 @@ export const books = [
   {
     slug: 'gods-and-monsters',
     title: 'Gods and Monsters',
-    series: 'The Godfire Sage',
-    status: 'unpublished',
+    series: 'The Godfire Saga',
+    status: 'coming-soon',
 
     cover: {
       src: '/gods-and-monsters-cover.jpg',
@@ -17,6 +17,16 @@ export const books = [
       'Something ancient is moving beneath the surface... and it knows his name.',
     ],
 
+    releaseDate: '2027-02-01',
+
+    // Preorder / buy links. Replace the "#" placeholders with real retailer
+    // URLs as they become available (Amazon, B&N, Bookshop.org, etc.).
+    buyLinks: [
+      { retailer: 'Amazon', url: '#' },
+      { retailer: 'Barnes & Noble', url: '#' },
+      { retailer: 'Bookshop.org', url: 'https://bookshop.org/p/books/gods-and-monsters-the-godfire-series-1-patrick-o-dell/f52b62d8d788c1b4?ean=9798232758400' },
+    ],
+
     seo: {
       description: 'Gods and Monsters by Patrick O’Dell',
     },
@@ -25,8 +35,8 @@ export const books = [
   {
     slug: 'watchers-in-the-dark',
     title: 'Watchers in the Dark',
-    series: 'The Godfire Sage',
-    status: 'unpublished',
+    series: 'The Godfire Saga',
+    status: 'coming-soon',
 
     cover: {
       src: '/watchers-in-the-dark-cover.jpg',
@@ -44,7 +54,7 @@ export const books = [
   {
     slug: 'the-dream-eaters-bargain',
     title: 'The Dream Eater’s Bargain',
-    series: 'The Godfire Sage',
+    series: 'The Godfire Saga',
     status: 'coming-soon',
 
     cover: {
