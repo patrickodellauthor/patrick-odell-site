@@ -9,7 +9,7 @@ site:
 metadata:
   title:
     default: Patrick O'Dell
-    template: '%s — Patrick O'Dell'
+    template: "%s — Patrick O'Dell"
   description: "Author of Gods and Monsters, the first novel in The Godfire Saga. Urban fantasy and supernatural detective fiction."
   robots:
     index: true
