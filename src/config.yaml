@@ -9,7 +9,7 @@ site:
 metadata:
   title:
     default: Patrick O'Dell
-    template: '%s — Patrick O\'Dell'
+    template: '%s — Patrick O'Dell'
   description: "Author of Gods and Monsters, the first novel in The Godfire Saga. Urban fantasy and supernatural detective fiction."
   robots:
     index: true
@@ -17,7 +17,7 @@ metadata:
   openGraph:
     site_name: Patrick O'Dell
     images:
-      - url: 'public/gods-and-monsters-cover.jpg'
+      - url: '/gods-and-monsters-cover.jpg'
         width: 1200
         height: 628
     type: website
