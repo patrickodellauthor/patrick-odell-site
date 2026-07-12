@@ -1,50 +1,524 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { books } from '../data/books';
+
+const godsAndMonsters = books.find((b) => b.slug === 'gods-and-monsters');
+
+const assets = [
+  { label: 'Full Press Kit', file: '/press-kit.pdf', hint: 'PDF · bio, book info, quick facts, contact' },
+  { label: 'Author Headshot', file: '/patrick-odell-author.jpg', hint: 'JPG · high resolution' },
+  { label: 'Author Logo', file: '/patrick-odell-logo.png', hint: 'PNG · transparent background' },
+  { label: 'Gods and Monsters — Cover', file: '/gods-and-monsters-cover.jpg', hint: 'JPG · 600×900' },
+  { label: 'Watchers in the Dark — Cover', file: '/watchers-in-the-dark-cover.jpg', hint: 'JPG · 600×900' },
+  { label: 'The Dream Eater’s Bargain — Cover', file: '/the-dream-eaters-bargain-cover.jpg', hint: 'JPG · 600×900' },
+];
+
+const facts = [
+  { label: 'Based In', value: 'Baton Rouge, Louisiana' },
+  { label: 'Genres', value: 'Urban Fantasy · Dark Fantasy' },
+  { label: 'Current Series', value: 'The Godfire Saga' },
+  { label: 'Debut Novel', value: 'Gods and Monsters (February 2027)' },
+  { label: 'Education', value: 'MFA, Creative Writing — University of Nebraska Omaha' },
+  { label: 'Press Contact', value: 'patrickodellauthor@gmail.com' },
+];
 ---
 
-<Layout metadata={{ title: 'Media Kit | Patrick O’Dell' }}>
-  <section class="page">
-    <div class="container">
-      <h1>Media Kit</h1>
+<Layout
+  metadata={{
+    title: 'Media Kit | Patrick O’Dell',
+    description:
+      'Press kit for author Patrick O’Dell — bio, book information, quick facts, and downloadable assets for media and press use.',
+  }}
+>
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="mk-hero">
+    <div class="container mk-hero-grid">
+      <div class="hero-image-wrap">
+        <img src="/patrick-odell-author.jpg" alt="Patrick O’Dell Author Portrait" class="hero-image" />
+      </div>
 
-      <p class="intro">Author information, book details, and press materials.</p>
+      <div class="hero-content">
+        <span class="kicker">Media Kit</span>
+        <h1>Patrick O’Dell</h1>
+        <p class="hero-intro">
+          Author information, book details, quick facts, and press-ready assets for interviews, features, and coverage.
+        </p>
 
-      <div class="block">
-        <h3>Author Bio</h3>
+        <div class="hero-links">
+          <a href="/press-kit.pdf" class="btn primary" download>Download Press Kit (PDF)</a>
+          <a href="#assets" class="btn secondary">Individual Assets</a>
+          <a href="/contact" class="btn secondary">Press Inquiries</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       BIO
+  ========================== -->
+  <section class="mk-section">
+    <div class="container narrow">
+      <div class="section-heading">
+        <span class="kicker">Author Bio</span>
+        <h2>Short Bio</h2>
+      </div>
+
+      <div class="prose-block">
         <p>
-          Patrick O’Dell writes dark fantasy and urban fantasy rooted in character-driven transformation and
-          consequence.
+          Patrick O’Dell is a Baton Rouge–based author of urban and dark fantasy, and a graduate of the University of
+          Nebraska Omaha’s MFA in Creative Writing program. His debut novel, <em>Gods and Monsters</em>, is the first
+          book in The Godfire Saga, following supernatural fixer Elias Fetch as he navigates a modern world where magic,
+          grief, and consequence collide. Patrick began writing at sixteen and now works as a grant writer for a
+          nonprofit in Baton Rouge when he isn’t building the world of Elias Fetch.
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="block">
-        <h3>Books</h3>
-        <p>Includes The Godfire Series: Gods and Monsters, Watchers in the Dark, and The Dream Eater’s Bargain.</p>
+  <section class="mk-section alt">
+    <div class="container narrow">
+      <div class="section-heading">
+        <span class="kicker">Author Bio</span>
+        <h2>Long Bio</h2>
       </div>
+
+      <div class="prose-block">
+        <p>
+          Patrick O’Dell writes character-driven urban and dark fantasy rooted in transformation and consequence. He
+          began writing at sixteen and went on to earn a bachelor’s degree in Biology before realizing that storytelling
+          was what he wanted to spend his life doing. With the support of mentors, including Dr. Ernest Rufleth, Kevin
+          Clouther, and Charlene Donaghy, he earned his MFA in Creative Writing from the University of Nebraska Omaha in
+          2023.
+        </p>
+
+        <p>
+          His debut novel, <em>Gods and Monsters</em>, launches in February 2027 as the first installment of The Godfire
+          Saga, an urban fantasy series following Elias Fetch, a supernatural fixer and reluctant detective, as he’s
+          pulled into a spiral of grief, memory, and the true underbelly beneath the surface of Locust Grove, Georgia.
+          Patrick’s work is irreverent and unafraid to sit with difficult themes, blending adventure
+          and dark humor with genuine emotional stakes.
+        </p>
+
+        <p>
+          Patrick lives in Baton Rouge, Louisiana, where he works as a grant writer for a nonprofit organization. When
+          he isn’t writing, he can usually be found reading, gaming, or spending time with his family.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       QUICK FACTS
+  ========================== -->
+  <section class="mk-section">
+    <div class="container narrow">
+      <div class="section-heading">
+        <span class="kicker">At a Glance</span>
+        <h2>Quick Facts</h2>
+      </div>
+
+      <div class="facts-grid">
+        {
+          facts.map((fact) => (
+            <div class="fact-card">
+              <span class="fact-label">{fact.label}</span>
+              <p class="fact-value">{fact.value}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       BOOKS
+  ========================== -->
+  <section class="mk-section alt">
+    <div class="container narrow">
+      <div class="section-heading">
+        <span class="kicker">Books</span>
+        <h2>The Godfire Saga</h2>
+      </div>
+
+      <div class="book-list">
+        {
+          books.map((book) => (
+            <div class="book-row">
+              <img
+                src={book.cover.src}
+                width={book.cover.width}
+                height={book.cover.height}
+                alt={book.title}
+                class="book-thumb"
+              />
+
+              <div class="book-details">
+                <p class="series">{book.series}</p>
+                <h3>{book.title}</h3>
+                <p class="book-blurb">{book.blurb[0]}</p>
+
+                {book.buyLinks && book.buyLinks.length > 0 && (
+                  <div class="buy-buttons">
+                    {book.buyLinks.map((buy) => (
+                      <a class="btn secondary small" href={buy.url}>
+                        {buy.retailer}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {
+        godsAndMonsters && (
+          <p class="book-note">
+            <strong>{godsAndMonsters.title}</strong> releases February 2027 — preorder links above will go live closer
+            to launch.
+          </p>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- =========================
+       DOWNLOADABLE ASSETS
+  ========================== -->
+  <section class="mk-section" id="assets">
+    <div class="container narrow">
+      <div class="section-heading">
+        <span class="kicker">Press Assets</span>
+        <h2>Downloads</h2>
+      </div>
+
+      <div class="asset-list">
+        {
+          assets.map((asset) => (
+            <a class="asset-row" href={asset.file} download>
+              <div>
+                <p class="asset-label">{asset.label}</p>
+                <p class="asset-hint">{asset.hint}</p>
+              </div>
+              <span class="download-icon">↓</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       PRESS CONTACT
+  ========================== -->
+  <section class="mk-section newsletter-section">
+    <div class="container narrow center">
+      <span class="kicker">Get in Touch</span>
+      <h2>Press & Media Inquiries</h2>
+      <p class="newsletter-text">
+        For interviews, review copies, podcast appearances, or other press inquiries, reach out directly.
+      </p>
+      <a href="mailto:patrickodellauthor@gmail.com" class="btn primary">patrickodellauthor@gmail.com</a>
     </div>
   </section>
 </Layout>
 
 <style>
-  .page {
-    padding: 80px 20px;
-  }
   .container {
-    max-width: 800px;
+    max-width: 1120px;
     margin: 0 auto;
+    padding: 0 24px;
   }
+
+  .narrow {
+    max-width: 760px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .kicker {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(188, 170, 146, 0.58);
+  }
+
   h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
+    line-height: 1.08;
+    margin-bottom: 16px;
   }
-  .block {
-    margin-top: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    padding-bottom: 16px;
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
   }
-  .intro {
-    opacity: 0.75;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
   }
+
   p {
-    opacity: 0.8;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: rgba(230, 220, 205, 0.8);
+  }
+
+  .mk-hero {
+    padding: 70px 20px 90px;
+  }
+
+  .mk-hero-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  }
+
+  .hero-content {
+    max-width: 620px;
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .mk-section {
+    padding: 70px 20px;
+  }
+
+  .mk-section.alt {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .prose-block {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fact-card {
+    padding: 22px;
+    border: 1px solid rgba(210, 198, 178, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  .fact-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(188, 170, 146, 0.58);
+  }
+
+  .fact-value {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .book-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(210, 198, 178, 0.12);
+  }
+
+  .book-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .book-thumb {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  }
+
+  .series {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(230, 220, 205, 0.6);
+    margin-bottom: 4px;
+  }
+
+  .book-blurb {
+    margin-top: 6px;
+  }
+
+  .book-note {
+    margin-top: 24px;
+    font-size: 0.88rem;
+    text-align: center;
+    color: rgba(230, 220, 205, 0.6);
+  }
+
+  .buy-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .asset-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .asset-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border: 1px solid rgba(210, 198, 178, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.015);
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .asset-row:hover {
+    border-color: rgba(214, 199, 161, 0.4);
+    background: rgba(214, 199, 161, 0.05);
+  }
+
+  .asset-label {
+    margin: 0;
+    font-size: 0.98rem;
+    color: rgba(240, 232, 220, 0.92);
+  }
+
+  .asset-hint {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+    color: rgba(230, 220, 205, 0.55);
+  }
+
+  .download-icon {
+    font-size: 1.1rem;
+    color: rgba(214, 199, 161, 0.85);
+  }
+
+  .newsletter-section {
+    padding-bottom: 110px;
+  }
+
+  .newsletter-text {
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border-radius: 6px;
+  }
+
+  .btn.small {
+    padding: 9px 16px;
+    font-size: 0.7rem;
+  }
+
+  .btn.primary {
+    background: rgba(214, 199, 161, 0.9);
+    color: #14120f;
+  }
+
+  .btn.secondary {
+    border: 1px solid rgba(210, 198, 178, 0.3);
+    color: rgba(230, 220, 205, 0.9);
+  }
+
+  .btn.primary:hover {
+    background: rgba(214, 199, 161, 1);
+  }
+
+  .btn.secondary:hover {
+    border-color: rgba(214, 199, 161, 0.6);
+    color: rgba(250, 242, 230, 0.95);
+  }
+
+  @media (max-width: 900px) {
+    .mk-hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-content {
+      margin: 0 auto;
+    }
+
+    .hero-links {
+      justify-content: center;
+    }
+
+    .hero-image-wrap {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .facts-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .book-row {
+      grid-template-columns: 80px 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2rem;
+    }
   }
 </style>
