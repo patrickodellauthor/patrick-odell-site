@@ -231,6 +231,7 @@ const pageMetadata = {
     justify-content: space-between;
     align-items: center;
     gap: 16px;
+    min-height: 56px;
   }
 
   .nav-brand {
@@ -242,21 +243,29 @@ const pageMetadata = {
   }
 
   .nav-toggle {
+    position: relative;
+    z-index: 60;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 24px;
+    gap: 6px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     background: transparent;
     border: none;
-    padding: 0;
+    padding: 8px;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .nav-toggle span {
     display: block;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background: rgba(230, 220, 205, 0.85);
     border-radius: 999px;
     transition: transform 0.25s ease, opacity 0.25s ease;
