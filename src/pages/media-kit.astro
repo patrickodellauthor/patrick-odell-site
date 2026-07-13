@@ -15,11 +15,13 @@ import Layout from '../layouts/Layout.astro';
           Patrick O’Dell writes dark fantasy and urban fantasy rooted in character-driven transformation and
           consequence.
         </p>
+        <a href="/press-kit.pdf" download="press-kit.pdf" class="download-link">Download Press Kit PDF</a>
       </div>
 
       <div class="block">
         <h3>Books</h3>
         <p>Includes The Godfire Series: Gods and Monsters, Watchers in the Dark, and The Dream Eater’s Bargain.</p>
+        <a href="/press-kit.pdf" download="press-kit.pdf" class="download-link">Download Press Kit PDF</a>
       </div>
     </div>
   </section>
@@ -46,5 +48,12 @@ import Layout from '../layouts/Layout.astro';
   }
   p {
     opacity: 0.8;
+  }
+  .download-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
   }
 </style>

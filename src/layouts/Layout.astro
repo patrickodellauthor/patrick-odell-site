@@ -50,48 +50,95 @@ const pageMetadata = {
 
   <body class="antialiased bg-page tracking-tight">
     <!-- ================= NAVBAR ================= -->
-    <header class="nav">
+    <header class="nav" aria-label="Main navigation">
       <div class="nav-inner">
-        <div class="nav-center">
-          <!-- LOGO -->
+        <div class="nav-brand">
           <a class="logo" href="/" aria-label="Home">
             <img src="/patrick-odell-logo.png" alt="Patrick O’Dell" class="nav-logo" />
           </a>
 
-          <!-- MENU -->
-          <nav class="menu">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-
-            <div class="dropdown">
-              <button class="dropbtn">Books ▾</button>
-              <div class="dropdown-content">
-                <a href="/books">All Books</a>
-                <a href="/books/gods-and-monsters">Gods and Monsters</a>
-                <a href="/books/watchers-in-the-dark">Watchers in the Dark</a>
-                <a href="/books/the-dream-eaters-bargain">The Dream Eater’s Bargain</a>
-              </div>
-            </div>
-
-            <div class="dropdown">
-              <button class="dropbtn">Lore ▾</button>
-              <div class="dropdown-content">
-                <a href="/lore">Overview</a>
-                <a href="/lore/timeline">Timeline</a>
-                <a href="/lore/bestiary">Bestiary</a>
-                <a href="/lore/elderspeech">Elderspeech</a>
-              </div>
-            </div>
-
-            <a href="/blog">Blog</a>
-            <a href="/faq">FAQ</a>
-            <a href="/media-kit">Media Kit</a>
-            <a href="/contact">Contact</a>
-          </nav>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
 
-        <!-- SOCIAL ICONS -->
-        <div class="nav-social">
+        <nav class="menu" id="main-navigation">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+
+          <div class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Books ▾</button>
+            <div class="dropdown-content">
+              <a href="/books">All Books</a>
+              <a href="/books/gods-and-monsters">Gods and Monsters</a>
+              <a href="/books/watchers-in-the-dark">Watchers in the Dark</a>
+              <a href="/books/the-dream-eaters-bargain">The Dream Eater’s Bargain</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Lore ▾</button>
+            <div class="dropdown-content">
+              <a href="/lore">Overview</a>
+              <a href="/lore/timeline">Timeline</a>
+              <a href="/lore/bestiary">Bestiary</a>
+              <a href="/lore/elderspeech">Elderspeech</a>
+            </div>
+          </div>
+
+          <a href="/blog">Blog</a>
+          <a href="/faq">FAQ</a>
+          <a href="/media-kit">Media Kit</a>
+          <a href="/contact">Contact</a>
+
+          <div class="nav-social mobile-nav-social">
+            <a href="https://www.facebook.com/patrickodellauthor/" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"
+                ></path>
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/patrickodellauthor" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z"
+                ></path>
+              </svg>
+            </a>
+
+            <a href="https://www.tiktok.com/@patrickodellauthor" target="_blank" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M21 8.5a6.5 6.5 0 0 1-4-1.4v6.6a5.8 5.8 0 1 1-5.8-5.8c.2 0 .4 0 .6.02v2.8a3 3 0 1 0 2.2 2.9V2h2.8a4.5 4.5 0 0 0 4.2 4.5z"
+                ></path>
+              </svg>
+            </a>
+
+            <a href="https://www.threads.com/@patrickodellauthor" target="_blank" aria-label="Threads">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+              </svg>
+            </a>
+
+            <a href="https://bsky.app/profile/patrickodellauthor.bsky.social" target="_blank" aria-label="Bluesky">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  fill="currentColor"
+                  d="M12 11c-2-3-5-4-7-4 0 4 2 7 5 8-2 1-4 3-4 6 3 0 5-2 6-4 1 2 3 4 6 4 0-3-2-5-4-6 3-1 5-4 5-8-2 0-5 1-7 4z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </nav>
+
+        <div class="nav-social desktop-nav-social">
           <a href="https://www.facebook.com/patrickodellauthor/" target="_blank" aria-label="Facebook">
             <svg viewBox="0 0 24 24" class="icon">
               <path
@@ -139,6 +186,21 @@ const pageMetadata = {
 
     <slot />
 
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.getElementById('main-navigation');
+
+        if (!toggle || !menu) return;
+
+        toggle.addEventListener('click', function () {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('open');
+        });
+      });
+    </script>
+
     <Footer />
     <BasicScripts />
   </body>
@@ -163,26 +225,66 @@ const pageMetadata = {
   .nav-inner {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 22px 24px;
+    padding: 16px 18px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
   }
 
-  .nav-center {
+  .nav-brand {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(230, 220, 205, 0.85);
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
   }
 
   .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .menu.open {
     display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .menu a,
@@ -195,6 +297,9 @@ const pageMetadata = {
     border: none;
     cursor: pointer;
     opacity: 0.85;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
   }
 
   .menu a:hover,
@@ -205,15 +310,16 @@ const pageMetadata = {
 
   .dropdown {
     position: relative;
+    width: 100%;
   }
 
   .dropdown-content {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 10px;
+    position: static;
+    transform: none;
+    padding-top: 0;
+    background: transparent;
+    width: 100%;
   }
 
   .dropdown:hover .dropdown-content {
@@ -222,13 +328,28 @@ const pageMetadata = {
 
   .dropdown-content a {
     display: block;
-    padding: 10px 14px;
+    padding: 10px 0;
     background: rgba(18, 16, 14, 0.96);
   }
 
   .nav-social {
     display: flex;
-    gap: 14px;
+    gap: 10px;
+  }
+
+  .desktop-nav-social {
+    display: none;
+  }
+
+  .mobile-nav-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 18px;
+    width: 100%;
+    border-top: 1px solid rgba(210, 198, 178, 0.1);
+    margin-top: 18px;
   }
 
   .icon {
@@ -243,7 +364,7 @@ const pageMetadata = {
   }
 
   .nav-logo {
-    height: 225px;
+    height: 52px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -252,6 +373,68 @@ const pageMetadata = {
 
   .nav-logo:hover {
     transform: scale(1.02);
+  }
+
+  @media (min-width: 768px) {
+    .nav-inner {
+      padding: 22px 24px;
+    }
+
+    .nav-brand {
+      width: auto;
+      gap: 22px;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+      width: auto;
+      padding-top: 0;
+    }
+
+    .menu.open {
+      display: flex;
+    }
+
+    .menu a,
+    .dropbtn {
+      width: auto;
+      padding: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 10px;
+      background: transparent;
+      width: auto;
+    }
+
+    .dropdown-content a {
+      padding: 10px 14px;
+      background: rgba(18, 16, 14, 0.96);
+    }
+
+    .desktop-nav-social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .mobile-nav-social {
+      display: none;
+    }
+
+    .nav-logo {
+      height: 100px;
+    }
   }
 
   body {
