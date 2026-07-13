@@ -1,18 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { books } from '../data/books';
+import { events } from '../data/events';
 
 const featured = books[0];
 
 const authorImage = '/patrick-odell-author.jpg';
 
-const news = [
-  {
-  title: 'Gods and Monsters launch event announced',
-  text: 'Join me for the launch of Book One of The Godfire Saga — February 2027.',
-  link: '/events',
-},
-];
+// "Latest News" on the homepage is an automated feed of upcoming events —
+// it pulls straight from src/data/events.ts, so there's nothing to edit
+// here. Add/edit events in that one file and this updates automatically.
+const now = new Date();
+
+const news = events
+  .filter((e) => new Date(e.date).getTime() >= now.getTime())
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  .slice(0, 3)
+  .map((e) => ({
+    title: e.newsTitle || e.title,
+    text: e.newsText || e.description,
+    link: `/events#${e.slug}`,
+  }));
 ---
 
 <Layout
@@ -73,16 +81,20 @@ const news = [
     <div class="section-container">
       <h2 class="center">Latest News</h2>
 
-      <div class="news-box">
-        {
-          news.map((item) => (
-            <a class="news-item" href={item.link}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </a>
-          ))
-        }
-      </div>
+      {
+        news.length === 0 ? (
+          <p class="center news-empty">No news right now — check back soon.</p>
+        ) : (
+          <div class="news-box">
+            {news.map((item) => (
+              <a class="news-item" href={item.link}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </a>
+            ))}
+          </div>
+        )
+      }
     </div>
   </section>
 </Layout>
@@ -187,6 +199,11 @@ const news = [
     border-radius: 8px;
     text-decoration: none;
     background: rgba(255, 255, 255, 0.03);
+  }
+
+  .news-empty {
+    margin-top: 30px;
+    opacity: 0.65;
   }
 
   .news-item:hover {
