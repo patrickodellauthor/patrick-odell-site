@@ -1,29 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { books } from '../data/books';
-
-// -----------------------------------------------------------------------
-// Add / edit events here. Each event needs a title, date, and description.
-// `time` and `location` are optional — leave them blank until confirmed
-// and they simply won't render. Set `link` for a dedicated event page,
-// RSVP form, or ticket page. `buyLinks` (retailer + url) will render as a
-// row of buttons — handy for a book-launch event.
-// -----------------------------------------------------------------------
-const godsAndMonsters = books.find((b) => b.slug === 'gods-and-monsters');
-
-const events = [
-  {
-    title: 'Book Launch: Gods and Monsters',
-    date: '2027-02-01',
-    dateLabel: 'February 2027',
-    time: '',
-    location: '',
-    description:
-      'The official launch of Gods and Monsters, Book One of The Godfire Saga. Join me to celebrate the release of Elias Fetch’s first case — details on venue and time to come as the date gets closer.',
-    link: '',
-    buyLinks: godsAndMonsters?.buyLinks ?? [],
-  },
-];
+import { events } from '../data/events';
 
 const formatDate = (dateStr: string) =>
   new Date(dateStr).toLocaleDateString('en-US', {
@@ -41,6 +19,8 @@ const upcoming = events
 const past = events
   .filter((e) => new Date(e.date).getTime() < now.getTime())
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const buyLinksFor = (bookSlug?: string) => books.find((b) => b.slug === bookSlug)?.buyLinks ?? [];
 ---
 
 <Layout
@@ -70,8 +50,8 @@ const past = events
         ) : (
           <div class="event-list">
             {upcoming.map((event) => (
-              <article class="event-card featured">
-                <p class="event-date">{event.dateLabel ?? formatDate(event.date)}</p>
+              <article class="event-card featured" id={event.slug}>
+                <p class="event-date">{event.dateLabel || formatDate(event.date)}</p>
 
                 <h3>{event.title}</h3>
 
@@ -85,11 +65,11 @@ const past = events
 
                 <p class="event-description">{event.description}</p>
 
-                {event.buyLinks && event.buyLinks.length > 0 && (
+                {buyLinksFor(event.bookSlug).length > 0 && (
                   <div class="buy-links">
                     <span class="buy-label">Preorder / Buy</span>
                     <div class="buy-buttons">
-                      {event.buyLinks.map((buy) => (
+                      {buyLinksFor(event.bookSlug).map((buy) => (
                         <a class="btn secondary" href={buy.url}>
                           {buy.retailer}
                         </a>
@@ -122,7 +102,7 @@ const past = events
 
           <div class="event-list">
             {past.map((event) => (
-              <article class="event-card past">
+              <article class="event-card past" id={event.slug}>
                 <p class="event-date">{formatDate(event.date)}</p>
                 <h3>{event.title}</h3>
                 {event.location && <p class="event-meta">{event.location}</p>}
@@ -205,6 +185,7 @@ const past = events
 
   .events-section {
     padding: 60px 20px;
+    scroll-margin-top: 20px;
   }
 
   .events-section.alt {
@@ -231,6 +212,7 @@ const past = events
     border: 1px solid rgba(210, 198, 178, 0.12);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.015);
+    scroll-margin-top: 100px;
   }
 
   .event-card.featured {
