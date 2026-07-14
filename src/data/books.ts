@@ -17,12 +17,10 @@ export const books = [
       'Something ancient is moving beneath the surface... and it knows his name.',
     ],
 
-    releaseDate: '2027-02-01',
+    releaseDate: '2027-02-09',
 
-    // Preorder / buy links. Replace the "#" placeholders with real retailer
-    // URLs as they become available (Amazon, B&N, Bookshop.org, etc.).
     buyLinks: [
-      { retailer: 'Amazon', url: '#' },
+      { retailer: 'Amazon', url: 'https://www.amazon.com/Gods-Monsters-Godfire-Book-1-ebook/dp/B0GMKJFHQ8/ref=sr_1_5?dib=eyJ2IjoiMSJ9.Y1o0jvZQAxXXOtI85f2qFgzdL3R3wKhsmcMyaulKaYIXSVEOYulCYI9y65ZryCECAwxLQWnVZqVH-k1fUX4VqA.RJFPbMJDoL54ywMTq0ek_0R9j3vxvzVfPGM-0Dx7IGs&dib_tag=se&qid=1783991695&refinements=p_27%3APatrick+O%27Dell&s=digital-text&sr=1-5&text=Patrick+O%27Dell' },
       { retailer: 'Barnes & Noble', url: '#' },
       { retailer: 'Bookshop.org', url: 'https://bookshop.org/p/books/gods-and-monsters-the-godfire-series-1-patrick-o-dell/f52b62d8d788c1b4?ean=9798232758400' },
     ],
