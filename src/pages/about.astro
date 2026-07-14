@@ -152,12 +152,20 @@ import Layout from '../layouts/Layout.astro';
         leave the page.
       </p>
 
-      <!-- REPLACE WITH YOUR NEWSLETTER EMBED -->
-      <form class="newsletter-form">
-        <input type="email" placeholder="Email address" />
+      <!--
+  Buttondown subscribe form — patrickodellauthor
+-->
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/patrickodellauthor"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.com/patrickodellauthor', 'popupwindow')"
+  class="newsletter-form"
+>
+  <input type="email" name="email" placeholder="Email address" required />
 
-        <button type="submit" class="btn primary"> Subscribe </button>
-      </form>
+  <button type="submit" class="btn primary"> Subscribe </button>
+</form>
     </div>
   </section>
 </Layout>
