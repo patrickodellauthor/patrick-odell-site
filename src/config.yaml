@@ -10,7 +10,7 @@ metadata:
   title:
     default: Patrick O'Dell
     template: "%s — Patrick O'Dell"
-  description: "Author of Gods and Monsters, the first novel in The Godfire Saga. Urban fantasy and supernatural detective fiction."
+  description: "Patrick O'Dell writes urban and dark fantasy. His debut novel, Gods and Monsters, launches February 2027 — the first book in The Godfire Saga."
   robots:
     index: true
     follow: true
