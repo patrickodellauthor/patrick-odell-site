@@ -12,7 +12,8 @@ const year = new Date().getFullYear();
       <div class="footer-tagline">Fantasy & Urban Fantasy Fiction</div>
     </div>
 
-    <!-- =========================
+
+<!-- =========================
          NEWSLETTER
     ========================== -->
     <div class="newsletter">
@@ -20,8 +21,15 @@ const year = new Date().getFullYear();
 
       <div class="newsletter-text">Occasional updates on new work, releases, and world material.</div>
 
-      <form class="newsletter-form">
-        <input type="email" placeholder="Email address" required />
+      <!-- Buttondown subscribe form — patrickodellauthor -->
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/patrickodellauthor"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/patrickodellauthor', 'popupwindow')"
+        class="newsletter-form"
+      >
+        <input type="email" name="email" placeholder="Email address" required />
         <button type="submit">Subscribe</button>
       </form>
     </div>
