@@ -47,7 +47,7 @@ const news = events
 
         <h1>{featured.title}</h1>
 
-        {featured.blurb.map((line) => <p>{line}</p>)}
+        {featured.blurb.map((line) => <p set:html={line} />)}
 
         <div class="hero-actions">
           <a href={`/books/${featured.slug}`} class="primary-btn"> Explore Book </a>
