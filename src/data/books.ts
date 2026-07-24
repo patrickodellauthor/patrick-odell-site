@@ -16,7 +16,7 @@ export const books = [
       'In a horrible twist, he learns his best friend from childhood is among the dead. Devastated, Elias is determined more than ever to find the cause of the killings to mete out justice and save others.',
       'Yet, while on a rollercoaster of emotions, foreboding portents of forgotten gods appear, and he’s thrust into the struggles of his past and the uncertainty of his future.',
       'Gods don’t play fair. Nothing will ever be the same, and the consequences are final.',
-      'Fans of  "The Dresden Files" by Jim Butcher, *Hellblazer* by Alan Moore, "The Iron Druid Chronicles" by Kevin Hearne, and "Rivers of London" by Ben Aaronovitch will enjoy *Gods and Monsters*.',
+      'Fans of  The Dresden Files by Jim Butcher, <em>Hellblazer<em> by Alan Moore, The Iron Druid Chronicles by Kevin Hearne, and the Rivers of London series by Ben Aaronovitch will enjoy <em>Gods and Monsters<em>.',
     ],
 
     releaseDate: '2027-02-09',
@@ -49,7 +49,7 @@ export const books = [
       'Elias Fetch makes a living cleaning up other people’s supernatural messes, yet even he has limits. Fire runs under his skin, but his roommates, a headless Dullahan and his witch of a girlfriend, keep him grounded. Nothing prepares him for Louis, a soft-spoken stranger who arrives with a problem that feels wrong in all the ways Elias has learned to fear. Louis insists something ancient is stirring around him, leaving drained bodies and spiritual ruptures across New Orleans, and he begs Elias to sever the connection before it kills again.',
       'What starts as a routine job unravels into a web of secrets older than the city itself. Nightmares creep into daylight, strange creatures stalk the streets, and Elias and his found family are pulled into a conflict involving fallen angels, fractured identities, and a past Louis refuses to name. As Elias digs deeper, he discovers that the forces gathering around Louis aren’t hunting him, they’re bound to him by a history soaked in guilt and catastrophe.',
       'With the city teetering on the edge of mythic collapse, Elias must rely on evolving powers he barely understands and allies who have everything to lose. The truth lurking beneath Louis’s calm exterior threatens to reshape the world, and Elias is the only one standing between an ancient reckoning and the people he loves. In a battle woven from fire and forbidden celestial history, Elias must decide what can be saved and what must be burned away in order to survive.',
-      'Fans of  "The Dresden Files" by Jim Butcher, *Hellblazer* by Alan Moore, "The Iron Druid Chronicles" by Kevin Hearne, and "Rivers of London" by Ben Aaronovitch will enjoy *Gods and Monsters*.',
+      'Fans of  The Dresden Files by Jim Butcher, <em>Hellblazer<em> by Alan Moore, The Iron Druid Chronicles by Kevin Hearne, and the Rivers of London series by Ben Aaronovitch will enjoy <em>Gods and Monsters<em>.',
     ],
 
     releaseDate: '2027-07-06',
@@ -81,7 +81,7 @@ export const books = [
       'Elias Fetch’s power is fading fast. When Somnus, the uncanny ruler of the Dream Realm, appears in his living room in the middle of the night, he’s wary of the unfamiliar god. Somnus’s children, powerful Dream Lords born from his own mistakes, have escaped into the minds of the living, twisting dreams into nightmares and feeding on the innocent. In exchange for restoring Elias’s fading power, Somnus strikes a bargain: Elias must hunt down the wayward creatures before they tear apart both the dreamscape and the waking world.',
       'With Ena, his sharp-witted girlfriend, and his best friend Crom, a headless Dullahan who knows more about the Dream Realm than he’s letting on, Elias descends into nightmares made flesh. Each encounter tests Elias’s dwindling strength, Ena’s growing abilities, and Crom’s resolve, pushing them to the limits of what they can endure and what they are willing to sacrifice.',
       'But as Elias closes in on the final truth, he realizes the real danger isn’t the Dream Lords he’s been chasing, but something else. And he must decide whether mercy or fire will save the Dream Realm from collapsing. Even dreams can kill.',
-      'Fans of  "The Dresden Files" by Jim Butcher, *Hellblazer* by Alan Moore, "The Iron Druid Chronicles" by Kevin Hearne, and *Rivers of London* by Ben Aaronovitch will enjoy *Gods and Monsters*.',
+      'Fans of  The Dresden Files by Jim Butcher, <em>Hellblazer<em> by Alan Moore, The Iron Druid Chronicles by Kevin Hearne, and the Rivers of London series by Ben Aaronovitch will enjoy <em>Gods and Monsters<em>.',
     ],
 
     
