@@ -157,7 +157,7 @@ const facts = [
               <div class="book-details">
                 <p class="series">{book.series}</p>
                 <h3>{book.title}</h3>
-                <p class="book-blurb">{book.blurb[0]}</p>
+                <p class="book-blurb" set:html={book.blurb[0]} />
 
                 {book.buyLinks && book.buyLinks.length > 0 && (
                   <div class="buy-buttons">
