@@ -48,7 +48,7 @@ const cover =
         <h1>{book.title}</h1>
         <p class="series">{book.series}</p>
 
-        {book.blurb.map((line) => <p class="blurb">{line}</p>)}
+       {book.blurb.map((line) => <p class="blurb" set:html={line} />)}
 
         <div class="actions">
           {
